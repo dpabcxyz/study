@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由分写</title>
+    <script type="text/javascript" src="../js/VUE.js"></script>
+    <script type="text/javascript" src="../JS/vue-router.js"></script>
+    <style type="text/css">
+        .Box{
+            width: 400px;
+            height: 32px;
+            margin: 24px 0 0 40px;
+        }
+        .Box ul{
+            overflow: hidden;
+        }
+        .Box ul li{
+            float: left;
+            list-style: none;
+            padding: 0 10px;
+        }
+        .show{
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="Box">
+    <ul>
+        <li>
+            <router-link to='/home'>首页</router-link>
+        </li>
+        <li>
+            <router-link to='/news'>新闻</router-link>
+        </li>
+        <li>
+            <router-link to='/hot'>热点</router-link>
+        </li>
+    </ul>
+
+    <div class="show">
+        <router-view></router-view>
+    </div>
+</div>
+<template id="home">
+    <ul>
+        <h2>首页1</h2>
+        <h2>首页2</h2>
+        <h2>首页3</h2>
+        <h2>首页4</h2>
+    </ul>
+</template>
+
+<template id="news">
+    <h2>新闻</h2>
+</template>
+
+<template id="hot">
+    <h2>热点</h2>
+</template>
+
+</body>
+</html>
+<script type="text/javascript">
+    /* 模块名称大写字母开头 */
+    /*  1、extend()注册路由模块*/
+    var Home=Vue.extend({
+        template:"#home"
+    });
+    var News=Vue.extend({
+        template:"#news"
+    });
+    var Hot=Vue.extend({
+        template:"#hot"
+    });
+
+    /*2、配置路径信息*/
+    var arr=[
+        {path:'/home',component:Home},
+        {path:'/news',component:News},
+        {path:'/hot',component:Hot},
+    ];
+
+    /*3、创建路由对象*/
+    /*es6语法，配置项与配置内容相同时可以简写*/
+    var router=new VueRouter({
+        routes:arr
+    });
+
+    /*3、配置路由对象*/
+    var vm=new Vue({
+        el:"#box",
+        data:{
+
+        },
+        /*重定向*/
+        beforeCreate:function(){
+            this.$router.push('/home')
+        },
+        router:router
+    });
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/VUE.js"></script>
+    <title>$delete</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{user.id}}</h2>
+        <h2>{{user.name}}</h2>
+        <h2>{{user.age}}</h2>
+        <button @click="fn">删除属性</button>
+    </div>
+    
+    <script>
+        var vm=new Vue({
+            el:'#app',
+           data:{
+               user:{
+                   id:'001',
+                   name:'chenxuan',
+                   age:18
+               }
+           },
+            methods:{
+                fn:function(){
+                   if(this.user.age){
+                       vm.$delete(this.user,'age');
+                   }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

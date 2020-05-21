@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打开窗口</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 300px auto 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="btn1">点击打开</button>
+    <button id="btn2">点击打开</button>
+</div>
+<script>
+    function openWin(){
+        var
+                mywindow=window.open('http://www.anydo.wang/','_blank','top=200,left=200px,width=1200px,height=720,menubar=no,toolbar=no,sorollbars=no,status=no');
+    }
+    $('#btn1').on('click',function(){
+       openWin();
+    })
+    $('#btn2').on('click',function(){
+        mywindow.close();
+    })
+</script>
+</body>
+</html>

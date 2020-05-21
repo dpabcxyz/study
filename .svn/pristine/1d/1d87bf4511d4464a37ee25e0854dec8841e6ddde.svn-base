@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/VUE.js"></script>
+    <script src="http://at.alicdn.com/t/font_862259_mqei3s1uix.js"></script>
+</head>
+<body>
+<div id="box">
+    <my-header>
+          DDDDDDDDDDDDD  
+          <span slot="title">123</span>
+          <li class="headIcon1" slot="img1">aa</li>
+          <li class="headIcon2" slot="img2">bb</li>       
+    </my-header>
+    <my-header>
+          <span slot="title">456</span>
+          <li class="headIcon1" slot="img1">cc</li>
+          <li class="headIcon2" slot="img2">dd</li>       
+    </my-header>
+
+    <my-header>
+          <span slot="title">789</span>
+          <li class="headIcon1" slot="img1">ee</li>
+          <li class="headIcon2" slot="img2">ff</li>       
+    </my-header>
+</div>
+
+<template id="head">
+    <div class="headWrap">
+        <li class="headName"> <slot name="title"></slot></li>
+        <slot name="img1"></slot>
+        <slot name="img2"></slot>
+        <slot></slot>
+    </div>
+</template>
+</body>
+</html>
+<script>
+    var app=new Vue({
+        el:"#box",
+        components:{
+            "myHeader":{
+                template:"#head"
+            }
+        }
+    })
+</script>

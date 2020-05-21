@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function waitSomeTime(msg,time){
+            setTimeout(function(){
+                console.log(mag);
+            },time);
+        }
+        // waitSomeTime('hello world!','3000');
+
+        function test1(){
+            for (var i = 1; i <= 10; i++) {
+                setTimeout(function () {
+                    console.log(i);
+                }, 1000);
+             }
+        }
+        // test1();
+        //究其原因：i是声明在全局作用中的，定时器中的匿名函数也是执行在全局作用域中，那当然是每次都输出11了。
+
+
+        function test2(){
+            for (var i = 1; i <= 10; i++) {
+                (function () {
+                    var j = i;
+                    setTimeout(function () {
+                        console.log(j);
+                    }, 1000);
+                })();
+            }  
+        }
+        test2();
+        //我们可以让i在每次迭代的时候，都产生一个私有的作用域，在这个私有的作用域中保存当前i的值。
+
+    </script>
+</body>
+</html>

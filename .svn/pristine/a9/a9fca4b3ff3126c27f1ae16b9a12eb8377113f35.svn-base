@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>computed</title>
+	<script src="../js/VUE.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>{{msg_1}}</h1>
+		<h1>{{msg_2}}</h1>
+		<h1>{{msg_3}}</h1>
+		<h1>{{msg_4}}</h1>
+	</div>
+	<script>
+		var app =new Vue({
+			el:'#app',
+			data:{
+				msg_1:'hello kitty!',
+				msg_2:'beijing!'
+			},
+			computed:{
+				msg_3:function(){
+					return `${this.msg_1+this.msg_2}`;
+				},
+				msg_4:function(){
+					let msg_=`${this.msg_1+this.msg_2}`;
+					return msg_.split('').reverse().join('');
+				}
+			}
+
+		})
+		/*
+		与方法的区别
+		1、计算属性基于它的依赖，只有在相关依赖发送改变时才能更新
+		2、有缓存，如果依赖没有改变，它不会多次执行
+		3、
+		*/
+
+	</script>
+</body>
+</html>

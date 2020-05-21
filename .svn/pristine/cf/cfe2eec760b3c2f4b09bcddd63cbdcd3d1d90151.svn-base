@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test{
+            width: 100%;
+            height: 800px;
+            margin: 0 auto;
+            background: red url("img/1.png") no-repeat center;
+        }
+    </style>
+</head>
+<body>
+<div class="test" id="wrapper">
+<button id="btn">123</button>
+</div>
+<script>
+    $(document).ready(function(){
+        total = document.documentElement.clientHeight;
+        colHeight = total-document.getElementById("wrapper").offsetTop;
+        document.getElementById("wrapper").style.height=colHeight+"px";
+    })
+</script>
+<script>
+    $('#btn').on('click',function(){
+        alert('hello');
+    })
+</script>
+</body>
+</html>

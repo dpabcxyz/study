@@ -1,0 +1,305 @@
+样式重置
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+li{ list-style: none;}
+ul{padding: 0;margin: 0}
+body{
+    min-width: 1366px;
+    height: 100vh;
+    margin: 0;
+    font-family: "Microsoft YaHei", 微软雅黑, helvetica, arial, verdana, tahoma, sans-serif;
+    background: #0c041c url("../images/bg_body.png") center no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin:  10px 0 0;
+}
+@media screen and (max-width: 1367px) {
+    .header .left{
+        width: 32%;
+    }
+    .header .right{
+        width: 32%;
+    }
+}
+@media screen and (min-width:1367px) and (max-width:1440px){
+    .header .left{
+        width: 34%;
+    }
+    .header .right{
+        width: 34%;
+    }
+}
+@media screen and (min-width:1441px){
+    .header .left{
+        width: 36%;
+    }
+    .header .right{
+        width: 36%;
+    }
+}
+.header .left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 34px;
+    background: url("../images/bg_head-left.png") center no-repeat;
+    background-size: 100% 100%;
+}
+.header .center{
+    width: 437px;
+    margin:0 auto;
+    height: 34px;
+    background: url("../images/bg_head_center.png") center no-repeat;
+    background-size: 100% 100%;
+}
+.header .right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 34px;
+    background: url("../images/bg_head-right.png") center no-repeat;
+    background-size: 100% 100%;
+}
+.header .date{
+    position: absolute;
+    width: 300px;
+    right: 24px;
+    text-align: right;
+    top: -3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+.main{
+    box-sizing: border-box;
+    padding: 0 8px 8px 8px;
+    overflow: hidden;
+}
+.main .corner{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #5033ff;
+    background:
+            url("../images/bg_left_top.png") no-repeat left top ,
+            url("../images/bg_right_top.png") no-repeat right top ,
+            url("../images/bg_left_bottom.png") no-repeat left bottom,
+            url("../images/bg_right_bottom.png") no-repeat right bottom;
+    background-color: rgba(1,23,86,.4);
+    /*box-shadow: 0 0 6px #5033ff;*/
+}
+.main .corner .inner{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+.main .corner .title{
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 162px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    background: url("../images/bg_title.png") center no-repeat;
+    background-size: 162px 30px;
+}
+
+.main .corner .title .name{
+    float: left;
+}
+.main .layout-left{
+    float: left;
+    width: 360px;
+}
+.main .layout-left .item{
+    box-sizing: border-box;
+    width: 100%;
+    height: 33.33%;
+    padding-top: 24px;
+}
+.main .layout-left .left-1 .carCount{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+.main .layout-left .left-1 .carCount .labelLeft{
+    position: absolute;
+    width: 146px;
+    left: 12px;
+    top: 52%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.main .layout-left .left-1 .carCount .labelLeft ul:first-child{
+    margin-bottom: 14px;
+}
+.main .layout-left .left-1 .carCount .labelLeft .videoCar{
+    margin-bottom: 2px;
+    color: white;
+    text-align: center;
+}
+.main .layout-left .left-1 .carCount .labelLeft .videoCarCount{
+    color: #ffff43;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.main .layout-left .left-1 .chartsRight{
+    position: absolute;
+    width: 200px;
+    height: 95%;
+    left: 140px;
+    top: 58%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.main .layout-left .left-2 .onlineRatio{
+    position: absolute;
+    box-sizing: border-box;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-top: 32px;
+}
+.main .layout-left .left-3 .flowCount{
+    position: absolute;
+    width: 166px;
+    left: 50%;
+    top: 55%;
+    -ms-transform: translate(-50%,-50%);
+    transform:  translate(-50%,-50%);
+    text-align: left;
+}
+.main .layout-left .left-3 .flowCount ul:first-child{
+    margin-bottom: 16px;
+}
+.main .layout-left .left-3 .flowCount ul .today{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background: url(../images/today.png) center no-repeat;
+}
+.main .layout-left .left-3 .flowCount ul .legend{
+    height: 20px;
+    line-height: 24px;
+    color: white;
+}
+.main .layout-left .left-3 .flowCount ul .amount{
+    width: 100%;
+    margin-top: 6px;
+    text-align: left;
+    color: #ffff43;
+    font-weight: bold;
+    font-size: 22px;
+}
+.main .layout-left .left-3 .flowCount ul .month{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background: url(../images/month.png) center no-repeat;
+}
+.main .layout-center{
+    box-sizing: border-box;
+    padding: 0 12px;
+    /*background-color: red;*/
+    overflow: hidden;
+}
+.main .layout-center .item{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 33.33%;
+    padding-top: 24px;
+}
+.main .layout-center .item .echarts-tool{
+    position: absolute;
+    z-index: 9999;
+    top: 28px;
+    left: 12px;
+}
+.main .layout-center .item .move{
+    width: 100%;
+    height: 100%;
+}
+.main .layout-center .item .echarts-tool .layui-input-inline{
+    width: 136px;
+    margin-right: 12px;
+}
+.main .layout-center .item .echarts-tool label{
+    color: white;
+}
+.main .layout-center .item .echarts-tool input{
+    border: none;
+    background-color: rgba(255,255,255,.5)!important;
+}
+.main .layout-center .item .echarts-tool .layui-form-select dl dd.layui-this {
+    background-color: #0086ff;
+    color: #fff;
+}
+.main .layout-right .item .carTypeCount{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 55%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+}
+.main .layout-right .item .carTypeCount ul{
+    width: 130px;
+    margin: 0 auto;
+}
+.main .layout-right .item .carTypeCount  ul .carType{
+    color: #0081ff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.main .layout-right .item .carTypeCount ul .accountItem{
+    height: 22px;
+    line-height: 22px;
+   color: white;
+}
+.main .layout-right .item .carTypeCount  ul .accountItem span{
+    color: #ffff43;
+    font-weight: bold;
+}
+.main .layout-right{
+    float: right;
+    width: 220px;
+}
+.main .layout-right .item{
+    box-sizing: border-box;
+    width: 100%;
+    height: 33.33%;
+    padding-top: 24px;
+}
+.main .layout-right .right-1{
+
+}
+.main .layout-right .right-2 .typeCount{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+

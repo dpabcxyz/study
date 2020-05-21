@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: none;
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        div:first-of-type{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <div style="display: block;">aaa</div>
+    <div>bbb</div>
+    <div>cccc</div>
+    <script>
+        [...document.querySelectorAll('button')].find((x,y,z)=>{
+            x['onclick']=()=>{
+                // [...document.querySelectorAll('div')].find((a,b,c)=>{
+                //     a.style.display="none"
+                // });
+                [...document.querySelectorAll('div')].find(a=>{
+                    a.style.display="none"
+                });
+                [...document.querySelectorAll('div')][y].style.display="block"
+            }
+        })
+    </script>
+</body>
+</html>

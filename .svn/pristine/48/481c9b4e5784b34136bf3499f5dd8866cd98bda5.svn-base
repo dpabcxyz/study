@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上标</title>
+	<script src="http://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<p>中国<span id="test1"></span>人民</p>
+	<script>
+		var str="How are you doing today?";
+		$('#test1').html(str.sup())
+	</script>
+</body>
+</html>

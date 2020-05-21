@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宽度的探索</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test{
+            width: 300px;
+            height: 200px;
+            border: 1px dashed red;
+            padding: 10px;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    width:300px;
+    height:200px;
+    border:1px;
+    padding:10px;
+    margin:8px;
+</div>
+<div class="test">
+    width:300px;
+    height:200px;
+    border:1px;
+    padding:10px;
+    margin:8px;
+</div>
+<script>
+//    var Owidth=$('.test').outerWidth(true);
+//    var Oheight=$('.test').outerHeight();
+//    var Iwidth=$('.test').innerWidth();
+//    var Iheight=$('.test').innerHeight();
+//    console.log('outerwidth:'+Owidth);
+//    console.log('outerheight:'+Oheight);
+//    console.log('innerWidth:'+Iwidth);
+//    console.log('innerHeight:'+Iheight);
+
+    $('.test').outerWidth(function(i,v){
+        alert(v)
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-bind基本用法</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+	<h1>基本用法</h1>
+	<div id="app">
+		<li  v-bind:id="id1">hello world！</li>
+	</div>
+	<script>
+		var app=new Vue({
+			el:'#app',
+			data:{
+				id1:'myid'
+			}
+		})
+	</script>
+</body>
+</html>

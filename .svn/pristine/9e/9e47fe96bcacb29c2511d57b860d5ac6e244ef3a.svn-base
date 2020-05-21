@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json数据结构</title>
+	<script src="http://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+	<button id="btn1">json对象</button>
+	<button id="btn2">json键值对</button>
+	<button id="btn3">json数组</button>
+	<script>
+		var json1={
+			"name":"陈轩"
+		}
+		var json2={
+			"msg":{
+				"name":"王二小",
+				"age":"18",
+				"sex":"girl",
+				"city":"北京",
+				"job":"软件开发",
+			}
+		}
+		var json3={
+			"employees":[
+			{ "firstName":"Bill" , "lastName":"Gates","age":"18"},
+			{ "firstName":"George" , "lastName":"Bush","age":"30" },
+			{ "firstName":"Thomas" , "lastName":"Carter","age":"22"}
+		]};
+			
+		$('#btn1').click(function(){
+			console.log("键值对："+json1.name);
+		})
+		$('#btn2').click(function(){
+			console.log("对象："+json2.msg.city);
+		})
+		$('#btn3').click(function(){
+			console.log("数组："+json3.employees[1].firstName);
+		})
+	</script>
+</body>
+</html>

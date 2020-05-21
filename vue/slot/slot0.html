@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slot</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<div id="box">
+    <test>我是插入的内容</test>
+</div>
+
+<template id="pp">
+    <div>
+        <h2 @click="f1()">title</h2>
+        <h2>{{msg}}</h2>
+        <h2>{{name}}<slot></slot></h2>
+        <h2>槽口:<slot></slot></h2>
+    </div>
+</template>
+</body>
+</html>
+<script>
+    Vue.component('test',{
+        template:'#pp',
+        data:function () {
+            return {
+                msg:'成绩排行',
+                name:"陈轩"
+            }
+        },
+        methods:{
+            f1:function () {
+                alert("你点了我！")
+            }
+        }
+    });
+    var app=new Vue({
+        el:"#box",
+    })
+</script>

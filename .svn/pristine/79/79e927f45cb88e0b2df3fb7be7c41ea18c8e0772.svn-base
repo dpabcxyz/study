@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function outer(){
+				var value1=1;
+				var value2=2;
+				function inner1 (){
+					console.log(value1);
+				}
+				function inner2 (){
+					console.log(value2);
+				}
+				return {
+					inner1:inner1,
+					inner2:inner2
+				}
+			}
+			var outerValue=outer();
+			outerValue.inner1();
+			outerValue.inner2();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链的尽头</title>
+</head>
+<body>
+<script>
+    var obj=Object.getPrototypeOf(Object.prototype);
+    console.log(obj);
+    //Object.prototype的原型对象是null,原型链的尽头是null
+    //注意，一级级向上，在整个原型链上寻找某个属性，对性能是有影响的。所寻找的属性在越上层的原型对象，对性能的影响越大。如果寻找某个不存在的属性，将会遍历整个原型链。
+</script>
+</body>
+</html>

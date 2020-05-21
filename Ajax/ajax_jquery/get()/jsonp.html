@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get()跨源请求</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../../css/common.css">
+
+</head>
+<body>
+<button class="button">action</button>
+<script>
+    // get()跨源请求
+    $(function () {
+        $('.button').click(function () {
+            $.get('php/jsonp.php',function (data) {
+                console.log(data)
+            },'jsonp')
+        })
+    })
+</script>
+</body>
+</html>

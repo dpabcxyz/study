@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="../js/VUE.js"></script>
+    <style>
+        li{list-style: none;text-align: center}
+        .red{ background: red;color: white;cursor: pointer;}
+    </style>
+</head>
+<body>
+<div id="app">
+    <li v-for="(chenxuan,index) in list" @click="fn(index)" v-bind:class="{red:chenxuan.bol}">{{chenxuan.des}}</li>
+</div>
+</body>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            content:"hello kitty",
+            list:[
+                {des:"吃饭",bol:false},
+                {des:"睡觉",bol:false},
+                {des:"上班",bol:false},
+                {des:"codding",bol:false},
+                {des:"撸啊撸",bol:false}
+        ]},
+
+        methods:{
+            fn:function (Index) {
+                for(var i=0;i<this.list.length;i++){
+                    this.list[i].bol=false;
+                }
+                this.list[Index].bol=true;
+            }
+        }
+
+    })
+</script>
+</html>

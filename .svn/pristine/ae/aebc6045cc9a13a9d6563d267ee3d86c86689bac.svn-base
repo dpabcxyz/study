@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主要选择器</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="iphone">苹果</div>
+<div id="android">安卓</div>
+<div class="wp">微软</div>
+<div class="wp">微软</div>
+<div class="wp">微软</div>
+<div class="wp">微软</div>
+<div class="wp">微软</div>
+
+
+<script>
+    //1、全部选择器
+//   $('*').css({'border':'red 1px solid','background-color':'green'});
+
+    //2、类选择器
+//    $('.iphone').css('font-size','50px');
+
+    //3、id选择器
+//   alert($('#android').length);
+
+    //4、元素-类名选择器
+//    alert($('div[class].wp').length);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()数组获取属性值</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+       .test{
+           width: 500px;
+           height: 400px;
+           margin: 100px auto;
+           border: 1px solid red;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+    </style>
+</head>
+<body>
+<div class="test">
+    测试的div
+</div>
+<script>
+    var obj=$('.test').css(['width','height','border','display','align-items','justify-content']);
+    console.log('宽度：'+obj['width']);
+    console.log('高度：'+obj['height']);
+    console.log('边框：'+obj['border']);
+    console.log('display：'+obj['display']);
+    console.log('align-items：'+obj['align-items']);
+    console.log('justify-content：'+obj['justify-content']);
+</script>
+</body>
+</html>

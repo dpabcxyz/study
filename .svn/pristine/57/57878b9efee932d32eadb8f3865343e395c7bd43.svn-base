@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跨域</title>
+    <script src="../js/VUE.js"></script>
+	<script type="text/javascript" src="../js/vue-resource.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="fn">发起请求</button>
+    </div>
+    
+    <script>
+        var app=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                fn:function(){
+                    this.$http
+                    .jsonp('http://v.juhe.cn/joke/content/list.php',{
+                        params:{
+                        key:'478503db587d59d275971755259b4899',
+                        page:'4',
+                        size:'20',
+                        sort:'asc',
+                        time:'1418745237'
+                        }
+                    })
+                    .then(resp=>{
+                        console.log(resp.data.result.data);
+                    })
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

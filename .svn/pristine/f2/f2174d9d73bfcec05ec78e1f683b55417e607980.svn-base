@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>console</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        var txt="i love you";
+        console.log(txt);
+    })
+</script>
+</body>
+</html>

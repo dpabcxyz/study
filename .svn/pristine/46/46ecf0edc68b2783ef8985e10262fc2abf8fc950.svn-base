@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isPrototypeOf()</title>
+</head>
+<body>
+    <script>
+        /*
+        isPrototypeOf() 返回一个布尔值，用于检测原型对象是否有某个实例
+        */
+        function Person(name,height){
+           this.name=name;
+           this.height=height;
+        }
+        var boy=new Person('chenxuan',180);
+        console.log(Person.prototype.isPrototypeOf(boy));
+    </script>
+</body>
+</html>

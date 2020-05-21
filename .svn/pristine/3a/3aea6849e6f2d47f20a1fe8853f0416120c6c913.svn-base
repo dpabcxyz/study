@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class</title>
+	</head>
+	<body>
+		<script>
+			class Person{
+				constructor(x,y,z){
+					console.log(x,y,z);
+					this.x=10;//定义私有属性,this指代实例对象
+				}
+				test(x){
+					alert(x);
+				}
+				chenxuan(){
+					console.log(this.x);
+				}
+			}
+			// new Person(1,2,3).chenxuan();
+
+
+			function Point(x,y,z){
+				console.log(x,y,z);
+				this.x=10;//定义私有属性
+			}
+			Point.prototype.chenxuan=function(){
+				console.log(this.x);
+			}
+			new Person(1,2,3).chenxuan();
+		</script>
+	</body>
+</html>

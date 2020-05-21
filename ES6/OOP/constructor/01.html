@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+        /*
+        1、定义所有对象实例的方法和属性
+        2、对于构造函数，它是一个属性；对于对象实例，它是一个原型对象
+        3、原型对象都有一个constructor属性，同时也会被对象实例继承
+        4、对象实例的constructor属性指向构造函数
+        5、所有一切对象的原型顶端，都是Object.prototype，Object.prototype是null,null没有自己的原型
+        6、所有构造函数都有prototype属性
+        7、所有对象都有__proto__属性
+        8、对象包括函数对象和普通对象
+        */
+       //定义一个构造函数
+       function Person(name,height){
+           this.name=name;
+           this.height=height;
+       }
+       //往原型对象上添加方法
+       Person.prototype.hobby=function(){
+           return "看电影"
+       }
+       //创建一个实例
+       var boy=new Person('chenxuan',180);
+       console.log(boy.name);  //chenxuan
+       console.log(boy.height); //180
+       console.log(boy.hobby()); //看电影
+       console.log("------over------")
+       console.log("boy的构造函数："+boy.constructor);
+       console.log("构造函数的原型："+Person.prototype);
+       console.log("构造函数的原型对象的constructor："+Person.prototype.constructor);
+       console.log("构造函数原型的原型指向Object.prototype:"+(Person.prototype.__proto__==Object.prototype))
+       console.log("Object的原型:"+Object.prototype.__proto__)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>修饰符可以串联</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<div id="btn">
+    <input type="text" @keydown.up.enter="f1()">
+</div>
+</body>
+</html>
+<script>
+    var app=new Vue({
+        el:"#btn",
+        methods:{
+            f1:function (e) {
+                alert("修饰符可以串联");
+            },
+        }
+    })
+</script>

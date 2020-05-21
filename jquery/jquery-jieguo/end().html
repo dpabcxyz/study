@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>end()方法</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+        .test1,.test2,.test3,.test4,.test5{
+            width: 80%;
+            margin: 100px auto 0;
+            border: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <div class="one">1
+        <div class="two">2
+            <div class="three">
+                <p>3inner</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="test2">
+    <ul>
+        <p>我爱你op！</p>
+        <li>1</li>
+        <li class="test3">2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+<script>
+    /*返回链式结构中先前的元素*/
+    $('.one').find('.two').children().css('color','red').end().css('color','green');
+
+    /*返回当前结果与先前的元素的集合*/
+
+    $('.test3').nextAll().addBack().css('color','yellow')
+
+
+</script>
+
+</body>
+</html>

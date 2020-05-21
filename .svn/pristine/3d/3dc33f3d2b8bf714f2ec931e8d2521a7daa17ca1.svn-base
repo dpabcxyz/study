@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>之前的用法-继承</title>
+</head>
+
+<body>
+    <script>
+        //--面向对象方法--
+        function Person(name, age) {
+            //-为对象添加属性--
+            this.name = name;
+            this.age = age;
+        };
+        //为对象添加方法
+        Person.prototype.showName = function () {
+            alert(this.name);
+        };
+        Person.prototype.showAge = function () {
+            alert(this.age);
+        }
+    
+        //Work继承Person
+        function Work(name,age,sex){
+            //子类继承父类属性
+            Person.apply(this,arguments);
+            this.sex=sex;
+        }
+
+        //子类继承父类方法
+        Work.prototype=new Person();
+        var p1 = new Person('陈轩', '芳龄18岁!');
+        var w1=new Work('大侠','今年100岁!','男');
+        p1.showName();
+        p1.showAge();
+        w1.showName();
+        w1.showAge();
+        w1.showSex();
+    </script>
+</body>
+
+</html>

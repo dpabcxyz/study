@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var A={
+        name:'陈轩',
+        desc:function(){
+            return '姓名：'+this.name;
+        }
+    };
+    var name='李四';
+    var f=A.desc;
+    console.log(f()); //姓名：李四
+    // 上面代码中，A.describe被赋值给变量f，内部的this就会指向f运行时所在的对象（本例是顶层对象）。
+</script>
+</body>
+</html>

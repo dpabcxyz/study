@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var person ={
+        _name : "chen",
+        age:21,
+        set name(name) {
+            this._name = name;
+            },
+        get name() {
+            return this._name;
+        }
+    }
+    console.log(person.name); //输出”chen“
+    person.name="lunc";       //输出"lunc"
+    person.name               //输出"lunc"
+
+</script>
+</body>
+</html>

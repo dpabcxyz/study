@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on()方法</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        p,h3,a,span{
+            background-color:green;
+            margin-bottom: 20px;
+        }
+        a{
+            display: block;
+        }
+        .div2,.div3,.div4,.div5,.div6{
+            width: 80%;
+            height: 100px;
+            margin: 50px auto 0;
+            border: 1px solid red;
+        }
+        .div7{
+            width: 80%;
+            height: 50px;
+            margin: 50px auto 0;
+            border: 2px solid grey;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <p>hello</p>
+    <p>Kitty</p>
+    <h3>我是H3</h3>
+    <a href="http://baidu.com">百度</a>
+    <a href="">新浪</a>
+    <span>我是span</span>
+</div>
+<div class="div2">
+    <h1>div2-hello kitty</h1>
+    <a href="http://baidu.com">百度</a>
+</div>
+
+<div class="div3">
+    <h1>div3-hello kitty!</h1>
+</div>
+<div class="div4">
+    <h1>div4-hello kitty!</h1>
+</div>
+
+<div class="div5">
+    <h2>div5-hello kitty!</h2>
+    <a href="http://baidu.com">百度</a>
+</div>
+
+<div class="div6">
+    <h2 style="color:red">div6-hello kitty!</h2>
+</div>
+
+<div class="div7">
+    <h2 style="color:red">div7-hello kitty!</h2>
+</div>
+<script>
+//    一、jquery对象.on('事件名称或民命空间'，[选择器]，[数据]，函数)
+//    1、传入选择器，模拟事件委托
+    $(document).ready(function(){
+        $('.div1').on('mouseenter','p',function(){
+            console.log('p被覆盖了！')
+        });
+
+        $('.div1').on('mouseenter','h3',function(){
+            console.log('h3被覆盖了！')
+        });
+
+        $('.div1').on('mouseenter','a',function(){
+            console.log('a被覆盖了！')
+        });
+
+        $('.div1').on('mouseenter','span',function(){
+            console.log('a被覆盖了！')
+        })
+    });
+
+
+//    2、传入object引用类型的数据或其他任何类型的数据
+    $(document).ready(function(){
+        $('.div2').on('click',{name:'陈轩'},function(e){
+            console.log(e.data);
+        })
+    });
+$(document).ready(function(){
+    $('.div3').on('click',null,'love',function(e){
+        console.log(e.data);
+    })
+});
+
+//    3、简写
+$(document).ready(function(){
+   $('.div1').on('click','a',function(){
+       return false;
+   })
+});
+
+$(document).ready(function(){
+    $('.div2').on('click','a',false)
+});
+
+//    二、jquery对象.on({事件名称：函数}，[选择器]，[数据])
+
+//    $(document).ready(function(){
+//        $('.div4').on({
+//            click:function(){
+//                console.log('被点击了！')
+//            },mouseenter:function(){
+//                console.log('被覆盖了！')
+//            }
+//        })
+//    });
+
+//对于多个事件的相同执行语句
+$(document).ready(function(){
+    $('.div4').on({
+        'click mouseenter':function(){
+            console.log('中招了！')
+        }
+    })
+});
+
+    $(document).ready(function(){
+        $('.div5').on({
+            click:function(e){
+                console.log(e.data.name+'被点击了！')
+            },mouseenter:function(){
+                console.log('被覆盖了！')
+            }
+        },'h2',{name:'陈轩'})
+    });
+//对于直接事件，this指代currentTarget；对于委托事件，this指代选择器
+//$(document).ready(function(){
+//   $('.div6').on('click',function(){
+//       console.log($(this))
+//   })
+//});
+$(document).ready(function(){
+    $('.div6').on('click','h2',function(){
+        console.log(this)
+    })
+});
+$(document).ready(function(){
+    $('.div7').on('mouseenter',function(e){
+        console.log(e.pageX+' '+ e.pageY);
+    })
+});
+</script>
+</body>
+</html>

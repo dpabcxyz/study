@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处理html</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+</head>
+<body>
+<button class="btn">ACTION</button>
+<script>
+   $('.btn').click(function () {
+       var xhr=new XMLHttpRequest();
+       xhr.addEventListener('readystatechange',function () {
+           if (xhr.readyState==4){
+               $('body').append(xhr.responseText);
+           }
+       });
+       xhr.open('get','html.php');
+       xhr.send(null);
+   });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nth的区别</title>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <style>
+        .test1,.test2{
+            width: 80%;
+            margin: 50px auto 0;
+            text-align: center;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+<div class="test1" >
+    <ul>
+        <p>12</p>
+        <p>12</p>
+        <p>12</p>
+         <p>12</p>
+        <li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>sass</li>
+        <li>scss</li>
+        <li>PHP</li>
+        <li>JAVA</li>
+        <li>PATHY</li>
+    </ul>
+</div>
+<div class="test2" >
+    <ul>
+
+        <li>html</li>
+        <span>123</span>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>sass</li>
+        <li>scss</li>
+        <li>PHP</li>
+        <li>JAVA</li>
+        <li>PATHY</li>
+    </ul>
+</div>
+<script>
+    //4、nth-child(even) 匹配父元素下第n个指定元素
+//    $('.test1 li:nth-child(4)').css({'color':'blue','font-size':"50px"});
+    $('.test1 li:nth-child(odd)').css({'color':'blue','font-size':"50px"});
+//    $('.test1 li:nth-child(even)').css({'color':'yellow','font-size':"50px"});
+
+    //5、nth-of-type 匹配父元素下第n个指定元素，位置不固定，只要是第n个就可以，
+    $('.test2 li:nth-of-type(2)').css({'color':'red','font-size':"50px"});
+//    $('.test2 li:nth-of-type(2)').css({'color':'blue','font-size':"50px"});
+</script>
+</body>
+</html>

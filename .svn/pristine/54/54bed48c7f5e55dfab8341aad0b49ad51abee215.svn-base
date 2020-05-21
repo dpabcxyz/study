@@ -1,0 +1,19 @@
+.section1{
+    background: white url("../img/1.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.section2{
+    background: white url("../img/2.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.section3{
+    background: white url("../img/3.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.section4{
+    background: white url("../img/4.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.section{
+    text-align: center;
+}

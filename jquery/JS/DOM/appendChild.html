@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>在指定最后一个子节点后插入新节点</title>
+<style>
+	p{
+		color: red;
+	}
+</style>
+</head>
+<body>
+<ul id="test">
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>SASS</li>
+</ul>
+<script>
+	var otest=document.getElementById("test");
+	var newnode=document.createElement("li");
+	newnode.innerHTML="hello,world!";
+	otest.appendChild(newnode);
+</script>
+<div id="div">
+	<p>我爱你1</p>
+	<p>我爱你2</p>
+	<p>我爱你3</p>
+</div>
+<script>
+	var otest=document.getElementById("test");
+	var newnode=document.createElement("p");
+	newnode.innerHTML="hello,world!";
+	otest.appendChild(newnode);
+	</script>
+</body>
+</html>

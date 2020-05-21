@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子组件槽口</title>
+    <script src="../js/VUE.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+        }
+        .menuse{
+            float: left;
+            width: 200px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: 2px 0 2px rgba(0,0,0,.2);
+        }
+        .menuse .item{
+            height: 40px;
+            line-height: 40px;
+        }
+        .menuse .item .symbol{
+            float: left;
+            margin-right: 4px;
+            font-size: 24px;
+            color: saddlebrown;
+            list-style: none;
+        }
+        .menuse .item .name{
+            float: left;
+            font-size: 16px;
+            color: #333;
+            list-style: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <menuse></menuse>
+    </div>
+    <template id="menuse">
+        <div class="menuse">
+            <item>
+                <span slot="symbol"><svg class="icon" aria-hidden="true"> <use xlink:href="#icon-yundong" ></use></svg></span>
+                <span slot="name">系统管理</span> 
+            </item>
+            <item>
+                <span slot="symbol"><svg class="icon" aria-hidden="true"> <use xlink:href="#icon-qq" ></use></svg></span>
+                <span slot="name">用户管理</span> 
+            </item>
+            <item>
+                <span slot="symbol"> <svg class="icon" aria-hidden="true"> <use xlink:href="#icon-userBlock" ></use></svg></span>
+                <span slot="name">个人中心</span> 
+            </item>
+            <item>
+                <span slot="symbol"><svg class="icon" aria-hidden="true"> <use xlink:href="#icon-ship"></use></svg></span>
+                <span slot="name">千年老妖</span> 
+            </item>
+        </div>
+    </template>
+    
+    <template id="item">
+        <div class="item">
+                <li class="symbol"><slot name="symbol"></slot></li>
+                <li class="name"><slot name="name"></slot></li>
+        </div>   
+    </template>
+    <script>
+        var app=new Vue({
+            el:'#app',
+            components:{
+                'menuse':{
+                    template:'#menuse',
+                    components:{
+                        'item':{
+                            template:"#item"
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="http://at.alicdn.com/t/font_996938_qb4d4iq1sj.js"></script>
+</body>
+</html>

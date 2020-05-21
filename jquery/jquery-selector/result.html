@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery选择结果</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="test">
+    <p id="p1">hello</p>
+    <p id="p2">I LOVE YOU</p>
+    <P id="p3">hahah</P>
+    <p id="p4">我爱你！</p>
+</div>
+<script>
+    //1、each()方法
+//    $('.test p').each(function(a){
+//        if (a==1){
+//            return true;
+//        }
+//        alert(a);
+//    })
+
+//$('.test p').each(function(a){
+//       alert(this.id);
+//    })
+
+    //2、length属性
+//    alert($('.test p').length);
+
+    //3、toArray()方法
+//       alert($('.test p').get(1).id);
+var t=$('.test p').toArray();
+    alert(t[2].id);
+
+    //4、get()方法
+    alert($('.test p').get(2));
+
+</script>
+</body>
+</html>

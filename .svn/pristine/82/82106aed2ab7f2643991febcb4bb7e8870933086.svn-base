@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作属性</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+        }
+        .test1{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .test2{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid blue;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .test3{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid black;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .test4{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid yellow;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .p1{
+            color: red;
+
+        }
+        .p2{
+            color: green;
+            font-size: 40px;
+        }
+        .p3{
+            color: red;
+            font-size: 40px;
+        }
+
+        #p2{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <p class="p3">1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+<div class="test2">
+    <p class="y1">1</p>
+    <p class="y2">2</p>
+    <p class="y3">3</p>
+    <p class="y4">4</p>
+</div>
+<div class="test3">
+    <input type="radio" name="sex" checked>女
+</div>
+<script>
+//    1、传一个参数，获取匹配集的第一个对象的属性值
+//    alert($('.test1 p').attr('class'));
+
+//    2、传入object()引用类型创建的对象
+//    var  obj1= {'class':'p1','id':'p2'};
+//    $('.test1 p').attr(obj1);
+
+//    3、传入函数
+//$('.test2 p').on('click',function(){
+//    $(this).attr('class',function(i,v){
+//        switch (i){
+//            case 0:
+//                console.log('点击了第一个'+v);
+//                break;
+//            case 1:
+//                console.log('点了第二个'+v);
+//                break;
+//            case 2:
+//                console.log('点了第三个'+v);
+//                break;
+//            case 3:
+//                console.log('点了第四个'+v);
+//                break;
+//        }
+//    })
+//});
+//    4、传入两个值
+//$('.test2 p').attr('alt','哈哈哈');
+
+//    1、移除类名
+//setTimeout("$('.test2 p').removeAttr('class')",3000);
+
+//    1、添加特殊类名
+//setTimeout(" $('.test3 :radio').prop('checked',true)",2000);
+
+//    1、移除特殊类名
+//setTimeout(" $('.test3 :radio').prop('checked',false)",2000);
+
+//    1、检测是否拥有特殊类名
+    console.log($('.test3 :radio').prop('checked'));
+
+</script>
+</body>
+</html>

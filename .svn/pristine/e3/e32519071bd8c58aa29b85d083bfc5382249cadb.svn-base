@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/VUE.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <parent></parent>
+    </div>
+    <template id="parent">
+        <div class="parent">
+            <h2>父组件</h2>
+            <li>父级的值：{{user.name}}</li>
+            <child :users='user'></child>
+        </div>
+        
+    </template>
+    <template id="child">
+        <div class="child">
+            <h2>子组件</h2>
+            <li>来自父组件的值：{{users.name}}</li>
+            <button @click="fn">同步修改</button>
+        </div>
+    </template>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            components:{
+                'parent':{
+                    template:'#parent',
+                   data:function(){
+                       return {
+                           user:{
+                               name:'陈轩',
+                               age:18
+                           }
+                       }
+                   },
+                    components:{
+                        'child':{
+                            template:'#child',
+                            props:['users'],
+                            methods:{
+                                fn:function(){
+                                  this.users.name="同步修改成功！"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

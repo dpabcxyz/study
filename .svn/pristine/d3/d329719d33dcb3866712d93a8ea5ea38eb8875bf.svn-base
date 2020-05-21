@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind配合过滤器</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<h1>配合v-model使用</h1>
+<div id="app">
+    <a v-bind:href='url | add_protocol'>baidu.com</a>
+</div>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data: {
+            url: 'baidu.com',
+        },
+        filters:{
+            add_protocol:function(value){
+                if(!value){
+                    return '';
+                }
+                else{
+                    return 'http://'+value;
+                }
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

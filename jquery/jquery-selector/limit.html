@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery给定范围查找对象</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1,.test2{
+                width: 80%;
+            height: 100px;
+            margin:50px auto;
+            text-align: center;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <p>我爱你！</p>
+</div>
+<div class="test1">
+    <p>I LOVE YOU</p>
+</div>
+
+<script>
+    //$()函数传入第二个函数，限制选择器的选择范围
+//    $('p','.test1').css({'color':'blue','font-size':'35px'});
+
+    var limit=document.getElementsByClassName('test1');
+    $('p',limit).css({'color':'blue','font-size':'35px'});
+
+</script>
+</body>
+</html>

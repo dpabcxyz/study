@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str="i love you";
+		 console.log("第一次出现的位置是："+str.indexOf('i'));
+	</script>
+</body>
+</html>

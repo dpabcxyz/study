@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/VUE.js"></script>
+    <title>动画</title>
+    <style>
+        .obj{
+            width: 200px;
+            height: 200px;
+            margin: 30px  auto 0;
+            background-color: fuchsia;
+        }
+        .x-enter-active,.x-leave-active{
+            transition: all 5s ease-in;
+        }
+        .x-enter-active{
+            opacity: 1;
+            width: 200px;
+            height: 200px;
+            background-color: fuchsia;
+        }
+      
+    
+        .x-leave-active{
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+       
+        .x-enter{
+            opacity: 0;
+            width: 50px;
+            height: 50px;
+        }
+      
+       
+       
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button  @click="bol=!bol">切换</button>
+        <transition 
+        name="x"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @after-enter="afterEnter"
+        @before-leave="beforeLeave"
+        @leave="leave"
+        @after-leave="afterLeave"
+        >
+            <div class="obj" v-show='bol'></div>
+        </transition> 
+        
+    </div>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                bol:false
+            },
+           methods:{
+               beforeEnter:function(){
+                   alert("开始进入之前")
+               },
+               enter:function(){
+                   alert("开始进入")
+               },
+               afterEnter:function(){
+                alert("进入之后")
+               },
+               beforeLeave:function(){
+                alert("离开之前")
+               },
+               leave:function(){
+                alert("离开")
+               },
+               afterLeave:function(){
+                alert("离开之后");
+                }
+           }
+        })
+    </script>
+</body>
+</html>

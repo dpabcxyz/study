@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>从前端指定返回输数据类型</title>
+    <script src="../js/jauery-3.2.1.js"></script>
+</head>
+<body>
+    <script>
+        //从前端指定返回数据类型
+        $(function(){
+            $.get('http://v.juhe.cn/weixin/query?key=b03a5875ca5269ab856b543fbb0e77c2&pno=2&ps=50',function(data, textStatus, jqXHR){
+                console.log(data.result.list[1].url);
+                console.log(textStatus);
+                console.log(jqXHR);
+            },'json')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>不可枚举</title>
+</head>
+
+<body>
+    <!-- 类内部定义的方法都是不可枚举的-->
+    <!-- assign()可一次性给类添加多个方法 -->
+    <script>
+        class Person {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            };
+            sayName() {
+
+            };
+            countAmount() {
+
+            };
+            alert() {
+
+            };
+        }
+        Object.assign(Person.prototype, {
+            hello() {},
+            test() {},
+            test() {}
+        })
+        console.log(Object.keys(Person.prototype));
+        console.log(Object.getOwnPropertyNames(Person.prototype));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .test2{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid green;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .test3{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid blue;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+        .test3 div{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    0
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</div>
+<div class="test2">
+    0
+    <p>3e31</p>
+    <p>2eqe32q</p>
+    <p>3e3qe3</p>
+</div>
+<div class="test3">
+    <div>姓名：<input type="text"></div>
+    <div>性别：<input type="text"></div>
+    <div>年龄：<input type="text"></div>
+    <div>电话：<input type="text"></div>
+</div>
+<!--//    text()-->
+<script>
+//    1、text(),不传参数，将获取匹配元素及后代的标签内容
+    console.log( $('.test1').text());
+
+//    2、text(),传入参数，设置匹配元素的内容
+    $('.test1 p:eq(2)').text('hello!');
+
+//    3、text(),传入函数
+    $('.test1 p').text(function(i,v){
+    if (i==1){
+        return '恭喜，中奖啦'
+    }
+        else{
+        return '抱歉！'
+    }
+    })
+</script>
+
+<!--//    html()-->
+<script>
+    //    1、html(),不传参数，将获取匹配的第一个元素的标签内容
+    console.log($('.test2 p').html());
+
+    //    2、html(),传入参数，设置标签内容
+    $('.test2 p:eq(2)').html('helo,kitty!');
+
+    //    3、html(),传入函数
+    $('.test2 p').html(function(i,v){
+      if (i>0){
+          return '哈哈';
+      }
+        else{
+          return '嘿嘿';
+      }
+    })
+</script>
+
+<!--//    val()-->
+
+<script>
+    //    1、val()不传参数，获取匹配的第一个表单值
+    console.log($('.test3 input').val())
+
+    //    2、val()传入参数，设置表单值
+    $('.test3 input:eq(2)').val('hi');
+
+    //    3、html(),传入函数
+    $('.test3 input').val(function(i,v){
+        if (i==0){
+            return '1'
+        }
+        else  if(i==1){
+            return '2'
+        }
+        else  if(i==2){
+            return '3'
+        }
+        else  if(i==3){
+            return '4'
+        }
+    });
+</script>
+</body>
+</html>

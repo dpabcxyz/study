@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建元素节点</title>
+	<style>
+		.test{
+			width: 800px;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 40px;
+			text-align: center;
+			
+		}
+	</style>
+</head>
+<body>
+	<script>
+		var body=document.body;
+		var input=document.createElement("input");
+		input.type="button";
+		input.value="创建一个按钮";
+		body.appendChild(input);
+	</script>
+	<div class="test" id="test">
+		<script>
+		var body=document.getElementById("test");
+		var btn=document.createElement("input");
+		btn.setAttribute("type", "button");
+		btn.setAttribute("value", "button");
+		btn.setAttribute("onclick", "javascript:alert('hello,我是一个小小按钮');");
+		body.appendChild(btn);
+	</script>
+	</div>
+	
+</body>
+</html>

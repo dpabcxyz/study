@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="test">
+    <p id="p1">hello world!</p>
+    <p id="p2">hello kitty!</p>
+    <p id="p3">hello moto！</p>
+    <P id="p4">day day up</P>
+    <P id="p5">good good study</P>
+    <P id="p6">任我行</P>
+</div>
+<div>
+    <input type="text" name="aaa" value="123">
+    <input type="text" name="bbb" value="456">
+    <input type="text" name="ccc" value="789">
+    <input type="text" name="ddd" value="000">
+</div>
+<script>
+    var arr1=[1,2,3,4,5,6,'g','b','m','n'];
+    var arr2=[['b','m','n'],[15,6,'g','n'],[2,'m'],['n','r']];
+    var arr3={one:9, two:8, three:7, four:6};
+//    一、遍历jquery对象
+    $('.test p').each(function(n,m){
+        if(n=='1'){
+            return true
+        }
+        alert(m.id);
+    });
+
+ //    二、遍历一维数组
+    $.each(arr1,function(m,n){
+        alert(m);
+        alert(n);
+    });
+
+    //    三、遍历二维数组
+    $.each(arr2,function(m,n){
+        $.each(n,function(x,y){
+            alert(x);
+            alert(y);
+        })
+    });
+
+    //    四、遍历json数据
+    $.each(arr3,function(m,n){
+        alert(m);
+        alert(n);
+    });
+
+    //    五、遍历input
+    $('input:text').each(function(m,n){
+        alert(m);
+        alert(n.value);
+        alert(n.name);
+        alert(n.type);
+
+    })
+</script>
+</body>
+</html>

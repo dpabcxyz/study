@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调用函数</title>
+    <style>
+        form{
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+    </style>
+    <script language="JavaScript">
+        function checkName(){
+            var str=form1.userName.value;
+            if(str==""){
+                alert("用户名不能为空");
+            }else{
+                alert("用户名可以注册");
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="form1" method="post" action="">
+    请输入姓名：<input type="text" name="userName" id="userName" size="30"/>
+    <br/>
+    <input type="button" value="检测" onclick="checkName()"/>
+</form>
+</body>
+</html>

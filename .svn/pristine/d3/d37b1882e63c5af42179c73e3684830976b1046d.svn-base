@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe子父级操作</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .child{
+            width: 600px;
+            height: 200px;
+            margin-bottom: 24px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<h1 id="parent">这是父级页面的标签</h1>
+
+<div class="child">
+    <iframe src="child1.html" frameborder="0" id="iframe1" name="Niframe1"></iframe>
+</div>
+
+<div class="child">
+    <iframe src="child2.html" frameborder="0" id="iframe2" name="Niframe2"></iframe>
+</div>
+
+<button id="btn1">调子iframe方法</button>
+<button id="btn2">调子iframe里面标签的绑定事件</button>
+<button id="btn3">获取子iframe里面的标签</button>
+</body>
+<script>
+    function parent() {
+        alert("父页面方法调取成功")
+    }
+    $('#btn1').click(function () {
+        document.getElementById("iframe1").contentWindow.child();
+    });
+    function  getChildMethod(){
+        document.getElementById("iframe2").contentWindow.child();
+
+    };
+    function getChildElement(){
+        alert( $("#iframe2").contents().find("#child2").html());
+
+    }
+    $('#btn2').click(function () {
+        $("#iframe1").contents().find("#child1").click();
+    });
+    $('#btn3').click(function () {
+        alert( $("#iframe1").contents().find("#child1").html());
+    });
+
+
+
+</script>
+</html>

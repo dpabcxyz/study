@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>删除第一个</title>
+</head>
+
+<body>
+    <script>
+        var arr = new Array(6);
+        arr[0] = '0';
+        arr[1] = '1';
+        arr[2] = '2';
+        arr[3] = '3';
+        arr[4] = '4';
+        arr[5] = '5';
+        document.write(arr.shift() + '<br/>');
+        document.write(arr);
+    </script>
+</body>
+
+</html>
+<!-- 返回已删除的数组元素-->

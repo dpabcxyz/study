@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件委托</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .div1{
+            margin: 140px auto;
+            width: 600px;
+            height: 600px;
+            background-color: #3c763d;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1" id="div1">
+    <p>我是p标签</p>
+    <a href="">我是a标签</a>
+    <h3>我是h3标签</h3>
+    <span>我是span标签</span>
+</div>
+<script>
+    var div1=document.getElementById('div1');
+    $(function(){
+        div1.addEventListener('click',function(e){
+           switch (e.target.tagName){
+               case 'P':
+                       alert('p被点击了');
+                   break;
+               case  'A':
+                   e.preventDefault();
+                   alert('a被点击了');
+                   break;
+               case  'H3':
+                   alert('h3被点击了');
+                   break;
+               case  'SPAN':
+                   alert('span被点击了');
+                   break;
+               default:
+                   alert('随便点击了');
+
+
+           }
+        })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class关键字</title>
+    <script src="js/bower_components/react/react.js"></script>
+    <script src="js/bower_components/react/react-dom.js"></script>
+    <script src="js/bower_components/babel/browser.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<script type="text/babel">
+    // 1. 创建组件类
+    class Liao extends React.Component{
+        render(){
+            return (
+                <div>
+                    <h3>我叫：{this.props.name}, 性别：{this.props.gender}, 代表作：{this.props.intro}</h3>
+                </div>
+            )
+        }
+    }
+
+    // 2. 渲染到DOM容器
+    ReactDOM.render(
+        <Liao name="陈轩" gender="男" intro="七里香" />,
+        document.getElementById('app')
+    );
+</script>
+</body>
+</html>

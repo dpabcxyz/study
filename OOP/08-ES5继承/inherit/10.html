@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Grand(){}
+    Grand.prototype.name="陈轩";
+    var grand=new Grand();
+
+    function Father(){}
+    Father.prototype=grand;
+    console.log(new Father().name);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Person(name1, age) {
+            this.name = name1;
+            this.age = age;
+            this.sayHello = function () {
+                console.log(this.name + this.age);
+            }
+        }
+
+        var boy = new Person("bella", 23);
+        boy.sayHello(); // bella say hello
+</script>
+</body>
+</html>
+
+<!-- 
+a:构造函数的首字母必须大写，用来区分于普通函数
+b:内部使用的this对象，来指向即将要生成的实例对象
+c:使用New来生成实例对象 
+-->

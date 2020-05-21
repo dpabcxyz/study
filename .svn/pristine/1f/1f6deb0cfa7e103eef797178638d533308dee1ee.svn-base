@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>删除节点1</title>
+  <style>
+    .test{
+      width: 1000px;
+      height: 200px;
+      margin:0 auto;
+      border: 1px solid gray;
+      text-align: center;
+    }
+    .btn{
+      width: 1000px;
+      height: 50px;
+      margin:0 auto;
+      margin-top: 40px;
+      border: 1px solid gray;
+      border-radius: 8px;
+      text-align: center;
+      background-color: rgb(240,240,240);
+    }
+    .btn p{
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="test" id="test">
+    <p>javascript</p>
+    <p>阿贾克斯</p>
+    <p>html</p>
+    <p>CSS</p>
+  <script>
+     var otest=document.getElementById("test");
+     var x=otest.removeChild(otest.childNodes[3]);
+     document.write("删除的节点是："+x.innerHTML); 
+  </script>
+</body>
+</html>

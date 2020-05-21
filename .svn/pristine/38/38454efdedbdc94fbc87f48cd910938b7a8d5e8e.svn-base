@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var datas={
+				code:'ok',
+				data:{
+					name:"陈轩",
+					sex:"男",
+					age:"22"
+				},
+				msg:'请求成功！'
+			}
+			var {code,data,msg}=datas;
+			if(code=='ok'){
+				console.log(data)
+			}
+		</script>
+	</body>
+</html>

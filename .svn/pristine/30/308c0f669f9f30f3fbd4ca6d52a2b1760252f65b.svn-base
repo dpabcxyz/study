@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <script src="../js/VUE.js"></script>
+    <script src="http://at.alicdn.com/t/font_862259_mqei3s1uix.js"></script>
+</head>
+<body>
+<div id="box">
+    <my-header name="书影音1" src1="#icon-sousu" src2="#icon-yonghu" ></my-header>
+</div>
+<template id="head">
+    <div class="headWrap">
+        <li class="headName">{{name}}</li>
+        <li class="headIcon">
+            <span><svg class="icon" aria-hidden="true"><use :xlink:href="src1"></use></svg></span>
+            <span><svg class="icon" aria-hidden="true"><use :xlink:href="src2"></use></svg></span>  
+        </li>
+    </div>
+</template>
+</body>
+</html>
+<script>
+    var app=new Vue({
+        el:"#box",
+        components:{
+            "myHeader":{
+                template:"#head",
+                props:['name','src1','src2']
+            },
+        },
+    })
+</script>
+<!-- 父组件向子组件传值 -->

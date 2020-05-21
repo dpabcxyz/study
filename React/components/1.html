@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="../js/bower_components/react/react.js"></script>
+    <script src="../js/bower_components/react/react-dom.js"></script>
+    <script src="../js/bower_components/babel/browser.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+    function HelloMessage(props) {
+        return <h1>Hello World!</h1>;
+    }
+    
+    ReactDOM.render(
+       <HelloMessage />,
+        document.getElementById('example')
+    );
+</script>
+
+</body>
+
+</html>

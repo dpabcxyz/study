@@ -1,0 +1,403 @@
+
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding-top: 106px;
+    background-color: #000c3b;
+}
+.clearfix:after {
+    content:"";
+    display: block;
+    clear:both;
+}
+.container .systemName{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    font-size: 40px;
+    font-weight: 400;
+    color:#00f5fe ;
+    text-align: center;
+    background: url("images/tit_bg.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.container .layout{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px 10px 10px;
+}
+.topL {
+    width: 20px;
+    height: 20px;
+    border-top-width: 2px;
+    border-top-color: #26c6f0;
+    border-top-style: solid;
+    border-left-width: 2px;
+    border-left-color: #26c6f0;
+    border-left-style: solid;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+.topR {
+    width: 20px;
+    height: 20px;
+    border-top-width: 2px;
+    border-top-color: #26c6f0;
+    border-top-style: solid;
+    border-right-width: 2px;
+    border-right-color: #26c6f0;
+    border-right-style: solid;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+}
+.bottomL {
+    width: 20px;
+    height: 20px;
+    border-bottom-width: 2px;
+    border-bottom-color: #26c6f0;
+    border-bottom-style: solid;
+    border-left-width: 2px;
+    border-left-color: #26c6f0;
+    border-left-style: solid;
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+}
+.bottomR {
+    width: 20px;
+    height: 20px;
+    border-bottom-width: 2px;
+    border-bottom-color: #26c6f0;
+    border-bottom-style: solid;
+    border-right-width: 2px;
+    border-right-color: #26c6f0;
+    border-right-style: solid;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+}
+/*左侧*/
+.container .layout .layoutLeft{
+    float: left;
+    width: 380px;
+    height: 100%;
+}
+.container .layout .layoutLeft .inner .name{
+    box-sizing: border-box;
+    position: absolute;
+    width: 218px;
+    height: 30px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    border-left: 3px solid #0090b4;
+    border-right: 3px solid #0090b4;
+    line-height: 30px;
+    color: #03d1de;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background-color: #2c3e50;
+}
+.container .layout .layoutLeft .top{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    padding-bottom: 14px;
+}
+.container .layout .layoutLeft .top .inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    border: 1px solid #0090b4;
+    box-shadow: 0 0 26px rgba(0,214,255,.8) inset;
+}
+
+.container .layout .layoutLeft .top .inner .numWrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.container .layout .layoutLeft .top .inner .num{
+    width: 350px;
+}
+.container .layout .layoutLeft .top .inner .num .num-title{
+    float: left;
+    width: 120px;
+    margin: 6px 0;
+    color: #008cff;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: right;
+}
+.container .layout .layoutLeft .top .inner .num .dataNum{
+    float: left;
+}
+.container .layout .layoutLeft .bottom{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    padding-top: 14px;
+}
+.container .layout .layoutLeft .bottom .inner{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0090b4;
+    box-shadow: 0 0 26px rgba(0,214,255,.8) inset;
+}
+.container .layout .layoutLeft .bottom .inner .echarts{
+    width: 100%;
+    height: 100%;
+}
+
+/*右侧*/
+.container .layout .layoutRight{
+    float: right;
+    width: 380px;
+    height: 100%;
+}
+.container .layout .layoutRight .inner .name{
+    box-sizing: border-box;
+    position: absolute;
+    width: 218px;
+    height: 30px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    border-left: 3px solid #0090b4;
+    border-right: 3px solid #0090b4;
+    line-height: 30px;
+    color: #03d1de;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    background-color: #2c3e50;
+}
+.container .layout .layoutRight .top{
+    box-sizing: border-box;
+    width: 100%;
+    height: 60%;
+    padding-bottom: 14px;
+}
+.container .layout .layoutRight .top .inner{
+     box-sizing: border-box;
+     position: relative;
+     width: 100%;
+     height: 100%;
+     border: 1px solid #0090b4;
+     box-shadow: 0 0 26px rgba(0,214,255,.8) inset;
+ }
+.container .layout .layoutRight .top .inner .events{
+    width: 340px;
+    height: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    overflow: hidden;
+}
+.container .layout .layoutRight .top .inner .events .item{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 12px ;
+    border-left: 2px solid #00ccff;
+    box-shadow: 0 0 16px rgba(0,214,255,.8) inset;
+}
+.container .layout .layoutRight .top .inner .events .item span{
+    line-height: 24px;
+}
+.container .layout .layoutRight .top .inner .events .item .eventType1{
+    margin-right: 6px;
+    font-size: 14px;
+    color: #fe8f00;
+}
+.container .layout .layoutRight .top .inner .events .item .eventType2{
+    margin-right: 6px;
+    font-size: 14px;
+    color: #ff00fc;
+}
+.container .layout .layoutRight .top .inner .events .item .eventType3{
+    margin-right: 6px;
+    font-size: 14px;
+    color: #fe3c00;
+}
+.container .layout .layoutRight .top .inner .events .item .eventType4{
+    margin-right: 6px;
+    font-size: 14px;
+    color: #f9ff49;
+}
+.container .layout .layoutRight .top .inner .events .item .carType,
+.container .layout .layoutRight .top .inner .events .item .mileageAmount,
+.container .layout .layoutRight .top .inner .events .item .lineName,
+.container .layout .layoutRight .top .inner .events .item .position,
+.container .layout .layoutRight .top .inner .events .item .position,
+.container .layout .layoutRight .top .inner .events .item .carId{
+    margin-right: 6px;
+    color: #00f5fe;
+    font-size: 14px;
+}
+.container .layout .layoutRight .top .inner .events .item .line,
+.container .layout .layoutRight .top .inner .events .item .mileage{
+    margin-right: 6px;
+    color: #009bfe;
+    font-size: 14px;
+}
+
+.container .layout .layoutRight .top .inner .events .item .eventType5{
+    margin-right: 6px;
+    font-size: 14px;
+    color: #ffffff;
+}
+.container .layout .layoutRight .bottom{
+    box-sizing: border-box;
+    width: 100%;
+    height: 40%;
+    padding-top: 14px;
+}
+.container .layout .layoutRight .bottom .inner{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0090b4;
+    box-shadow: 0 0 26px rgba(0,214,255,.8) inset;
+}
+.container .layout .layoutRight .bottom .inner .echarts{
+    width: 100%;
+    height: 100%;
+}
+/*中间*/
+.container .layout .layoutCenter{
+    box-sizing: border-box;
+    height: 100%;
+    padding:0 16px ;
+    overflow: hidden;
+}
+.container .layout .layoutCenter .inner .name{
+    box-sizing: border-box;
+    position: absolute;
+    width: 290px;
+    height: 30px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    border-left: 3px solid #0090b4;
+    border-right: 3px solid #0090b4;
+    line-height: 30px;
+    color: #03d1de;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background-color: #2c3e50;
+}
+.container .layout .layoutCenter .top{
+    box-sizing: border-box;
+    width: 100%;
+    height: 65%;
+    padding-bottom: 14px;
+}
+.container .layout .layoutCenter .top .inner{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0090b4;
+
+    background-color: #1b1b1b;
+}
+.container .layout .layoutCenter .top .inner .map{
+    width: 100%;
+    height: 100%;
+}
+.container .layout .layoutCenter .bottom{
+    box-sizing: border-box;
+    width: 100%;
+    height: 35%;
+    padding-top: 14px;
+
+}
+.container .layout .layoutCenter .bottom .inner{
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0090b4;
+    box-shadow: 0 0 26px rgba(0,214,255,.8) inset;
+}
+.container .layout .layoutCenter .bottom .inner .echarts{
+    width: 100%;
+    height: 100%;
+}
+/*数字滚动插件*/
+table {	border-collapse: collapse;border-spacing:0;}
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: ".";clear: both;height: 0;}
+* html .clearfix {zoom: 1;}
+*:first-child + html .clearfix {zoom: 1;}
+.fl {	float:left;}
+.fr {	float:right;}
+.none{	display:none;}
+
+.inrow{
+    font-size:0;
+[;font-size:12px;];
+    *font-size:0;
+    font-family:arial;
+[;letter-spacing:-3px;];
+    *letter-spacing:normal;
+    *word-spacing:-1px;
+}
+.inrow>li,.inrow span{
+    display:inline-block;
+    *display:inline;*zoom:1;
+    font-size:14px;
+    letter-spacing:normal;
+    word-spacing:normal; }
+.dataNums{
+    width:220px;
+    height:40px;
+    margin:12px 0;
+    text-align:center;
+}
+.dataNums .dataOne{
+    width:34px;
+    height:40px;
+    margin: 0px 8px;
+    text-align: center;
+    background: url(images/num-bg.png) no-repeat;
+}
+.dataNums .dataBoc
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.dataNums .dataBoc .tt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.dataNums .tt span{
+    width:100%;
+    height:100%;
+    line-height: 40px;
+    font-size: 20px;
+    color:#ddf0ff;
+}
+/*数字滚动插件*/

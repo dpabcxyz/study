@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>1px解决方案</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/common.css">
+    <script src="//at.alicdn.com/t/font_l9o1cxhtml323xr.js"></script>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            background: white;
+            overflow: hidden;
+            background: black;
+
+        }
+        .test{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 50px 50px;
+        }
+
+        /*.test:before {*/
+            /*position: absolute;*/
+            /*right: 0;*/
+            /*left: 0;*/
+            /*top: 0px;*/
+            /*height: 1px;*/
+            /*content: '';*/
+            /*-webkit-transform: scaleY(0.5);*/
+            /*transform: scaleY(0.5);*/
+            /*background-color: white;*/
+        /*}*/
+
+        .test:before {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            width: 1px;
+            content: '';
+            -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
+            background-color: white;
+        }
+
+        .test:after {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0px;
+            height: 1px;
+            content: '';
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            background-color: white;
+        }
+
+        /*@media screen and (-webkit-min-device-pixel-ratio: 2) {*/
+            /*.test { border: 0.5px solid #999 }*/
+        /*}*/
+        /*@media screen and (-webkit-min-device-pixel-ratio: 3) {*/
+            /*.test { border: 0.333333px solid #999 }*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="test">
+
+    </div>
+</div>
+</body>
+</html>

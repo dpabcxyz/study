@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实例属性</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+    <div id="app">
+        <li>{{msg}}</li>
+        <h2 ref="hello">测试ref</h2>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'hello world!'
+            },
+            chenxuan:"大侠！"
+        })
+        console.log(vm.msg);//vue实例外面获取data
+        console.log(vm.$el); //获取挂载dom 
+        console.log((vm.$data).msg) //获取data对象
+        console.log((vm.$options).chenxuan); //获取自定义属性
+        console.log(vm.$refs.hello);  //获取dom
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON.parse()</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        JSON.parse('{"name":"chenxuan","age":18}', function(k, v) {
+            console.log(v);
+        });
+        console.log('------')
+        console.log(JSON.parse('{"name":"chenxuan","age":18}'))
+    </script>
+</body>
+
+</html>

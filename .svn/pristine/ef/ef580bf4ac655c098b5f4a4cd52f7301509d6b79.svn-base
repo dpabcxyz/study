@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最小高度问题</title>
+    <style>
+        div{
+            width: 1200px;
+            height: 1px;
+            margin: 100px auto;
+            background-color: red;
+            *overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

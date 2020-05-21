@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wrapInner()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1{
+            margin: 0 auto;
+            width: 80%;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<a class="a1" href="http://baidu.com" target="_blank"></a>
+<a class="a2" href="http://anydo.wang" target="_blank"></a>
+<div class="test1">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+</div>
+
+<script>
+//    $('.test1 p').wrapInner('<a class="a1" href="http://baidu.com" target="_blank"></a>');
+//    $('.test1 p').wrapInner($('.a1'));
+//    $('.test1 p').wrapInner('.a1');
+    $('.test1 p').wrapInner(function(i){
+        if (i==2){
+            return $('.a1');
+        }
+        else {
+            return $('.a2');
+        }
+    })
+
+</script>
+</body>
+</html>

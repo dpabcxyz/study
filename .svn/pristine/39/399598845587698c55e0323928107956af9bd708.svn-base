@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>date对象</title>
+</head>
+<body>
+	<script>
+		var myDate=new Date();
+		console.log(Date());
+		console.log("获取毫秒数："+myDate.getTime());
+		console.log("获取年份"+myDate.getFullYear());
+		console.log(Date.parse("2005/07/08"));
+	</script>
+</body>
+</html>

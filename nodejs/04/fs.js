@@ -1,0 +1,41 @@
+var fs=require('fs');
+//写入文件
+fs.writeFile('./test.text','hello world!',function(err){
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log("文件创建成功！")
+});
+//修改文件
+fs.writeFile('./test1.text','1111111111',function(err){
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log("文件修改成功！")
+});
+//插入文件
+fs.appendFile('./test2.text','我是插入的内容',function(err){
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log('内容插入成功！')
+});
+//读取文件
+fs.readFile('./test1.text',function(err,data){
+    if(err){
+        console.log(err);
+        return;node 
+    }
+    console.log(data.toString());
+});
+//读取文件utf-8
+fs.readFile('./test2.text','utf8',function(err,data){
+    if(err){
+        console.log(err);
+        return;node 
+    }
+    console.log(data.toString());
+})

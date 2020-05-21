@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>not()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1,.tst{
+            width: 80%;
+            margin:0 auto 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <ul>
+    <li>1</li>
+    <li class="test2">2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    </ul>
+</div>
+
+<div class="tst">
+    <ul>
+    <li>1</li>
+    <li class="tst1">2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    </ul>
+</div>
+<script>
+    $(function(){
+        $('.test1 li').not('.test2').css('color','green');
+    });
+
+    $(function(){
+        var newLi=$('.tst li').not(function(i){
+            return $(this).hasClass('tst1');
+        });
+        newLi.css('color','red');
+    })
+</script>
+</body>
+</html>

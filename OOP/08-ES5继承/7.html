@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承2-prototype模式</title>
+</head>
+<body>
+    <script>
+         function Animal(){
+            this.species ='动物';
+        };
+        function Cat(name,color){
+    　　　　this.name = name;
+    　　　　this.color = color;
+　    　};
+        //我们将Cat的prototype对象指向一个Animal的实例。
+        //它相当于完全删除了prototype 对象原先的值，然后赋予一个新值。但是，第二行又是什么意思呢？
+        Cat.prototype = new Animal();
+        console.log(JSON.stringify(Cat.prototype));
+    　  Cat.prototype.constructor = Cat;
+    　　var cat1 = new Cat("大毛","黄色");
+    　　alert(cat1.species); // 动物
+    </script>
+</body>
+</html>

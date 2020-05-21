@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<body>
+</head>
+<input type="text" name="age" size=3 onChange="validate(this, 18, 99);">
+<script>
+    function validate(obj, lowval, hival){
+        if ((obj.value < lowval) || (obj.value > hival))
+            console.log('hello world!');
+    }
+   /* 上面代码是一个文本输入框，每当用户输入一个值，就会调用onChange回调函数，验证这个值是否在指定范围。浏览器会向回调函数传入当前对象，
+    因此this就代表传入当前对象（即文本框），然后就可以从this.value上面读到用户的输入值。*/
+
+   /*总结一下，JavaScript 语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是函数运行时所在的对象（环境）。
+   这本来并不会让用户糊涂，但是 JavaScript 支持运行环境动态切换，也就是说，this的指向是动态的，
+   没有办法事先确定到底指向哪个对象，这才是最让初学者感到困惑的地方。*/
+</script>
+</body>
+</html>

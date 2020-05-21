@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<div id="app">
+    <H2>计算并监听</H2>
+    <input type="text" v-model="firstName">
+    <input type="text" v-model="lastName">
+    <p>{{fullName}}</p>
+    <p>次数：<span>{{count}}</span></p>
+</div>
+
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            firstName:'null',
+            lastName:'null',
+            count:0
+        },
+        //不能直接写表达式，必须要使用函数，且有返回值，也称为get函数
+        computed:{
+            fullName:function () {
+                return this.firstName+''+this.lastName
+            }
+        },
+        watch:{
+            fullName:function (a,b) {
+                this.count++
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

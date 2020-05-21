@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三目运算符</title>
+    <script src="../js/bower_components/react/react.js"></script>
+    <script src="../js/bower_components/react/react-dom.js"></script>
+    <script src="../js/bower_components/babel/browser.js"></script>
+</head>
+<body>
+	<div id="frame"></div>
+    <script type="text/babel">
+     var ele= document.getElementById('frame');
+     var x=21,y=12;
+     ReactDOM.render(
+           <ul>
+               <li>{(x>y ? '是':'否')}</li>
+               <li>{x>y ? 'yes':'否'}</li>
+           </ul>
+           ,ele
+       )
+    </script>
+</body>
+</html>

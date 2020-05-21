@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <script src="../../js/jauery-3.2.1.js"></script>
+</head>
+<body>
+<script>
+    function encodeU(data) {
+        var str='';
+        for (var i in data){
+            str+=encodeURIComponent(i)+'='+encodeURIComponent(data[i]+'&');
+            console.log(i+'='+data[i]);
+        }
+        console.log(str.substr(0,str.length-1));
+        return str.substr(0,str.length-1);
+    }
+
+    function test() {
+        var xhr=new XMLHttpRequest();
+        var data=encodeU({
+            money:'chenxuan',
+            sex:'boy',
+            ages:3,
+            tel:13683663833
+        });
+        xhr.open('get','b.php?'+data);
+        xhr.send(null);
+    }
+</script>
+<button class="button" onclick="test()">test</button>
+</body>
+</html>

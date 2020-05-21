@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>after()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+        }
+        .wrap{
+            width: 95%;
+            height: 900px;
+            border: 1px solid grey;
+            margin: 0 auto;
+        }
+        .test1{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .test2{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid blue;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .test3{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid black;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="test1">
+       <ul>
+           <li>1</li>
+           <li>2</li>
+           <li>3</li>
+       </ul>
+    </div>
+</div>
+
+<script>
+//    $('.test1').after(document.getElementsByClassName('test2'));
+    $('.test1 ul li').after(function(m,n){
+        if (n=='3'){
+            return '<div class="test2">test</div>'
+        }
+        else{
+            return '<div class="test3">test</div>'
+        }
+    });
+//    $('.test1 ul li').after('<h3>hi</h3>')
+</script>
+</body>
+</html>

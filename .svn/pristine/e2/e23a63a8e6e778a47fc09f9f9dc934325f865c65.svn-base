@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=111, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>66666</h1>
+    <h1>{{name}}</h1>
+    <h1>{{sex}}</h1>
+    <ul>
+       
+        {{each score as item index}}
+        <li>{{index}}</li>
+        <li>{{item.id}}</li>
+        <li>{{item.title}}</li>
+        <li>{{item.Score}}</li>
+        <hr>
+        {{/each}}
+       
+    </ul>
+  
+</body>
+</html>

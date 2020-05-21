@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线性渐变</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .test{
+            width: 90%;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid rgb(240,240,240);
+        }
+        .contain1{
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(red,green,blue);
+        }
+        .contain2-1{
+            width: 300px;
+            height: 200px;
+            margin-right: 5%;
+            background: linear-gradient(to right, red,green,blue);
+        }
+        .contain2-2{
+            width: 300px;
+            height: 200px;
+            margin-right: 10%;
+            background: linear-gradient(to left, red,green,blue);
+        }
+        .contain3-1{
+            width: 300px;
+            height: 200px;
+            margin-right: 10%;
+            background: linear-gradient(to bottom left, red,green,blue);
+        }
+        .contain3-2{
+            width: 300px;
+            height: 200px;
+            margin-right: 10%;
+            background: linear-gradient(to bottom right, red,green,blue);
+        }
+        .contain3-3{
+            width: 300px;
+            height: 200px;
+            margin-right: 10%;
+            background: linear-gradient(to top left, red,green,blue);
+        }
+        .contain3-4{
+            width: 300px;
+            height: 200px;
+            margin-right: 10%;
+            background: linear-gradient(to top right, red,green,blue);
+        }
+        .contain4-1{
+            width: 200px;
+            height: 200px;
+            margin-right: 5%;
+            background: linear-gradient(0deg, red,green,blue);
+        }
+        .contain4-2{
+             width: 200px;
+             height: 200px;
+             margin-right: 5%;
+             background: linear-gradient(90deg, red,green,blue);
+         }
+        .contain4-3{
+            width: 200px;
+            height: 200px;
+            margin-right: 5%;
+            background: linear-gradient(-90deg, red,green,blue);
+        }
+        .contain4-4{
+            width: 200px;
+            height: 200px;
+            margin-right:5%;
+            background: linear-gradient(180deg, red,green,blue);
+        }
+        .contain5{
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+        .contain6{
+              width: 100%;
+              height: 300px;
+              background: linear-gradient(rgba(255,0,0,0.5),rgba(0,255,255,0.5),rgba(0,0,255,0.5));
+          }
+        .contain7{
+            width: 100%;
+            height: 300px;
+            background: repeating-linear-gradient(red, yellow 10%, green 20%);
+        }
+
+        .contain8{
+            width: 100%;
+            height: 200px;
+            background:linear-gradient(red 33%, yellow 66%, green);
+        }
+    </style>
+</head>
+<body>
+<h3>1、线性-线性渐变默认</h3>
+<div class="test">
+    <div class="contain1"></div>
+</div>
+
+<h3>2、线性-左右方向渐变</h3>
+<div class="test">
+    <div class="contain2-1"></div>
+    <div class="contain2-2"></div>
+</div>
+
+<h3>3、线性-对角线渐变</h3>
+<div class="test">
+    <div class="contain3-1"></div>
+    <div class="contain3-2"></div>
+    <div class="contain3-3"></div>
+    <div class="contain3-4"></div>
+</div>
+
+<h3>4、线性-角度渐变</h3>
+<div class="test">
+    <div class="contain4-1"></div>
+    <div class="contain4-2"></div>
+    <div class="contain4-3"></div>
+    <div class="contain4-4"></div>
+</div>
+
+<h3>5、线性-彩虹色渐变</h3>
+<div class="test">
+    <div class="contain5"></div>
+</div>
+
+<h3>6、线性-使用透明度</h3>
+<div class="test">
+    <div class="contain6"></div>
+</div>
+
+<h3>7、线性-重复的线性渐变</h3>
+<div class="test">
+    <div class="contain7"></div>
+</div>
+
+<h3>8、线性-分配渐变比例</h3>
+<div class="test">
+    <div class="contain8"></div>
+</div>
+</body>
+</html>

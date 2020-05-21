@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Number(num) {
+        this._num = num           //这里的_num和get/set方法num()不能重名
+    }
+
+    //get/set方法使用同一个命名，增加可读性
+    Number.prototype = {
+        get num() {
+            return this._num;
+        },
+
+        set num(num) {
+            this._num = num;
+        }
+    }
+
+    var test = new Number(8);
+    console.log(test.num);
+    test.num = 88;
+    console.log(test.num);
+</script>
+</body>
+</html>

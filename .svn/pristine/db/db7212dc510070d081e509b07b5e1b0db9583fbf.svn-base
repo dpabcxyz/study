@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6对象</title>
+</head>
+<body>
+    <script>
+        var name1='chenxuan';
+        var age1='18岁';
+        var person={
+            name:name1,
+            age:age1,
+            showName(){
+            alert(this.name);
+            },
+            showAge(){
+            alert(this.age);
+            }
+        };
+        person.showName();
+        person.showAge();
+        alert(person.name);
+       
+    </script>
+</body>
+</html>

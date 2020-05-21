@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addClass()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1,.test2{
+            margin: 30px auto 0;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .test3{
+            width: 80%;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .p1{
+            color: red;
+        }
+        .p1-1{
+            font-size: 40px;
+        }
+        .p2{
+            color: green;
+        }
+        .p3{
+            color: blue;
+        }
+        .div{
+            width: 100px;
+            height: 100px;
+            background-color: #0000FF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <p class="p1">1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+<button id="btn1">传类名-移除类名1</button>
+<button id="btn3">传函数-移除类名2</button>
+<button id="btn4">不传参数-移除类名3</button>
+<button id="btn2">检测类名</button>
+<button id="btn5">原类名切换</button>
+<button id="btn6">新类名切换</button>
+<div class="test2">
+    <p class="p1 p1">1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+</div>
+<div class="test3">
+    <div class="div">1</div>
+    <div class="div">2</div>
+    <div class="div">3</div>
+    <div class="div">4</div>
+    <div class="div">5</div>
+</div>
+<script>
+//    1、添加类名，传入类名，多个类名用逗号分隔
+    $('.test1 p').addClass('p1-1');
+
+//    2、添加类名，传入函数
+//    $('.test2 p').addClass(function(i,v){
+//        if (i==3){
+//            return 'p1'
+//        }
+//        else{
+//            return 'p2'
+//        }
+//    });
+
+
+//1、移除类名,传入类名,多个类名用逗号分隔
+//$(function(){
+//    $('#btn1').on('click',function(){
+//        $('.test2 p').removeClass('p1 p1-1')
+//    })
+//});
+//2、移除类名，传入函数
+//$(function(){
+//    $('#btn3').on('click',function(){
+//        $('.test2 p').removeClass(function(i,v){
+//            if (i==3){
+//                return 'p1';
+//            }
+//            else{
+//                return 'p2';
+//            }
+//        })
+//    })
+//});
+//3、移除类名，不传参数，将·移除所有类名
+//$(function(){
+//    $('#btn4').on('click',function(){
+//        $('.test2 p').removeClass()
+//    })
+//});
+
+
+//1、检测类名
+//$(function(){
+//    $('#btn2').on('click',function(){
+//        alert($('.test2 p').hasClass('p1'))
+//    });
+//
+//});
+
+//toggleClass(),1、不传参数，将切换原有样式
+//    $(function(){
+//        $('#btn5').on('click',function(){
+//            $('.test3 div').toggleClass();
+//        })
+//    })
+//toggleClass(),2、传入新类名进行切换
+//$(function(){
+//    $('#btn6').on('click',function(){
+//        $('.test3 div').toggleClass('div1');
+//    })
+//})
+</script>
+</body>
+</html>

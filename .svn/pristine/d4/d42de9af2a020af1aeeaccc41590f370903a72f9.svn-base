@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过度动画</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .obj{
+            position: absolute;
+            left: 0;
+            top: 60px;
+            width: 100px;
+            height: 100px;
+            background-color: deeppink;
+            cursor: pointer;
+            animation: chenxuan 6s ease-in;
+            /* animation: chenxuan 4s ease-in-out infinite alternate; */
+        }
+        @keyframes chenxuan{
+            0%{
+                left:0;
+            }
+            20%{
+                left: 80px;
+               
+            }
+            40%{
+                left: 160px;
+              
+            }
+            80%{
+                left: 240px;
+              
+            }
+            100%{
+                left: 320px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="obj" id="obj">
+
+    </div>
+   <!-- 
+       name 
+       duration
+       timing-function 
+       delay
+       interation-count   number | intinite
+       direction    normal | alternate
+    -->
+</body>
+</html>

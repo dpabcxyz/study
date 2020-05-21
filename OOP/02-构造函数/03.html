@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function getMessage(){
+           return "this is a message";
+       }
+       var msg=new getMessage();
+       console.log(msg()); //返回空对象
+       console.log(typeof msg());  //返回object
+    </script>
+    <!--
+        上面代码中，getMessage是一个普通函数，返回一个字符串。对它使用new命令，会得到一个空对象。
+        这是因为new命令总是返回一个对象，要么是实例对象，要么是return语句指定的对象。
+        本例中，return语句返回的是字符串，所以new命令就忽略了该语句。
+    -->
+</html>

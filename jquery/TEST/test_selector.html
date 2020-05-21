@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试选择器</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test,.test1,.test2,.test3,.test4,.test5{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+        <p>test1</p>
+        <p>test2</p>
+        <p>test3</p>
+        <p>test4</p>
+    <div class="inner">
+        <p>我是里面的p标签</p>
+    </div>
+    <li>我是第一个li标签</li>
+    <a>li后面的a标签</a>
+    <h3>a后面的h3标签</h3>
+    <li>我是第二个li标签</li>
+    <li>我是第三个li标签</li>
+    <li>我是第四个li标签</li>
+</div>
+<div class="test1">
+    <div><p>测试contains</p></div>
+</div>
+<div class="test2">
+    <li>1、测试eq(),gt(),lt()</li>
+    <li>2、测试eq(),gt(),lt()</li>
+    <li>3、测试eq(),gt(),lt()</li>
+    <li>4、测试eq(),gt(),lt()</li>
+    <li>5、测试eq(),gt(),lt()</li>
+    <li>6、测试eq(),gt(),lt()</li>
+    <li>7、测试eq(),gt(),lt()</li>
+</div>
+<div class="test3">
+    <span>测试has选择器</span>
+</div>
+<div class="test4">
+    <input type="text">
+    <input type="search">
+    <input type="number">
+</div>
+<div class="test5">
+    <p>1</p>
+    <p>1</p>
+    <h3>1</h3>
+    <br>
+    <p></p>
+</div>
+<div></div>
+<script>
+    $(function(){
+        $('div p').css('color','red')
+    })
+    $(function(){
+        $('div[class=inner]>p').css('color','green')
+    })
+    $(function(){
+        $('li+a').css('font-size','50px')
+    })
+    $(function(){
+        $('a+h3').css('font-size','50px')
+    })
+    $(function(){
+        $('div[class=inner]~li').css('background-color','black')
+    })
+    $(function(){
+        $('.test1 div').css('border','3px solid yellow')
+    })
+    $(function(){
+        $('.test2 li:eq(4)').css('border','3px solid yellow')
+    })
+    $(function(){
+        $('.test2 li:gt(5)').css('border','3px solid yellow')
+    })
+    $(function(){
+        $('.test2 li:lt(3)').css('border','3px solid yellow')
+    })
+    $(function(){
+        $('div:has(span)').css('font-weight','bold');
+    })
+//    alert($('.test4 :text').length)
+    $(function(){
+        $('.test5 :parent').css('border','3px solid yellow');
+    })
+</script>
+</body>
+</html>

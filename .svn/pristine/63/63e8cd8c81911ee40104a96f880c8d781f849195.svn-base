@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+        .test1 img,.test2 img{
+            width: 100%;
+        }
+        .test2{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+    <div class="test1">
+    <img src="" data-name="chenxuan">
+</div>
+<div class="test2">
+    <img src="" alt="">
+</div>
+<body>
+<script>
+    $(function(){
+        $('.test1 img').data('src','http://anydo.wang/img/index-bg22.jpg'); //存属性值
+       var src= $('.test1 img').data('src');  //取属性值
+        $('.test1 img').attr('src',src)         //设置属性值
+//        alert( $('.test1 img').data('name'))    //获取自定义的属性
+    })
+</script>
+<script>
+    $(function(){
+      $('.test2 img').data({
+          'style':{'width':'600px','border':'1px solid black'},
+          'name':'chenxuan',
+          'sex':'男',
+        'src':'http://anydo.wang/img/index-bg22.jpg'
+      })
+//        removeData();  //删除所的数据，传参数可删除指定的属性
+
+//        alert( $('.test2 img').data('style').width);
+        var src1=$('.test2 img').data('src');
+        $('.test2 img').attr('src',src1);
+
+    })
+</script>
+</body>
+</html>

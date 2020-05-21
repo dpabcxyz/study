@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuex</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+    <script>
+        // vuex集中管理数据
+        //小项目不要用
+    </script>
+</body>
+</html>

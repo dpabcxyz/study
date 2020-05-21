@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第二个参数为方法</title>
+</head>
+<body>
+	<!-- 如果第二个参数是一个方法的话，那么该函数会有两个参数，key和value，我们可以在函数内部改变json数据的值，如下代码： -->
+	<script>
+		var json={
+			"name":"王二狗子",
+			"age":100,
+			"sex":"男",
+			"lists":[
+			{"name":"xxx1","age":18},
+			{"name":"xxx2","age":28},
+			{"name":"xxx3","age":38}
+			],
+		};
+		var result=JSON.stringify(json,function(key,value){
+			switch(key){
+				 case "name":
+				 return "大侠";
+				 case "age":
+				 return "芳龄18";
+				 default:
+				 return value;
+			}
+		});
+		console.log(result);
+	</script>
+</body>
+</html>

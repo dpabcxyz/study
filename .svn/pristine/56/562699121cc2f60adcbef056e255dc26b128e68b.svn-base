@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拷贝继承</title>
+</head>
+<body>
+    <script>
+        function Animal(){}
+        Animal.prototype.species = "动物";
+        function Cat(name,color){
+            this.name=name;
+            this.color=color;
+        }
+        function extend(child,parent){
+            var p=parent.prototype;
+            var c=child.prototype;
+            for(var i in p){
+                c[i]=p[i]
+            }
+        }
+        extend(Cat,Animal);
+        var cat1=new Cat('小白','白色');
+        console.log(cat1.name);
+        console.log(cat1.species);
+    </script>
+</body>
+</html>

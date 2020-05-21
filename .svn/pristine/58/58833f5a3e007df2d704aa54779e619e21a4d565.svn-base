@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>可以传值的组件</title>
+    <script src="../js/bower_components/react/react.js"></script>
+    <script src="../js/bower_components/react/react-dom.js"></script>
+    <script src="../js/bower_components/babel/browser.js"></script>
+</head>
+
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+    var G2=React.createClass({
+        render:function(){
+            return <h1>{this.props.x}</h1>;
+        }
+    });
+
+    ReactDOM.render(
+        <G2 x="hello,陈轩!"/>,
+        document.getElementById('example')
+    );
+</script>
+
+</body>
+
+</html>

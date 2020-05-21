@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		#wrap{
+			width: 1200px;
+			height: 600px;
+			margin: 0 auto;
+			margin-top: 50px;
+			border: 5px solid red;
+			padding: 30px;
+			overflow: hidden;
+		}
+		#child{
+			width: 600px;
+			height: 500px;
+			border: 4px solid green;
+			float: left;
+			overflow:auto;
+
+		}
+		#child1{
+			width: 800px;
+			height: 700px;
+			background-color:pink;
+		}
+		#right{
+			float: left;
+			margin-left: 50px;
+		}
+		input{
+			width: 400px;
+			height: 50px;
+			border: 1px solid gray;
+			background-color: rgb(200,200,200);
+			color: black;
+			text-align: center;
+			border-radius: 12px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="parent">
+			<div id="child">
+				<div id="child1">
+					<p>床前明月光，疑是地上霜，举头望明月，低头思故乡。</p>
+					<p>噫吁嚱，危乎高哉！蜀道之难，难于上青天！ 蚕丛及鱼凫，开国何茫然！
+                      尔来四万八千岁，不与秦塞通人烟。西当太白有鸟道，可以横绝峨眉巅。 
+                      地崩山摧壮士死，然后天梯石栈相钩连。上有六龙回日之高标，下有冲波逆折之回川。
+                      黄鹤之飞尚不得过，猿猱欲度愁攀援。青泥何盘盘，百步九折萦岩峦</p>
+				</div>
+			</div>
+			<div id="right">
+				<ul>
+					<li>scrollWidth : <span id="li1"></span></li>
+                    <li>scrollHeight : <span id="li2"></span></li>
+                    <li>scrollTop : <span id="li3"></span></li>
+                    <li>scrollLeft : <span id="li4"></span></li>
+                    <br>
+                    <hr width="500px">
+                    <br>
+                    <li>offsetParent : <span id="li9"></span></li>
+                    <li>offsetWidth : <span id="li5"></span></li>
+                    <li>offsetHeight : <span id="li6"></span></li>
+                    <li>offsetTop : <span id="li7"></span></li>
+                    <li>offsetLeft : <span id="li8"></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+    function req(){
+          var div = document.getElementById("child");
+          document.getElementById("li1").innerHTML = (div.scrollWidth)+"px";//div1距离屏幕顶部的距离
+          document.getElementById("li2").innerHTML = (div.scrollHeight)+"px";//div1距离屏幕左部的距离
+          document.getElementById("li3").innerHTML = (div.scrollTop)+"px";//div1纵向滚动条滚动的距离
+          document.getElementById("li4").innerHTML = (div.scrollLeft)+"px";//div1横向滚动条滚动的距离
+          document.getElementById("li9").innerHTML = (div.offsetParent.tagName);
+          document.getElementById("li5").innerHTML = (div.offsetWidth)+"px";
+          document.getElementById("li6").innerHTML = (div.offsetHeight)+"px";
+          document.getElementById("li7").innerHTML = (div.offsetTop)+"px";
+          document.getElementById("li8").innerHTML = (div.offsetLeft)+"px";
+     }
+</script>
+	<input type="botton" value="点击" onclick="req()">
+</body>
+</html>

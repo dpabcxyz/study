@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>——proto__</title>
+</head>
+<body>
+<script>
+  function test(name){
+      this.name=name;
+  }
+  var t1=new test();
+  console.log(t1.__proto__===test.prototype);
+  console.log(t1.constructor===test);
+  /*js中一切都是对象，每个对象都是基于原型对象创建的，每个对象中都有__proto__属性，这个属性指向构造它的函数的原型对象*/
+</script>
+</body>
+</html>

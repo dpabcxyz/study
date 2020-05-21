@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fullpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.css">
+    <link rel="stylesheet" href="fullpage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.8/jquery.fullPage.js"></script>
+    <script src="fullpage.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>-->
+</head>
+<style>
+    .fixedElements{
+        width: 800px;
+        position: fixed;
+        right: 30%;
+        top: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .fixedElements button{
+        width: 120px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: #0f0f0f;
+        color: white;
+    }
+</style>
+<body>
+<div class="fixedElements">
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <button id="btn3">按钮3</button>
+    <button id="btn4">按钮4</button>
+    <button id="btn5">按钮5</button>
+</div>
+<!--<ul class="fullpagemenu">-->
+    <!--<li data-menuanchor="page1" class="active"><a href="#page1">第一页</a></li>-->
+    <!--<li data-menuanchor="page2"><a href="#page2">第二页</a></li>-->
+    <!--<li data-menuanchor="page2"><a href="#page3">第三页</a></li>-->
+    <!--<li data-menuanchor="page2"><a href="#page4">第四页</a></li>-->
+    <!--<li data-menuanchor="page2"><a href="#page5">第五页</a></li>-->
+<!--</ul>-->
+<div class="fullpage">
+    <div class="section">第一屏</div>
+    <div class="section">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <div class="section active">第三屏</div>
+    <div class="section">第四屏</div>
+    <div class="section">第五屏</div>
+    <!--<div class="section fp-height-auto">-->
+        <!--<div class="footer">-->
+            <!--<h3>我是底部</h3>-->
+        <!--</div>-->
+    <!--</div>-->
+
+</div>
+</body>
+</html>

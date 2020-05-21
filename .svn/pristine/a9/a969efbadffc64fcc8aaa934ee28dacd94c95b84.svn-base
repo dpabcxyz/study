@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hello world!</title>
+    <script src="js/bower_components/react/react.js"></script>
+    <script src="js/bower_components/react/react-dom.js"></script>
+    <script src="js/bower_components/babel/browser.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        function App(props){
+            return (
+                <li>hello word!{props.name}{props.age}</li>
+            )
+        }
+        ReactDOM.render(
+            <App name="陈轩" age="18岁"/>,document.getElementById('app')
+        )
+    </script>
+</body>
+</html>

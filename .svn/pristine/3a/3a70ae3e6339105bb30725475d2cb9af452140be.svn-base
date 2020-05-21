@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+body{
+    background-color: white;
+}
+ul{
+    list-style: none;
+}
+.nav-wrap{
+    width: 100%;
+    background-color: white;
+    height: 100px;
+    box-shadow: 0px 4px 3px rgb(200,200,200);
+}
+.nav{
+    width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+}
+.nav img{
+    margin-top: 15px;
+}.nav ul{
+     float: right;
+     margin-top: 38px;
+ }
+.nav ul li{
+    display: inline;
+    font-size: 21px;
+    color: rgb(50, 50, 50);
+    font-family: "Adobe 仿宋 Std R";
+}
+.nav ul li a{
+    text-decoration: none;
+    color:rgb(50, 50, 50);
+    margin-left: 60px;
+    padding: 6px 10px;
+}
+.nav ul li a:hover{
+    color: red;
+    font-weight: bold;
+    margin-left: 60px;
+    padding: 6px 10px;
+    background-color: #006f47;
+}
+.nav ul li a:visited{
+    color: red;
+}
+.main-wrap{
+    width: 100%;
+    background-color:white;
+}
+.main{
+    width: 1200px;
+    margin: 50px auto 0px;
+    background-color: #333333;
+    overflow: hidden;
+}
+.main-left1{
+    width: 360px;
+    height: 600px;
+    float: left;
+    background-color: #FE4445;
+}
+.main-left2{
+    width: 360px;
+    height: 600px;
+    margin-top: 50px;
+    float: left;
+    background-color: #FE4445;
+}
+.main-right1{
+    width: 360px;
+    height: 600px;
+    float: left;
+    margin-left: 60px;
+    background-color: green;
+}
+.main-right2{
+    width: 360px;
+    height: 600px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 60px;
+    background-color: green;
+}
+.main-middle1{
+    width: 360px;
+    height: 600px;
+    float: left;
+    margin-left: 60px;
+    background-color: blue;
+ }
+.main-middle2{
+    width: 360px;
+    height: 600px;
+    float: left;
+    margin-top: 50px;
+    margin-left: 60px;
+    background-color: blue;
+}

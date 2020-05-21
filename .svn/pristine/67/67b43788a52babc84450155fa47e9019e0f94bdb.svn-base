@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作string</title>
+</head>
+<body>
+<script>
+    var a='I LOVE YOU';
+    var b='www.baidu.com';
+    var c='rwferqferfewqfewqfewqhk';
+
+    //查找指定位置字符串，空格也算一个位置
+//    alert(a.charAt(3));
+
+//    //查找指定字符的位置
+//    alert(a.indexOf('x',5));
+
+    //指定位置分割字符串
+//    alert(b.split('.',2));
+    //截取字符串,指定开始位置和结束位置,如果第二个参数为
+    alert(c.substring(4,8));
+//    alert(c.substring(4,2));
+//    alert(c.substring(2,2));
+
+    //截取字符串,指定开始位置和长度
+//    alert(c.substr(2,6));
+</script>
+</body>
+</html>

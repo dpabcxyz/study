@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-bind-class属性绑定2</title>
+	 <script src="../js/jquery-3.2.1.js"></script>
+    <script src="../js/VUE.js"></script>
+    <style type="text/css" >
+    	.red{
+    		color: red;
+    		font-size: 14px;
+    		font-weight: bold;
+    	}
+    </style>
+</head>
+<body>
+	<h1>class属性绑定2</h1>
+	<div id="app">
+		<li  v-bind:class="{red:bol}">hello world！</li>
+	</div>
+	<script>
+		var app=new Vue({
+			el:'#app',
+			data:{
+				bol:false
+			}
+
+		})
+	</script>
+</body>
+</html>

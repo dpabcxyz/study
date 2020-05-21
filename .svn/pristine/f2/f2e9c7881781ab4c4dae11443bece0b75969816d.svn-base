@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件1</title>
+    <script src="../js/VUE.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <test></test>
+    </div>
+</body>
+
+</html>
+<script>
+    Vue.component('test', {
+        template: '<div><h1>title</h1><li>1</li><li>2</li><li>3</li><li>4</li></div>'
+    });
+
+    var app = new Vue({
+        el: "#box",
+    })
+</script>

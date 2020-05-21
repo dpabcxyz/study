@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强制为json</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<button class="button">action</button>
+<script>
+    $(function () {
+        $('.button').click(function () {
+            $.get('php/html.php',function (data,textStatus,jqXHR) {
+               $('body').append(data);
+			   jqXHR.done(function (data,textStatus,jqXHR) {
+			      alert("请求成功了！");
+			  });
+				 
+            },'html')
+        })
+    })
+</script>
+</body>
+</html>

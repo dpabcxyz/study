@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<div id="btn">
+    <button @click="f1($event)">点击1</button>
+    <input type="text" @keydown="f2($event)">
+</div>
+
+</body>
+</html>
+<script>
+    var app=new Vue({
+        el:"#btn",
+        methods:{
+            f1:function (e) {
+                // console.log(e);
+                  console.log("横坐标："+e.clientX,"纵坐标："+e.clientY,"时间戳："+e.timeStamp);
+            },
+            f2:function (e) {
+                console.log(e.keyCode)
+            }
+        }
+    })
+</script>

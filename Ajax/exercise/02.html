@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jauery-3.2.1.js"></script>
+    <title>转换查询字符串</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        width: 1200px;
+        margin: 40px auto 0;
+
+    }
+
+    .item {
+        margin-bottom: 36px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgb(200, 200, 200);
+    }
+
+    .item .content {
+        font-size: 16px;
+        color: cornflowerblue;
+        font-weight: bold;
+        line-height: 26px;
+        list-style: none;
+    }
+
+    .item .date {
+        font-size: 14px;
+        color: rgb(120, 120, 120);
+        text-align: right;
+        list-style: none;
+    }
+</style>
+</head>
+
+<body>
+<body>
+    <div class="main"></div>
+    <script>
+        encodeU=(data)=>{
+            var str='';
+            for(var i in data){
+                str+=encodeURIComponent(i)+'='+encodeURIComponent(data[i])+'&';
+            }
+            console.log(str);
+             return str.substr(0, str.length - 1);
+        }
+        $(function(){
+            var xhr=new XMLHttpRequest;
+            var data=encodeU({
+                key: '478503db587d59d275971755259b4899'
+            });
+            xhr.addEventListener('readystatechange',function(){
+                if(xhr.readyState==4){
+                    var v = JSON.parse(xhr.responseText);
+                    v.result.find(function (v, index, arr) {
+                        var str = "<ul class='item'><li class='content'>" + v.content + " </li><li class='date'>" + v.unixtime + "</li></ul>";
+                        $(str).appendTo($('.main'));
+                    })
+                }
+            })
+            xhr.open('get','http://v.juhe.cn/joke/randJoke.php?'+data);
+            xhr.send(null);
+        })
+    </script>
+</body>
+</html>

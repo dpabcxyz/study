@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包函数</title>
+</head>
+<body>
+
+	<li class="test">1</li>
+	<li class="test">2</li>
+	<li class="test">3</li>
+
+	<script type="text/javascript">
+	var aLi = document.getElementsByClassName("test");
+	function showAllNum( aLi ){
+    	for( var i =0;i<aLi.length;i++ ){
+            aLi[i].onclick = function(){
+            alert( i );
+        	}
+    	}
+	}
+	showAllNum(aLi);
+	/*
+	1、
+	   每个li标签的onclick事件执行时，本身onclick绑定的function的作用域中没有变量i，i为undefined,
+	   则解析引擎会寻找父级作用域，发现父级作用域中有i，且for循环绑定事件结束后，i已经赋值为4，
+	   所以每个li标签的onclick事件执行时，alert的都是父作用域中的i，也就是4。这是作用域的问题。
+
+	2、
+	  闭包只能取得包含函数中任何变量的最后一个值。
+	  因为别忘了闭包所保存的是整个变量对象，而不是某个特殊的变量
+
+	3、
+	  这里面给onclick赋值的是闭包。很多人会问为什么是闭包？之前闭包不是函数A里的函数B吗？
+	  函数B用来访问函数A的变量，称函数B是闭包，题目中只有一个函数为什么也是闭包。
+	  其实，用两个函数形成闭包只是一般形式。
+
+	4、
+	  闭包真正的含义是，如果一个函数访问了此函数的父级及父级以上的作用域变量，就可以称这个函数是一个闭包。
+	*/
+
+	/*
+	var a = 1;
+	(function test() {
+		alert(a);
+	})()
+	*/
+    //以上可称为闭包函数
+	</script>
+</body>
+</html>

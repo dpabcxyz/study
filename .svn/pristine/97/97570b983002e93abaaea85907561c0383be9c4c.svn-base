@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据表格-排序</title>
+    <link rel="stylesheet" href="../../../public/extends/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../public/extends/layui/css/layui.css">
+    <link rel="stylesheet" href="../../../public/css/common.css">
+    <link rel="stylesheet" href="../../../public/css/main.css">
+    <link rel="stylesheet" href="../../../public/css/reset.css">
+    <link rel="stylesheet" href="../../../public/css/theme/theme_black.css">
+    <style>
+        .layersExample {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+        }
+        
+        .tableToolContainer {
+            width: 600px;
+        }
+        
+        .tableToolContainer button {
+            margin: 30px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layersExample">
+        <div class="tableToolContainer">
+            <button type="button" class="btn btn-primary" id="btn1">一般弹窗</button>
+            <button type="button" class="btn btn-primary" id="btn2">可最大化弹窗</button>
+            <button type="button" class="btn btn-primary" id="btn3">默认最大化弹窗</button>
+            <button type="button" class="btn btn-primary" id="btn4">弹窗内容为dom节点1</button>
+            <button type="button" class="btn btn-primary" id="btn5">弹窗内容为dom节点2</button>
+            <button type="button" class="btn btn-primary" id="btn6">弹窗内容为dom节点3</button>
+            <button type="button" class="btn btn-primary" id="btn7">成功</button>
+            <button type="button" class="btn btn-primary" id="btn8">警告</button>
+            <button type="button" class="btn btn-primary" id="btn9">错误</button>
+            <button type="button" class="btn btn-primary" id="btn10">普通消息</button>
+            <button type="button" class="btn btn-primary" id="btn11">选择</button>
+            <button type="button" class="btn btn-primary" id="btn12">确认</button>
+        </div>
+    </div>
+
+    <script src="../../../public/extends/jquery-3.5.0/jquery.min.js"></script>
+    <script src="../../../public/extends/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../public/extends/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="../../../public/extends/layui/layui.js"></script>
+    <script src="../../../public/js/modules/layerIframe.js"></script>
+    <script src="../../../public/js/layers1.js"></script>
+    <script src="../../../public/js/iconfont.js"></script>
+    <script src="../../../public/js/common.js"></script>
+    <script>
+        //预加载layer
+        layui.use('layer', function() {
+            var layer = layui.layer;
+        });
+    </script>
+</body>
+<div id="dom1" style="display: none;">
+    <!-- 单列表单容器 -->
+    <div class="formContainerSingle">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">UserName</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">sex</label>
+                <select class="form-control">
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">telphone</label>
+                <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Email</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Textarea </label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+
+
+        </form>
+        <div class="btnGroupCenter">
+            <button type="button" class="btn btn-primary">暂存</button>
+            <button type="button" class="btn btn-primary" id="submit1">提交</button>
+            <button type="button" class="btn btn-primary">重置</button>
+        </div>
+    </div>
+</div>
+<div id="dom2" style="display: none;">
+    <!-- 两列表单容器 -->
+    <div class="formContainerDouble">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">UserName</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">sex</label>
+                <select class="form-control">
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">telphone</label>
+                <input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Email</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group textarea">
+                <label for="exampleInputPassword1">Textarea </label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+
+
+        </form>
+        <div class="btnGroupCenter">
+            <button type="button" class="btn btn-primary">暂存</button>
+            <button type="button" class="btn btn-primary" id="submit2">提交</button>
+            <button type="button" class="btn btn-primary">重置</button>
+        </div>
+    </div>
+</div>
+<script>
+    // 关闭弹窗
+    $('#submit1').click(function() {
+        layer.close(layer.index);
+    })
+    $('#submit2').click(function() {
+        layer.close(layer.index);
+    })
+</script>
+
+</html>

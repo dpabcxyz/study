@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <title>头像裁剪</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .avator{
+            position: relative;
+            margin: 200px auto 0;
+            width: 150px;
+            height: 150px;
+        }
+        .avator-img{
+            width: 150px;
+            height: 150px;
+            border-radius: 80px;
+            overflow: hidden;
+        }
+        .avator img{
+            width: 150px;
+            height: 150px;
+        }
+        .avator-shadow{
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 150px;
+            height: 150px;
+            border-radius: 80px;
+            box-shadow:inset 0 0 10px rgba(0,0,0,.3);
+        }
+    </style>
+</head>
+<body>
+<ul class="avator">
+    <li class="avator-img">
+        <img src="http://anydo.wang/images/avator-test.png" alt="">
+    </li>
+    <li class="avator-shadow">
+    </li>
+</ul>
+
+</body>
+</html>

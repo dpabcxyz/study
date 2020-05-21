@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换节点1</title>
+	<style>
+		.test{
+			width: 800px;
+			text-align: center;
+			margin: 0 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="test" id="test">
+		<p>hello,world!</p>
+		<p>jquery</p>
+		<p id="oldnode">日本</p>
+		<a href="javascript:replaceMseeages()">	点击替换内容</a>
+	</div>
+	<script>
+	function replaceMseeages() {
+		
+		 var otest=document.getElementById("test");
+			 var newnode=document.createElement("h2");
+			 newnode.innerHTML="中国梦,奋斗吧骚年！";
+			 var oldnode=document.getElementById("oldnode");
+			// otest.appendChild(newnode);
+			otest.replaceChild(newnode, oldnode); 
+	}
+			 
+	</script>
+</body>
+</html>

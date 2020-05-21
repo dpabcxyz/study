@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>设置与获取属性值</title>
+</head>
+<body>
+	<ul>  
+    <li title="JS">JavaScript</li>  
+    <li title="JQ">JQuery</li>  
+    <li title="">HTML/CSS</li>  
+    <li title="JAVA">JAVA</li>  
+    <li title="">PHP</li> 
+  </ul>
+  <script>
+  
+     var lists=document.getElementsByTagName("li");
+    for (var i=0;i<lists.length;i++) {
+      var Text=lists[i].getAttribute("title");
+      document.write(Text+"<br>");
+      if (Text=="") {
+        lists[i].setAttribute("title","我爱你");
+        document.write(lists[i].getAttribute("title")+"<br>")
+      }
+    }
+  </script> 
+</body>
+</html>

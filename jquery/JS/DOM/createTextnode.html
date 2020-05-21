@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建文本节点</title>
+	<style>
+		.test{
+			width: 800px;
+			text-align: center;
+			margin: 0 auto;
+			margin-top: 40px;
+			text-align: center;
+		}
+		.txt{
+			color: red;
+			font: 20px/30px "微软雅黑";
+		}
+	</style>
+</head>
+<body>
+	<div class="test" id="test">
+		<p>hello，world！</p>
+	</div>
+	<script>
+		var parentnode=document.getElementById("test");
+		var newnode=document.createElement("p");
+		newnode.className="txt";
+		var newtextnode=document.createTextNode("hi,welconme to china!");
+		newnode.appendChild(newtextnode);
+		parentnode.appendChild(newnode);
+	</script>
+</body>
+</html>

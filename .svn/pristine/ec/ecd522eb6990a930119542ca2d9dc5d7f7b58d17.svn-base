@@ -1,0 +1,11 @@
+1、开发模式、打包模式
+2、入口文件、输出文件、输出文件名
+3、单入口
+   1、单文件 entry: '/public/index.js',   filename: 'boundle.js'
+   2、多文件 entry: ['./public/index1.js', './public/index2.js'],  filename: 'boundle.js'
+4、多入口
+    entry: {
+        pageone: './public/page1/index.js',
+        pagetwo: './public/page2/index.js',
+    }, 
+    filename: '[name].js'  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>删除节点</title>
+		<style>
+			.wrap{
+				width: 1200px;
+				height: 230px;
+				background-color: rgb(240,240,240);
+				border: 1px solid rgb(220,220,220);
+				margin: 0 auto;
+				margin-top: 100px;
+				color: red;
+				font-size: 22px;
+			}
+		</style>
+	</head>
+	<div class="wrap">
+		<ul id="lessons">
+				<li id="js" onclick="Remove()">javascript</li>
+				<li>css</li>
+				<li>html</li>
+				<li>oc</li>
+				<li>jquery</li><li>sass</li></ul>
+				<script>
+	function Remove(){
+		var parent=document.getElementById("lessons");
+		var x=parent.removeChild(parent.lastChild);
+		document.write("移除的内容是："+x.innerHTML)
+	}
+	</script>
+	</div>
+	
+	<body>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function outer(){
+				let value=122;
+				function inner(){
+					console.log(value)
+				}
+				inner();
+			}
+			outer()
+		</script>
+	</body>
+</html>

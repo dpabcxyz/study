@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js面向对象普通继承练习</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            //为对象添加属性
+            this.name=name;
+            this.age=age;
+        };
+        //为对象添加方法
+        Person.prototype.showName=function(){
+            alert(this.name);
+        };
+        Person.prototype.showAge=function(){
+            alert(this.age);
+        };
+        //继承父级的属性
+        function Beauty(name,age,weight){
+            Person.apply(this, arguments);
+            this.weight=weight;
+        };
+        //继承父级方法
+        Beauty.prototype=new Person();
+
+        //实例
+        var p=new Person('人类','22岁');
+        var b=new Beauty('美女','18岁','女');
+        p.showName();
+        b.showName();
+    </script>
+</body>
+</html>

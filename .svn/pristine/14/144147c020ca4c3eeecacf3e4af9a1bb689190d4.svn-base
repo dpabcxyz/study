@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>unbind</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .content1,.content2{
+            width: 80%;
+            margin: 100px auto 50px;
+            border: 1px solid grey;
+            text-align: center;
+        }
+        .content1 p{
+            background-color: paleturquoise;
+        }
+        .content1 h3{
+            background-color: pink;
+        }
+        .content2 p{
+            background-color: burlywood;
+        }
+        .content2 h3{
+            background-color: dodgerblue;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="content1">
+    <p>hello world!</p>
+    <p>you have failed this city!</p>
+    <h3>h3-踏遍荆棘，只为心中的繁华。</h3>
+    <span>span-我是一颗无人知道的小草</span>
+    <br>
+    <a href="http://baidu.com">百度首页</a>
+</div>
+<div class="content2">
+    <p>hello world!</p>
+    <p>you have failed this city!</p>
+    <h3>h3-踏遍荆棘，只为心中的繁华。</h3>
+    <span>span-我是一颗无人知道的小草</span>
+    <br>
+    <h2>h2-踏遍荆棘，只为心中的繁华。</h2>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.content1').bind('click',{name:'chenxuan',age:'18'},function(e){
+            console.log('p被点击了'+e.data.age)
+        })
+    });
+function test1(){
+    alert();
+}
+    $(document).ready(function(){
+        $('.content2').bind('click',{name:'chenxuan',age:'18'},test1)
+    });
+
+//    1、移除所有事件
+//    $(document).ready(function(){
+//        $('.content1').unbind();
+//    })
+
+    //    2、移除指定事件事件
+        $(document).ready(function(){
+            $('.content1').unbind('click');
+        });
+
+    //    3、移除函数
+    $(document).ready(function(){
+        $('.content2').unbind('click',test1);
+    })
+</script>
+</body>
+</html>

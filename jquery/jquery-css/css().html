@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .test1,.test2{
+            margin: 30px auto 0;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: #2aabd2;
+          margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <p class="p">1</p>
+    <p class="txt1"></p>
+    <br>
+    <p class="txt2"></p>
+    <br>
+    <p> class="txt3"><p/>
+</div>
+<div class="test2">
+    <div class="div1"></div>
+    <button id="btn1">放大</button>
+    <button id="btn2">缩小</button>
+    <button id="btn3">检测</button>
+</div>
+<script>
+    //    1、传入一个参数，获取指定的属性值
+    $('.txt1').text('color:'+$('.test1 p').css('color'));
+
+    //    2、同时获取多个属性值
+    var obj=$('.test1').css(['width','border-width','font-weight']);
+    $('.txt2').text(obj.width);
+    $('.txt2').text(obj['font-weight']);
+    $('.txt3').text(obj['border-width']);
+
+    //    3、一次性设置多个属性
+    $('.test1 p').css({'color':'green','margin-bottom':'10px','font-size':'30px'});
+
+
+    //    4、相对属性值
+    $('#btn1').on('click',function(){
+        $('.test2 div').css('width','+=100px');
+    });
+    $('#btn2').on('click',function(){
+        $('.test2 div').css('width','-=100px');
+    });
+
+    //    5、传入函数
+    $('#btn3').on('click',function(){
+        $('.test2 div').css('width',function(i,v){
+            w=parseFloat(v);
+            alert(v);
+            if (w>500){
+                return '200px'
+            }
+        })
+    });
+
+
+
+</script>
+</body>
+</html>

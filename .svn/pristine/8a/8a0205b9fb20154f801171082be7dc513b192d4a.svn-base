@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../js/VUE.js"></script>
+	<script src="../../js/axios.js"></script>
+</head>
+<body>
+	<div id="itany">
+		<button @click='method1'>发送请求1</button>
+		<!-- <button @click='method2'>发送请求2</button> -->
+	
+	</div>
+<script>
+	new Vue({
+		el:'#itany',
+		methods:{
+
+			// post请求1
+			method1(){
+				axios.post('post.php','a=11&b=11')
+				  .then(function (response) {
+				    console.log(response);
+				  })
+				  .catch(function (error) {
+				    console.log(error);
+				  });
+			}
+		}
+	})
+</script>
+</body>
+</html>

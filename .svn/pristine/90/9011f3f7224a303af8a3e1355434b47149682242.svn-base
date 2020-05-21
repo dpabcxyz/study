@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<script>
+      'use strict';
+    var a = 20;
+    function foo () {
+        var a = 1;
+        var obj = {
+            a: 10,
+            fn: function () {
+                  return this.a;
+              }
+        };
+        return obj.fn();
+    }
+    console.log(foo());
+    console.log(window.foo());
+</script>
+</body>
+</html>

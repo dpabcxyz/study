@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关系选择器</title>
+    <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="div1">
+    <p>hello world!</p>
+    <p>hello world!</p>
+    <p>hello world!</p>
+    <p>hello world!</p>
+    <ul>
+        <p>hello</p>
+    </ul>
+</div>
+<div class="div2">
+    <h3>good  good study</h3>
+    <h3>day day up</h3>
+    <h4>you have failed this city</h4>
+    <p>hello world!</p>
+    <p>hello world!</p>
+    <p>hello world!</p>
+    <li><p>里面的P</p></li>
+    <div>
+        <p>hello world!</p>
+        <p>hello world!</p>
+        <p>hello world!</p>
+    </div>
+    <span>小日本</span>
+    <span>小日本</span>
+    <span>小日本</span>
+</div>
+<div class="div3">
+    <li>test1</li>
+    <a href="">我是跟在li后面的a1</a>
+    <li>test3</li>
+    <a href="">我是跟在li后面的a2</a>
+    <li>test2</li>
+</div>
+<a href="">我是跟在div3后面的a3</a>
+<div><a href="">里面的a</a></div>
+<script>
+    //1、匹配给定祖先元素的所有指定后代元素
+//    $('div p').css('color','red');
+//   alert($('.div2 p').length) ;
+
+    //2、匹配给定祖先元素的所有指定子元素
+//    alert($('.div2 > p').length) ;
+
+    //3、匹配紧跟在选择器1后面的选择器2
+//    $('a+li').css('font-weight','bold' );
+//    $('li+a').css('font-size','50px');
+    $('.div3+a').css('font-size','50px');
+
+
+    //4、匹配所有选择器1的同辈选择器2元素，在选择器1的同辈元素中筛选选择器2
+//    $('[class=div1]~[class=div3]').css('border','1px solid red');
+</script>
+</body>
+</html>

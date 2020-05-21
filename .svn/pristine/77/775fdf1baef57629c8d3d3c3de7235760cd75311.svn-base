@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function init(){
+            var name="火狐";
+            function displayName(){
+                alert(name);
+            }
+            displayName();
+        }
+        init();
+        /*--------------------------------*/
+        function makeFunc(){
+            var name="猎豹";
+            function displayName(){
+                alert(name);
+            }
+            return displayName;
+        }
+        var myFunc=makeFunc();
+        myFunc();
+
+         /*--------------------------------*/
+
+        function makeAdder(x){
+            return function(y){
+                return x+y;
+            }
+        }
+        var add5=makeAdder(5);
+        console.log(add5(2)); //7
+
+        var add10=makeAdder(10);
+        console.log(add10(2));// 12
+    </script>
+</body>
+</html>

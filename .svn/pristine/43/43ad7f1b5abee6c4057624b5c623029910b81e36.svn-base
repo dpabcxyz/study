@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getJSON</title>
+    <script src="../js/jauery-3.2.1.js"></script>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        $('#btn').click(function(){
+            $.getJSON('php/getJson.php',{id:1},function(x,y,z){
+                console.log(x);
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6面向对象</title>
+</head>
+<body>
+    <script>
+         //类
+        class Person{
+            //为对象添加属性
+            constructor(name='default',age=0){
+            this.name=name;
+            this.age=age;
+            }
+            //为对象添加方法
+            showName(){
+                alert(this.name);
+            }
+            showAge(){
+                alert(this.age);
+            }
+        };
+        var person1=new Person('陈轩',12);
+        var person2=new Person('大侠',51);
+        alert(person1.name);
+        person1.showAge();
+        person2.showName();
+        alert(person1.showAge()==person2.showAge());
+        alert(person1.constructor==Person);
+        
+    </script>
+</body>
+</html>

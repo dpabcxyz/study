@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/VUE.js"></script>
+    <title>自定义指令练习</title>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        .div1{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: deeppink;
+            cursor: pointer;
+        }
+        .div2{
+            position: absolute;
+            top: 100px;
+            right: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            cursor: pointer;
+        }
+        .div3{
+            position: absolute;
+            top: 160px;
+            right: 500px;
+            width: 100px;
+            height: 100px;
+            background-color:forestgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-drag id="div1" class="div1">1</div>
+        <div v-drag id="div2" class="div2">2</div>
+        <div v-drag id="div3" class="div3">3</div>
+    </div>
+    <script>
+       
+        Vue.directive('drag',function(el){
+            el.onmousedown=function(e){
+                var disx=e.clientX-el.offsetLeft;
+                var disy=e.clientY-el.offsetTop;
+                document.onmousemove=function(e){
+                    var l=e.clientX-disx;
+                    var t=e.clientY-disy;
+                    el.style.left=l+'px';
+                    el.style.top=t+'px';
+                }
+                document.onmouseup=function(){
+                    document.onmouseup=null;
+                    document.onmousemove=null;
+                }
+            }
+        });
+        var vm=new Vue({
+            el:'#app',
+            data:{},
+            methods:{
+
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wrap()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        li{
+            list-style: none;
+        }
+
+        .test1{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid red;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        .test2{
+            margin: 0 auto;
+            width: 80%;
+            border: 2px solid blue;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+
+        .test3{
+            margin: 0 auto;
+            width: 80%;
+            border: 1px solid green;
+            margin-bottom: 30px;
+        }
+        .wrap{
+            border: 1px solid yellow;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">one</div>
+<div class="test2">two</div>
+<div class="test3">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+<!--wrap()方法,可多层嵌套，只应该含有一个核心元素-->
+<script>
+//      $('.test3 ul li').wrap('<div class="wrap">1234567div</div>');
+//    $('.test3 ul li').wrap('.test1');
+//    $('.test3 ul li').wrap($('.test1'));
+    $('.test3 ul li').wrap(function(i,n){
+        if (i==2){
+            return $('.test1');
+        }
+        else {
+            return $('.test2');
+        }
+
+    });
+
+$('.test3 ul li').wrap(function(i){
+
+    console.log(n)
+
+})
+</script>
+</body>
+</html>

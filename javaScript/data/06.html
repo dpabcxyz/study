@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+	<script>
+		function  fun5() {
+        var scoreObject = {
+            "Tony": {
+                "Math": 95,
+                "English": 79,
+                "Music": 68
+            },
+            "Simon": {
+                "Math": 100,
+                "English": 95,
+                "Music": 98
+            },
+            "Annie": {
+                "Math": 54,
+                "English": 65,
+                "Music": 88
+            }
+        }
+        var arr= [];
+        for (var i in scoreObject){
+		  var obj={};
+          arr.push(i,scoreObject[i].Math,scoreObject[i].English,scoreObject[i].Music);
+        }
+        console.log(arr);
+    }
+   	 fun5();
+	</script>
+</body>
+</html>

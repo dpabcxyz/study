@@ -1,0 +1,50 @@
+.formContainer{
+    position: relative;
+    box-sizing: border-box;
+    padding:0 200px 16px 0;
+    border-bottom: 4px solid #f2f2f2;
+}
+.formContainer:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.formContainer .el-form-item{
+    float: left;
+    width: 260px;
+    margin: 18px 8px 0 0;
+}
+.formContainer .formBtn{
+    position: absolute;
+    right: 12px;
+    top: 18px;
+}
+.tableToolContainer{
+    box-sizing: border-box;
+    margin: 12px 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ebeef5;
+}
+.tableContainer{
+    box-sizing: border-box;
+    padding: 0 16px 16px 16px;
+}
+.el-table thead{
+    color: #333;
+    font-weight: bold;
+}
+/* .tableContainer .el-table thead{
+    color: #333;
+    font-weight: bold;
+} */
+/* .tableContainer .el-table .cell{
+    text-align: center;
+} */
+
+.tableContainer .el-pagination{
+    margin-top: 12px;
+}
+/* ElementUI重置*/
+.el-table .cell{
+    text-align: center;
+}
+.el-table thead{
+    color: #333;
+    font-weight: bold;
+}

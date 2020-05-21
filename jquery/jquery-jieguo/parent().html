@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>祖对象的一些方法()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+        .test1,.test2,.test3,.test4,.test5{
+            width: 80%;
+            margin: 100px auto 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <div style="position: relative">
+        <p>hello world</p>
+    </div>
+</div>
+<div>
+<div class="test2">
+    <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="li">4</li>
+            <li>5</li>
+
+    </ul>
+</div>
+</div>
+
+<div class="test3">
+    <div>1
+        <div class="chenxuan">2
+            <div>3
+                <h3>hello world!</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /*获取指定对象的最近的带有position属相的父元素*/
+//    $('p').offsetParent().css('border','1px solid red');
+
+    /*获取获取父对象*/
+//    $('ul').parent().css('border','1px solid green');
+
+    /*获取祖对象*/
+//    alert($('ul').parents().length);
+
+//    $('ul').parents('.test2').css('background-color','yellow');
+
+    /*获取祖对象*/
+    $('h3').parentsUntil('.chenxuan').css('color','blue');
+</script>
+</body>
+</html>

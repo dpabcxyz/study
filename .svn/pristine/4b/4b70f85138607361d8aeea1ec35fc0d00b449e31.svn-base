@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父元素包不住子元素</title>
+    <style>
+        .wrap{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #006f47;
+            margin-top: 100px;
+            border: 10px solid black;
+            overflow: hidden;
+            position: relative;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部组件1</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<div id="box">
+    <test1></test1>
+    <test2></test2>
+</div>
+<template id="pp1">
+    <div>
+        <h1 @click="f1()">title</h1>
+        <li>{{msg}}</li>
+        <li>{{name}}</li>
+    </div>
+</template>
+<template id="pp2">
+    <div>
+        <h1 @click="f1()">title</h1>
+        <li>{{msg}}</li>
+        <li>{{name}}</li>
+    </div>
+</template>
+</body>
+</html>
+<script>
+    var app=new Vue({
+        el:"#box",
+        components:{
+            "test1":{
+                template:"#pp1",
+                data:function () {
+                    return {
+                        msg:'成绩排行1',
+                        name:"陈轩1"
+                    }
+                },
+                methods:{
+                    f1:function () {
+                        alert("你点了我1！");
+                    }
+                },
+            },
+            "test2":{
+                template:"#pp2",
+                data:function () {
+                    return {
+                        msg:'成绩排行2',
+                        name:"陈轩2"
+                    }
+                },
+                methods:{
+                    f1:function () {
+                        alert("你点了我2！")
+                    }
+                }            }
+        }
+    })
+</script>

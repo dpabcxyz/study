@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a=['asdfghjk'];
+			console.log(String.prototype.split.call(a));
+			//用数组a去执行split()方法
+		</script>
+	</body>
+</html>

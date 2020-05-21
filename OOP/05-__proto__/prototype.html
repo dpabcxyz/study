@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function A(){
+    }
+    console.log((JSON.stringify(A.prototype.prototype)));
+    console.log(A.prototype.__proto__);
+    console.log(A.__proto__.__proto__);
+</script>
+</body>
+</html>

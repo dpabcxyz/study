@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>elese if嵌套</title>
+</head>
+<body>
+<script type="text/javascript">
+    var my=100;
+    if (my<27)
+    {
+        alert("小屁孩！");
+    }
+    else if (my<31)
+    {
+        alert("而立之年");
+    }
+    else if (my<41)
+    {
+        alert("不惑之年");
+    }
+    else if (my<51)
+    {
+        alert("半百之年");
+    }
+    else if (my<61)
+    {
+        alert("花甲之年");
+    }
+    else{
+        alert("你是人妖啊！大家快跑")
+    }
+</script>
+
+</body>
+</html>

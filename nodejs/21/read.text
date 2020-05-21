@@ -1,0 +1,5 @@
+
+1、bodyparser的使用
+2、bodyparser处理静态数据
+3、将post请求的参数转为json格式返回
+4、在ctx.request.body内获取POST请求参数

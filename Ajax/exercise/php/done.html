@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jXHR</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<div class="button">Action</div>
+<script>
+    var jqXHR=$.get('done1.php');
+    jqXHR.done(function (data,textStatus,jqXHR) {
+        alert("请求成功了！")
+    });
+    jqXHR.fail(function (jqXHR,textStatus,errorThrown) {
+        alert('请求失败了！')
+    });
+
+    // 请求成功的参数同done，请求失败的参数同fail
+    jqXHR.always(function (a,b,c) {
+        alert('请求完成了！');
+        console.log(a);
+        console.log(c);
+    });
+
+    // 链式调用
+    jqXHR
+        .done(function () {
+
+    })
+        .fail(function () {
+
+        })
+        .always(function () {
+
+        })
+</script>
+</body>
+</html>

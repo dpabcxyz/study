@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax方法</title>
+    <script src="http://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="button">Action</div>
+<div id="div1"></div>
+<script>
+    // $('.button').click(function () {
+    //     $.ajax('ajax.php',{
+    //         success:function (data,textStatus,jqXHR) {
+    //             console.log(data);
+    //             console.log(textStatus);
+    //             console.log(jqXHR);
+    //         }
+    //     })
+    // })
+
+
+    $('.button').click(function () {
+        $.ajax({
+            url:'ajax.php',
+            success:function (data,textStatus,jqXHR) {
+                console.log(data);
+                console.log(this);
+            },
+            // type:'post',
+            method:'post',
+
+            data:{
+                name:'chenxuan',sex:'boy'
+            },
+            beforeSend:function (jqXHR,settings) {
+                // settings.url='new.php';                 //修改请求地址
+                alert('即将发起请求'); 
+                // return false;                        //取消请求
+            },
+            // complete:function (jqXHR,textStatus) {      //无论成功会失败都会执行的函数
+            //     alert("请求完成");
+            // }
+            complete:[
+            function (jqXHR,textStatus) {               //传递函数数组
+                alert("请求完成1");
+            },
+            function (jqXHR,textStatus) {
+                alert("请求完成2");
+            }],
+
+            error:function (jqXHR,textStatus,errorThrown) {
+                alert(errorThrown);
+            },
+         /*   dataType:'json',*/
+            context:$('#div1'),//设置this指代的对象
+            timeout:6000,//设置超时时间,请求超时自动调用error函数
+            async:true,//设置是否异步请求
+            cache:true,//不缓存
+            dataFilter:function (date,dataType) {       //对原生数据进行过滤处理 注意retur。对数据进行过滤,最先接收服务器返回的数据
+                return date.toUpperCase();
+            },
+        
+            
+            converters:{
+                "text json":function (data) {           //默认： 对html数据不处理；对json数据，处理为对象；对xml数据处理为xml
+                    return data;
+                }
+            },
+            gloal:true                                  //设置是否触发全局ajax回调函数 默认为true
+        })
+    })
+</script>
+</body>
+</html>

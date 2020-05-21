@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>之前的用法-对象</title>
+</head>
+<body>
+    <script>
+        var person={
+            name:'chenxuan',
+            age:'18',
+            showName:function(){
+                alert(this.name);
+            },
+            showAge:function(){
+                alert(this.age);
+            }
+        }
+        person.showName();
+        person.showAge();
+    </script>
+</body>
+</html>

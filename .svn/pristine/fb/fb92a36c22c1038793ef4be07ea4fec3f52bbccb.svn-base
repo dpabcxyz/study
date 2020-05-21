@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义指令</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2 v-hi>{{msg}}</h2>
+        <button @click="fn">点击修改值</button>
+    </div>
+    <button onclick="myfunction()"></button>
+    <script>
+       
+        Vue.directive('hi',{
+            bind(){
+                alert("指令第一次绑定到元素上调用，只执行一次，可执行初始化操作")
+            },
+            inserted(){
+                alert("被绑定元素插入到dom中时调用！")
+            },
+            update(){
+                alert("更新时调用！")
+            },
+            componentUpdated(){
+                alert("完成更新时调用！")
+            },
+            unbind(){
+                alert('解绑时调用！')
+            }
+        })
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'呵呵呵呵呵!'
+            },
+            methods:{
+                fn:function(){
+                    this.msg="啊啊啊啊啊啊！"
+                },
+            }
+        })
+        function myfunction(){
+            vm.$destroy()
+        }
+    </script>
+</body>
+</html>

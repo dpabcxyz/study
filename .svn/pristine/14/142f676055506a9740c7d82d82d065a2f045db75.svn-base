@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery附加选择器</title>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <style>
+        .test1,.test2,.test3,.test4,.test5,.test6,.test7{
+            width: 80%;
+            margin: 30px auto 30px;
+            text-align: center;
+        }
+        .test7 p,.test7 h3{
+            display: none;
+        }
+        .test7,.test8,.test9{
+            width: 80%;
+            margin: 50px auto;
+            height: 150px;
+            border: 1px solid gray;
+        }
+
+    </style>
+</head>
+<body>
+<div class="test1">
+    <span>我爱你</span>
+    <p>我是幽灵</p>
+    <p>我是幽灵</p>
+</div>
+<div class="test2">
+    <ul>
+        <li>java</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+
+    </ul>
+</div>
+
+<div class="test3">
+    <ul>
+        <li>java</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+        <li>html</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+        <li>html</li>
+        <li>sass</li>
+    </ul>
+</div>
+
+<div class="test4">
+    <ul>
+        <li>java</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+        <li>html</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+        <li>html</li>
+        <li>sass</li>
+    </ul>
+</div>
+
+<div class="test5">
+    <ul>
+        <li>java</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+        <li>html</li>
+        <li>html</li>
+        <li>sass</li>
+        <li>php</li>
+        <li>html</li>
+        <li>sass</li>
+    </ul>
+</div>
+
+<div class="test5">
+    <h3>hello kitty</h3>
+    <p>我爱你</p>
+</div>
+
+<div class="test5">
+    <form action="">
+    <input type="text" placeholder="ok">
+    <br>
+    <input type="checkbox">美女
+    <br>
+    <input type="radio">男
+    <br>
+    <button>按钮</button>
+    <br>
+    <input type="button" value="我是按钮">
+    <br>
+    <input type="password" placeholder="请输入密码">
+    <br>
+    <input type="submit" value="提交">
+    <br>
+    <input type="image" src="http://anydo.wang/img/index-icon-1.png">
+    <br>
+    <input type="file">
+    <input type="reset" value="重置">
+    </form>
+</div>
+<div class="test6">
+    <h3>1</h3>
+    <h4>3</h4>
+    <h5>5</h5>
+    <h1>3</h1>
+</div>
+
+<div class="test7">
+    <p>我爱你！</p>
+    <p>我爱你！</p>
+    <p>我爱你！</p>
+    <h3>hi</h3>
+</div>
+
+<div class="test8">
+    <p>我爱你！</p>
+    <p>我爱你！</p>
+    <p></p>
+    <h3>hi</h3>
+</div>
+
+
+<div class="test9">
+    <secton>
+        <option value="">1</option>
+        <option value="" selected>2</option>
+        <option value="" selected>3</option>
+        <option value="">4</option>
+    </secton>
+</div>
+<script>
+
+    //1、contains(text)，元素或者后代元素包含指定内容，将会被选中
+    $('.test1 :contains(我是幽灵)').css('background','green');
+
+
+    //2、first
+    $('.test2 li:first').css('color','red');
+    //3、last
+    $('.test2 li:last').css('color','red');
+
+
+    //4、eq(2)
+    $('.test3 li:eq(4)').css({'color':'yellow','font-size':'30px'});
+
+    //5、gt(2)
+    $('.test3 li:gt(6)').css({'color':'yellow','font-size':'30px'});
+
+    //6、lt(2)
+    $('.test3 li:lt(3)').css({'color':'red','font-size':'30px'});
+
+
+    //6、odd
+    $('.test4 li:odd').css({'color':'yellow','font-size':'30px'});
+
+    //6、even
+    $('.test5 li:even').css({'color':'yellow','font-size':'30px'});
+
+    //7、has
+    $('div:has(p)').css({'border':'2px solid red'});
+
+    //8、input
+//    alert($('form :input').length);
+//    alert($('.test5 input').length);
+
+    //9、text
+//    alert($('.test5 :text').length);
+
+    //10、button
+//    alert($('.test5 :button').length);
+
+    //11、passworld
+//        alert($('.test5 :password').length);
+
+    //12、submit
+//    alert($('.test5 :submit').length);
+//    $('.test5 :submit').css('color','red');
+
+    //13、checkbox
+//    alert($('.test5 :checkbox').length);
+
+    //14、radio
+//    alert($('.test5 :radio').length);
+
+    //15、reset
+//    alert($('.test5 :reset').length);
+
+    //16、flie
+//    alert($('.test5 :file').length);
+
+    //17、image
+    //alert($('.test5 :image').length);
+
+    //18、selected
+    alert($('.test9 :selected').length);
+
+    //19、header
+//      alert($('.test6 :header').length);
+
+    //20、visiable
+//          alert($('.test7 :visible').length);
+
+    //21、parent
+//    alert($('.test8 p:parent').length);
+</script>
+</body>
+</html>

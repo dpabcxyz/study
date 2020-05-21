@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改原型对象3</title>
+</head>
+<body>
+<script>
+    function Person(name){
+        this.name=name;
+    }
+    //修改原型对象更聪明的写法
+    Person.prototype.method1={
+        method:function(){}
+    }
+    console.log(Person.prototype.constructor===Person)
+    console.log(Person.prototype.constructor)
+</script>
+</body>
+</html>

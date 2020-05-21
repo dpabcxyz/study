@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用prototype属性</title>
+</head>
+<body>
+    <script>
+        function Animal(){
+            this.spices="动物"
+        }
+        function Cat(name,color){
+            this.name=name;
+            this.color=color;
+        }
+        Cat.prototype=new Animal();     // 构造函数Cat的原型对象的constructor属性，指向new Animal()的构造函数Animal();
+        Cat.prototype.constructor=Cat   //重新指向Cat
+        var cat1=new Cat('小白','白色');
+        console.log(cat1.name);
+        console.log(cat1.spices);
+    </script> 
+</body>
+</html>

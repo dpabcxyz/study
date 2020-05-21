@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation属性</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .warp{
+            width: 800px;
+            height: 800px;
+            margin: 100px auto 0;
+            border: 1px solid rgb(220,220,220);
+        }
+        .content{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+            animation: keyname 10s infinite ease alternate-reverse running;
+        }
+        @keyframes keyname {
+            0% {background-color: red;left: 0px;top: 0px}
+            25% {background-color: green;left: 600px;top: 0px}
+            50% {background-color: blue;left: 600px;top: 600px}
+            75% {background-color: yellow;left: 0px;top: 600px}
+            100% {background-color: red;left: 0px;top: 0px}
+        }
+    </style>
+</head>
+<body>
+<div class="warp">
+    <div class="content"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    您好! {{userName}}您的密码是:{{psssWord}}
+    <ul>
+        {{each msg as item}}
+        <li>{{item.username}}:{{item.content}}</li>
+        {{/each}}
+    </ul>
+    {{userName}}<input type="text" name="newmsg" placeholder="请输入内容" id="newcontent">
+    <input type="submit" value="发送" id="btn">
+    <script>
+        document.getElementById('btn').onclick=function(){
+            var msg=document.getElementById('newcontent').value;
+            var xhr=new XMLHttpRequest();
+            xhr.open('post','/dosend');
+            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.send('msg='+msg);
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var arr=JSON.parse(xhr.responseText);
+                        console.log(arr);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

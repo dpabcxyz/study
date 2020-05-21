@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>call</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        };
+        function Student(age,name,sex){
+            Person.call(this,age,name,sex);
+            this.sex=sex;
+        }
+        var s1=new Student("zhangsan", 21, "男");
+        alert(s1.sex+s1.name+s1.age);
+    </script>
+</body>
+</html>

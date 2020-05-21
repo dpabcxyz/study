@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换节点3</title>
+	<style>
+		.test{
+			width: 800px;
+			text-align: center;
+			margin: 0 auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="test">
+		<p id="oldnode">javascript</p>
+		<p>hello,world</p>
+		<p>html</p>
+		<a href="javascript:replace_messages ()">点击加粗</a>
+	</div>
+	<script>
+	function replace_messages () {
+		 // body...
+		var oldnode=document.getElementById("oldnode");
+		var newnode=document.createElement("b");
+		oldnode.parentNode.replaceChild(newnode, oldnode);
+		newnode.innerHTML=oldnode.innerHTML;  
+	}
+	
+	</script>
+</body>
+</html>

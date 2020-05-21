@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../js/VUE.js"></script>
+	<script src="../../js/axios.js"></script>
+</head>
+<body>
+	<div id="itany">
+		<button @click='method1'>发送请求1</button>
+	
+	
+	</div>
+<script>
+	new Vue({
+		el:'#itany',
+		data:{
+			user:{
+				a:11,
+				b:11
+			}
+		},
+		methods:{
+
+			// post请求1
+			method1(){
+				axios.post('post.php',this.user,{
+							transformRequest:[
+								function(data){
+									let params='';
+									for(let index in data){
+										params+=index+'='+data[index]+'&';
+									}
+									return params;
+								}
+							]
+						})
+			}
+		}
+	})
+</script>
+</body>
+</html>

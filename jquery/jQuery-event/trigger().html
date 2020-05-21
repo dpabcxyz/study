@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>trigger()</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .content1,.content2{
+            width: 80%;
+            margin: 100px auto 50px;
+            border: 1px solid grey;
+            text-align: center;
+        }
+        .content1 p{
+            background-color: paleturquoise;
+        }
+        .content1 h3{
+            background-color: pink;
+        }
+        .content2 p{
+            background-color: burlywood;
+        }
+        .content2 h3{
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+<div class="content1">
+    <p>hello world!</p>
+    <p>you have failed this city!</p>
+    <h3>h3-踏遍荆棘，只为心中的繁华。</h3>
+    <span>span-我是一颗无人知道的小草</span>
+    <br>
+    <a href="http://baidu.com">百度首页</a>
+</div>
+<div class="content2">
+    <p>hello world!</p>
+    <p>you have failed this city!</p>
+    <h3>h3-踏遍荆棘，只为心中的繁华。</h3>
+    <span>span-我是一颗无人知道的小草</span>
+    <br>
+    <h2>h2-踏遍荆棘，只为心中的繁华。</h2>
+</div>
+<script>
+
+//    一、trigger()模拟事件的触发
+    $(document).ready(function(){
+        $('.content1').on('click',function(){
+            console.log('p被点击了')
+        })
+    });
+    function test(){
+        $('.content1 p').trigger('click');
+    }
+    $(document).ready(function(){
+        setInterval('test()',2000)
+    });
+
+//    二、触发自定义事件
+$(document).ready(function(){
+    $('.content2').on('陈轩',function(m,n){
+        console.log('陈轩被点击了');
+        console.log(n.name);
+    })
+});
+
+$(document).ready(function(){
+    $('.content2 P').trigger('陈轩',{name:"大侠"});
+});
+
+//$(document).ready(function(){
+//    $('.content2 P').triggerHandler('陈轩');
+//});
+</script>
+</body>
+</html>

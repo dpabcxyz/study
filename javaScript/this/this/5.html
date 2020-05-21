@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>严格模式</title>
+</head>
+<body>
+    <script>
+        function fn(){
+            'use strict';
+            console.log(this);
+        }
+        fn();//独立调用
+        window.fn();//fn是调用者，fn被window所拥有，故：this指向window
+        /*
+        1、如果调用者函数，被某一个对象所拥有，那么该函数在调用时，内部的this指向该对象。
+        2、如果函数独立调用，那么该函数内部的this，则指向undefined。
+        3、但是在非严格模式中，当this指向undefined时，它会被自动指向全局对象。
+        */
+    </script>
+</body>
+</html>

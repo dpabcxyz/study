@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用call或apply方法</title>
+</head>
+<body>
+    <script>
+        function Animal(){
+            this.spices="动物"
+        }
+        function Cat(name,color){
+            Animal.apply(this,arguments);
+            this.name=name;
+            this.color=color;
+        }
+        var cat1=new Cat('小白','白色');
+        console.log(cat1.spices);
+        console.log(cat1.name);
+        console.log(cat1.color);
+        console.log('--------over----------');
+        console.log(cat1.constructor);
+        console.log(Animal.prototype);
+    </script>
+</body>
+</html>

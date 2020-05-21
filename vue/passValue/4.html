@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父级子级传值</title>
+    <script src="../js/VUE.js"></script>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        li{list-style: none;}
+        .parent{
+            width: 400px;
+            height: 140px;
+            margin:50px auto 0;
+            padding: 10px;
+            border: 2px solid red;
+        }
+        .child{
+            padding: 10px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <parent></parent>
+    </div>
+    <template id="parent">
+        <div class="parent">
+            <li>父级组件</li>
+            <child :messages=msg @change="getVal">点击：子组件向父组件传值</child>
+        </div>
+    </template>
+    <template id="child">
+        <div class="child">
+            <li @click="fn">
+                <slot></slot>
+            </li>
+            <li>{{messages}}</li>
+        </div>
+       
+    </template>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{},
+            components:{
+                'parent':{
+                    template:'#parent',
+                    data:function(){
+                            return {
+                                msg:'父组件向子组件传值成功！'
+                            }
+                        },
+                    methods:{
+                        getVal:function(val){
+                            alert("子组件向父组件传值成功:"+val)
+                        }
+                    },    
+                    components:{
+                        'child':{
+                            template:'#child',
+                            data:function(){
+                                return {
+                                    vlaue:'来自子组件的值'
+                                }
+                            },
+                            props:['messages'],
+                            methods:{
+                                fn:function(){
+                                    this.$emit('change',this.vlaue)
+                                }
+                            }
+                           
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

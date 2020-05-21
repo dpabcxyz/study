@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<p class="child1" id="child1">我是child1的标签内容</p>
+<button id="btn1">调父级页面方法</button>
+<button id="btn2">获取父级页面标签</button>
+<button id="btn3">调兄弟iframe里面方法</button>
+<button id="btn4">获取兄弟iframe里面的标签</button>
+</body>
+</html>
+<script>
+    function child(){
+        alert("子级1方法调用成功")
+    }
+    $('#btn1').click(function () {
+        // window.top.parent();
+        // window.parent.parent();
+       parent.parent();
+    });
+    $('#btn2').click(function () {
+        // alert( window.top.$("#parent").html());
+        // alert( window.parent.$("#parent").html());
+        alert( parent.$("#parent").html());
+    });
+    $('#btn3').click(function () {
+        parent.getChildMethod();
+    });
+    $('#child1').click(function () {
+       alert("我是绑定在#child1上的点击事件")
+    });
+    $('#btn4').click(function () {
+        window.top.getChildElement();
+    });
+
+</script>

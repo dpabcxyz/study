@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/VUE.js"></script>
+    <title>$watch-基本类型</title>
+</head>
+<body>
+    <div id="app">
+       <input type="text" v-model='name'>
+       <h2>{{name}}</h2>
+    </div>
+    
+    <script>
+        var vm=new Vue({
+            el:'#app',
+           data:{
+             name:''
+           },
+           //方法1
+           watch:{
+               name:function(val,oldVal){
+                   console.log("new:"+val+','+"old:"+oldVal);  
+               }
+           }
+        })
+        //方法2
+        // vm.$watch('name',function(val,oldVal){
+        //     console.log("new:"+val+','+"old:"+oldVal);
+        // })
+    </script>
+</body>
+</html>

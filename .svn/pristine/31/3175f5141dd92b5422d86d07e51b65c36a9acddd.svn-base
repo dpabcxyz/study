@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../js/VUE.js"></script>
+	<script src="../../js/axios.js"></script>
+</head>
+<body>
+	<div id="itany">
+		<button @click='method1_1'>发送请求1_1</button>
+		<button @click='method1_2'>发送请求1_2</button>
+		<button @click='method1_3'>发送请求1_3</button>
+	</div>
+<script>
+	new Vue({
+		el:'#itany',
+		methods:{
+			// get请求1
+			method1_1(){
+				axios.get('get.php',{
+					params:{
+						a:100,
+						b:11
+					}
+				})
+				.then(function(response){
+					console.log(response)
+				})
+				.catch(function(error){
+					console.log(error)
+				})
+			},
+			// get请求2
+			method1_2(){
+				axios.get('get.php?a=100&b=11')
+				.then(function(response){
+					console.log(response.data)
+				})
+				.catch(function(error){
+					console.log(error)
+				})
+			},
+			// get请求3
+			method1_3(){
+				axios({
+					// method:'get',
+					url:'get.php',
+					params:{
+						a:11,
+						b:11
+					}
+				})
+				.then((res) => {
+					this.arr = res.data.result.data;
+					console.log(this.arr[7].content);
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    });
+			}
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成函数</title>
+</head>
+<body>
+    <script>
+        function* test(){
+            yield function(){
+                alert(1)
+            };
+            yield function(){
+                alert(2)
+            }
+            yield ()=>{
+                alert(3)
+            }
+        }
+        var k= test();
+        // k.next().value()
+        // k.next().value()
+        document.onclick=x=>{
+            k.next().value()
+        }
+    </script>
+</body>
+</html>

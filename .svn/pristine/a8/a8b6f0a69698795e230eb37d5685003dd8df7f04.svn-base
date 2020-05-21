@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax</title>
+    <script src="../js/bower_components/react/react.js"></script>
+    <script src="../js/bower_components/react/react-dom.js"></script>
+    <script src="../js/bower_components/babel/browser.js"></script>
+    <script src="../js/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div id="frame"></div>
+    <script type="text/babel">
+     var ele=document.getElementById('frame');
+     var A1=React.createClass({
+        getInitialState:function(){
+            alert("即将发起请求！");
+            return{
+                url:'http://v.juhe.cn/joke/content/list.php?key=478503db587d59d275971755259b4899&page=2&pagesize=10&sort=asc&time=1418745237',
+                tip:'正在获取数据......',
+            }
+        },
+        componentDidMount:function(){
+            var _this=this;
+            $.ajax({
+                url:this.state.url,
+                success:function(d){
+                    _this.setState({
+                        tip:d.result.data[1].content
+                    })
+                }
+            })
+        },
+        render:function(){
+            return <div>{this.state.tip}</div>
+        }
+     });
+     ReactDOM.render(
+         <A1/>,ele
+     )
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call()继承</title>
+</head>
+<body>
+<script>
+    function Foo(name){
+        this.name=name;
+    }
+    Foo.prototype.age=function(){
+        console.log("父类："+this.name);
+    }
+    Foo.prototype.obj=function(){
+        console.log("hello world!");
+    }
+    function fn(name){
+        Foo.call(this,name);
+    }
+    var F=function(){};
+    F.prototype=Foo.prototype;
+    fn.prototype=new F();
+    fn.prototype.constructor=fn;
+    var a=new fn("陈轩");
+    a.age();
+    a.obj();
+    console.log(a.name);
+</script>
+</body>
+</html>

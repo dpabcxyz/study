@@ -1,0 +1,182 @@
+.Xsucceed {
+    border: none!important;
+    border-radius: 6px!important;
+}
+
+.Xsucceed .layui-layer-content {
+    min-width: 200px;
+    padding: 10px 10px 10px 10px!important;
+    border-radius: 6px;
+    border: 1px solid #bfe8af;
+    background-color: #e6f5e6;
+}
+
+.Xsucceed .layui-layer-content .content .txt {
+    float: left;
+    height: 36px;
+    padding-left: 4px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #39c602;
+}
+
+.Xsucceed .layui-layer-content .content .symbol {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    font-size: 36px;
+    color: #39c602;
+}
+
+
+/*--------------------------*/
+
+.Xerror {
+    border: none!important;
+    border-radius: 6px!important;
+}
+
+.Xerror .layui-layer-content {
+    min-width: 200px;
+    padding: 10px 10px 10px 10px!important;
+    border-radius: 6px;
+    border: 1px solid #eccfd3;
+    background-color: #f7eeef;
+}
+
+.Xerror .layui-layer-content .content .txt {
+    float: left;
+    height: 36px;
+    padding-left: 4px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #ff8c96;
+}
+
+.Xerror .layui-layer-content .content .symbol {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    font-size: 36px;
+    color: #f14e59;
+}
+
+
+/*--------------------------*/
+
+.Xalarm {
+    border: none!important;
+    border-radius: 6px!important;
+}
+
+.Xalarm .layui-layer-content {
+    min-width: 200px;
+    padding: 10px 10px 10px 10px!important;
+    border-radius: 6px;
+    border: 1px solid #decaa4;
+    background-color: #f5ead5;
+}
+
+.Xalarm .layui-layer-content .content .txt {
+    float: left;
+    height: 36px;
+    padding-left: 4px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #e6a23c;
+}
+
+.Xalarm .layui-layer-content .content .symbol {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    font-size: 36px;
+    color: #e6a23c;
+}
+
+
+/*--------------------------*/
+
+.Xmsg {
+    border: none!important;
+    border-radius: 6px!important;
+}
+
+.Xmsg .layui-layer-content {
+    min-width: 200px;
+    padding: 10px 10px 10px 10px!important;
+    border-radius: 6px;
+    border: 1px solid #ced7ec;
+    background-color: #eef1f7;
+}
+
+.Xmsg .layui-layer-content .content .txt {
+    float: left;
+    height: 36px;
+    padding-left: 4px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #1d5dfb;
+}
+
+.Xmsg .layui-layer-content .content .symbol {
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    font-size: 36px;
+    color: #346fff;
+}
+
+
+/*--------------------------*/
+
+.Xconfirm {
+    border-radius: 4px!important;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .2) !important;
+}
+
+.Xconfirm .layui-layer-content {
+    font-size: 13px!important;
+    color: rgb(85, 85, 85);
+    padding: 20px 20px 10px 20px!important;
+}
+
+.Xconfirm .layui-layer-btn {
+    padding-bottom: 0!important;
+}
+
+.Xconfirm .layui-layer-btn a {
+    padding: 0 26px;
+}
+
+.Xconfirm .layui-layer-btn .layui-layer-btn0 {
+    border: 0!important;
+    background-color: #1c2955;
+}
+
+
+/*--------------------------*/
+
+.Xsure {
+    border-radius: 4px!important;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .2) !important;
+}
+
+.Xsure .layui-layer-content {
+    font-size: 13px!important;
+    color: rgb(85, 85, 85);
+    padding: 20px 20px 10px 20px!important;
+}
+
+.Xsure .layui-layer-btn {
+    padding-bottom: 0!important;
+}
+
+.Xsure .layui-layer-btn a {
+    padding: 0 26px;
+}
+
+.Xsure .layui-layer-btn .layui-layer-btn0 {
+    border: 0!important;
+    background-color: #1c2955;
+}

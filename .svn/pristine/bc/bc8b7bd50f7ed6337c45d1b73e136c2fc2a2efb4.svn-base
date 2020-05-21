@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<!-- f()意思是执行f函数，返回子函数 -->
+<!-- f()()执行子函数，返回孙函数 -->
+<!-- f()()()执行孙函数,返回孙孙函数 -->
+
+<!-- 但注意，如果想这样执行，函数结构必须是这样，f的函数体里要return 子函数，子函数里要return 孙函数，如果没有return关键字，是不能这样连续执行的，会报错的。举个例子：k是f的子函数，return子函数k，所以f()()能连续执行。 -->
+	<script type="text/javascript">
+    function f(){
+    	var i=1;
+        i++;
+        return k;
+        function k() {
+            return "I love you!"
+        }
+    }
+    // 注意f()与f()()的区别
+    // alert(f()())
+    alert(f()());
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load()方法</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<div id="div"></div>
+<button class="button">action</button>
+<script>
+    // 在url后传入选择器
+    $(function () {
+        $('.button').click(function () {
+            $('#div').load('load_selector.php .ul11',function (responseText,textStatus,jqXHR) {
+                console.log(responseText);
+            })
+        })
+    })
+</script>
+</body>
+</html>

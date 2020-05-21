@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>skew</title>
+    <style>
+        .wrap{
+            width: 1200px;
+            height: 1200px;
+            margin: 0 auto;
+            background-color: #0082CB;
+            overflow: hidden;
+        }
+        .content{
+            width: 200px;
+            height: 80px;
+            background-color: red;
+            margin: 200px auto;
+            /*transform: skewX(45deg);*/
+            /*transform: skewY(45deg);*/
+            transform: skew(30deg);
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="content"></div>
+</div>
+</body>
+</html>

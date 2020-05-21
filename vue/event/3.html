@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>阻止默认事件</title>
+    <script src="../js/VUE.js"></script>
+</head>
+<body>
+<div id="btn">
+    <button @contextMenu.prevent="f1($event)">阻止默认右键菜单</button>
+    <button @contextMenu="f1($event)">正常右键菜单</button>
+    <a href="https://www.baidu.com" @click.prevent="">阻止点击事件</a>
+</div>
+</body>
+</html>
+<script>
+    var app=new Vue({
+        el:"#btn",
+        methods:{
+            f1:function (e) {
+                console.log(e);
+            },
+            f2:function(){
+                console.log('1');
+            }
+        }
+    })
+</script>

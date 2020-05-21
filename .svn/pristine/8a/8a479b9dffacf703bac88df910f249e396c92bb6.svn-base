@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一次性获取表单所有内容</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+
+<form>
+    <div> 姓名： <input type="text" name="userName"></div>
+    <div> 性别： <label for="">男<input type="radio" name="sex" value="男"></label><label for="">女<input type="radio" name="sex" value="女"></label> </div>
+    <div> 爱好：
+        <label><input type="checkbox" name="sport[]" value="足球">足球</label>
+        <label><input type="checkbox" name="sport[]" value="篮球">篮球</label>
+        <label><input type="checkbox" name="sport[]" value="把皮球">把皮球</label>
+        <label><input type="checkbox" name="sport[]" value="羽毛球">羽毛球</label>
+    </div>
+    <div>简介： <textarea name="info" id="" cols="30" rows="10"></textarea></div>
+    <div><input type="submit" value="提交"> </div>
+</form>
+<script>
+    $('form').submit(function (jqe) {
+        console.log($(this).serializeArray());
+        var v= $(this).serialize();
+        console.log(v);
+        $.ajax({
+             url:'serialize.php'
+            ,data:v
+            ,type:'get'
+            ,success:function(data){
+                console.log(data);
+            }
+        });
+        jqe.preventDefault();
+    })
+</script>
+</body>
+</html>

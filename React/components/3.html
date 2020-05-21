@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复合组件</title>
+    <script src="../js/react-with-addons.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <script src="../js/babel.js"></script>
+</head>
+<body>
+    <div id="frame"></div>
+    <script type="text/babel">
+     var A1=React.createClass({
+         render:function(){
+             return <li>姓名：{this.props.name}</li>
+         }
+     });
+     var A2=React.createClass({
+         render:function(){
+             return <li>性别：{this.props.sex}</li>
+         }
+     });
+     var A3=React.createClass({
+         render:function(){
+             return (
+                <ul>
+                    <A1 name={this.props.name}/>
+                    <A2 sex={this.props.sex}/>
+                </ul>
+             )
+         }
+     });
+     ReactDOM.render(
+         <A3 name='陈轩' sex='男'/>,
+          document.getElementById('frame')
+     )
+    </script>
+   
+</body>
+</html>

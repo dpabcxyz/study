@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<script>
+    {
+        var a = 20;
+        function fn() {
+            console.log(this.a);
+        }
+        fn();
+    }
+    {
+        var a = 100;
+        function fn() {
+            function foo() {
+                console.log(this.a);
+            }
+            foo();
+        }
+        fn();
+    }
+    {
+        var a = 2000;
+        var obj = {
+            a: 1000,
+            c: this.a + 20,
+            fn: function () {
+                return this.a;
+            }
+        }
+        console.log(obj.c);
+        console.log(obj.fn());
+
+    }
+</script>
+</body>
+</html>

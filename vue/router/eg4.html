@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css.css">
+    <script type="text/javascript" src="../js/VUE.js"></script>
+    <script type="text/javascript" src="../JS/vue-router.js"></script>
+    <title>路由传参</title>
+</head>
+<body>
+    <div class="container" id="chenxuan">
+        <ul class="tab">
+            <li><router-link to="/home">首页</router-link></li>
+            <li><router-link to="/news">新闻</router-link></li>
+            <li><router-link to="/hot">热点</router-link></li>
+        </ul>
+        <ul class="show">
+          <router-view></router-view>
+        </ul>
+    </div>
+    <!-- 模板 -->
+    <template id="home">
+        <iframe src="http://taobao.com" frameborder="0" width="100%" height="100%"></iframe>
+    </template>
+    <template id="news">
+        <div>
+            <h1>新闻</h1>
+            <ul class="newsItem">
+                <li><router-link to="/news/shehui">社会</router-link></li>
+                <li><router-link to="/news/money">财经</router-link></li>
+                <li><router-link to="/news/junshi">军事</router-link></li>
+                <li><router-link to="/news/car">汽车</router-link></li>
+                <li><router-link to="/news/monther">母婴</router-link></li>
+            </ul>
+            <ul class="newsView">
+                <router-view></router-view>
+            </ul>
+        </div>
+       
+    </template>
+    <template id="hot">
+        <iframe src="http://jd.com" frameborder="0" width="100%" height="100%"></iframe>
+    </template>
+    <!-- 二级路由模板 -->
+    <template id="shehui">
+        <li class="reciveValue">接收查询字符串：</li>
+    </template>
+    <template id="money">
+        <li>财经</li>
+    </template>
+    <template id="junshi">
+        <li>军事</li>
+    </template>
+    <template id="car">
+        <li class="reciveValue">接收哈希类型：</li>
+    </template>
+    <template id="monther">
+        <li>母婴</li>
+    </template>
+
+    <script>
+        // 注册路由
+        var Home=Vue.extend({
+            template:'#home'
+        });
+        var News = Vue.extend({
+            template: '#news'
+        });
+        var Hot = Vue.extend({
+            template: '#hot'
+        });
+         // 注册二级路由
+        var Shehui = Vue.extend({
+            template: '#shehui'
+        });
+        var Money = Vue.extend({
+                template: '#money'
+            });
+        var Junshi = Vue.extend({
+                template: '#junshi'
+            });
+        var Car = Vue.extend({
+                template: '#car'
+            });
+        var Monther = Vue.extend({
+                template: '#monther'
+            });
+        // 实例
+        var vmZ=new Vue({
+            el:'#chenxuan',
+            beforeCreate:function(){
+                this.$router.push('/home')
+            },
+            router:new VueRouter({
+                routes:[
+                    {
+                        path:'/home',component:Home
+                    },
+                    {
+                        path:'/news',component:News,children:[
+                            {path:'shehui',component:Shehui},
+                            {path:'money',component:Shehui},
+                            {path:'junshi',component:Junshi},
+                            {path:'car',component:Car},
+                            {path:'monther',component:Monther}
+                        ]
+                    },
+                    {
+                        path:'/hot',component:Hot
+                    }
+                ],
+                linkActiveClass:'active'
+            })
+
+        })
+    </script>
+</body>
+</html>

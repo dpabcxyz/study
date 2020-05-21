@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变样式</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<p id="txt">hello kitty!</p>
+<button id="btn1">点击改变样式</button>
+<button id="btn2">点击隐藏</button>
+<script>
+    var tst=document.getElementById('txt');
+    $('#btn1').on('click',function(){
+        changecss();
+    })
+    $('#btn2').on('click',function(){
+       yincang();
+    })
+    function changecss (){
+        tst.style.color='red';
+        tst.style.fontSize='50px';
+    }
+    function yincang(){
+        tst.style.display='none';
+    }
+</script>
+</body>
+</html>

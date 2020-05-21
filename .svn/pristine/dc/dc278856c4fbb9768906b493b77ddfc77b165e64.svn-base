@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var btns=JSON.parse(sessionStorage.getItem('btns'))[window.location.pathname.replace(webName+'/', '')]
+			 //遍历按钮权限决定现隐
+			for(var i=0;i<btns.length;i++){
+				if(btns[i]=="添加" || btns[i]=="修改" || btns[i]=="删除"){
+					
+				}
+			}
+			 var addFlag = btns.some(item=>{
+			    if(item.menuName=='添加'){
+			       return true
+			   }
+			 })
+			 
+			 var editFlag = btns.some(item=>{
+			    if(item.name=='修改'){
+			       return true
+			   }
+			 })
+			 
+			 var deleteFlag = btns.some(item=>{
+			    if(item.name=='删除'){
+			       return true
+			   }
+			 })
+			 
+			 if(!addFlag){ // 如果存在
+			    $("#addFactor").hide();
+			  }
+			  
+			  if(!editFlag){ // 如果存在
+			    $("#editFactor").hide();
+			  }
+			  
+			  if(!deleteFlag){ // 如果存在
+			    $("#deleteFactor").hide();
+			  }
+		</script>
+	</body>
+</html>

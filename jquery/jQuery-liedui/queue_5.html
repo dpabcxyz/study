@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立即完成动画</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+    <style>
+        #div1{
+            width: 120px;
+            height: 120px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<button class="action">点击执行动画</button>
+<button class="btn_1">stop模拟</button>
+<button class="btn_2">finish</button>
+<div id="div1"></div>
+<script>
+    $('.action').click(function () {
+        $('#div1')
+            .animate({
+                'margin-left':'+=400px'
+            },3000)
+            .animate({
+                'margin-top':'+=400px'
+            },3000)
+            .hide(2000)
+            .show(3000)
+            .animate({
+                'margin-top':'+=300'
+            },3000)
+            .animate({
+                'margin-left':'0'
+            },5000)
+            .animate({
+                'margin-top':'0'
+            },5000)
+    });
+
+    $('.btn_1').click(function () {
+        var count=$('#div1').queue().length;
+        for(var i=0;i<count;i++){
+            $('#div1').stop('fx',false,true);
+        }
+    });
+    $('.btn_2').click(function () {
+        $('#div1').finish();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性表达式</title>
+</head>
+<body>
+<script>
+    let methodName='getArea';
+    class Square{
+        constructor(){}
+        [methodName](){
+            alert("哈哈哈");
+        }
+    }
+    var obj=new Square();
+    obj.getArea();
+    //class的属性名可以采用表达式
+    //上述代码中，Square类的方法名：getArea,是通过表达式得到的
+</script>
+</body>
+</html>

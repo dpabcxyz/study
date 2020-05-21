@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .normal{
+            animation: rotate2 2s
+        }
+        .rotate{
+            animation: rotate1 2s both;
+        }
+        @keyframes rotate1 {
+            100%{transform: rotate(90deg)}
+        }
+        @keyframes rotate2 {
+            100%{transform: rotate(0deg)}
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    <img src="../images/rotate.png" alt="" class="normal">
+</div>
+<script>
+    $('.test img').click(function(){
+        $(this).toggleClass('rotate');
+    })
+</script>
+</body>
+</html>

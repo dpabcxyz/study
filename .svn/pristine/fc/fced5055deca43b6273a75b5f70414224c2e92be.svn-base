@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上卷与下拉效果</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+    <style>
+        .div1{
+            width: 300px;
+            height: 500px;
+            margin: 100px auto 0;
+            background-color: #2a6496;
+        }
+    </style>
+</head>
+<div class="div1"></div>
+<button id="btn1">下拉</button>
+<button id="btn2">上卷</button>
+<button id="btn3">切换显示</button>
+<body>
+<script>
+    $(function(){
+//传入函数
+        $('#btn1').on('click',function(){
+            $('.div1').slideDown(3000,function(){
+                alert('下拉完成！')
+            })
+        });
+
+        $('#btn2').on('click',function(){
+            $('.div1').slideUp({
+                duration:5000,
+                easing:'swing',
+                complete:function(){
+                    alert('上卷完成！');
+                }
+            })
+        });
+
+        $('#btn3').on('click',function(){
+            $('.div1').slideToggle({
+                duration:5000,
+                easing:'swing',
+                complete:function(){
+                    alert('完成！');
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

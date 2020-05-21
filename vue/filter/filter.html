@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+	<script src="../js/VUE.js"></script>
+</head>
+<body>
+	<div id="app">
+		<span>{{chenxuan | test1 | test2 | test3}}</span>
+	</div>
+	<script type="text/javascript">
+		Vue.filter('test1',function(val){
+			return val+'-欧耶-1！'
+		});
+		Vue.filter('test2',function(val){
+			return val+'-欧耶-2！'
+		});
+		Vue.filter('test3',function(val){
+			return val+'.......'
+		})
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				chenxuan:'陈轩是一个了不起的大侠！'
+			}
+		})
+	</script>
+</body>
+</html>

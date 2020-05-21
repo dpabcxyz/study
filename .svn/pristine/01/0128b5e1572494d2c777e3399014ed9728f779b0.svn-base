@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/VUE.js"></script>
+    <title>$watch-对象类型</title>
+</head>
+<body>
+    <div id="app">
+       <input type="text" v-model='user.name'>
+       <h2>{{user.name}}</h2>
+    </div>
+    
+    <script>
+        var vm=new Vue({
+            el:'#app',
+           data:{
+               user:{
+                   name:'',
+                   age:18,
+                   address:'北京'
+               }
+           },
+           /*
+           方法1 
+           */
+           watch:{
+               //监听对象
+              user:{
+                  handler:function(val,oldVal){  
+                    console.log("new:"+val.name+','+"old:"+oldVal.name);     //新值与旧值是一样的 
+                  },
+                  deep:true  //深度监听，属性发生变化
+              }
+           }
+          
+        });
+        //方法2
+        // vm.$watch('user',function(val,oldVal){
+        //     console.log("new:"+val+','+"old:"+oldVal);
+        // },{deep:true})   
+    </script>
+</body>
+</html>

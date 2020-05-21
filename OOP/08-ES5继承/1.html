@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>构造函数模式</title>
+</head>
+<body>
+    <script>
+        function Cat(name,color){
+            this.name=name;
+            this.color=color;
+        };
+        var cat1=new Cat('小白','白色');
+        var cat2=new Cat('小黑','黑色');
+        alert(cat1.name);
+        alert(cat2.color);
+        alert(cat1.constructor==cat2.constructor);   
+        
+        //Javascript还提供了一个instanceof运算符，验证原型对象与实例对象之间的关系。
+        alert(cat1 instanceof Cat);
+        alert(cat2 instanceof Cat);
+    </script>
+</body>
+</html>

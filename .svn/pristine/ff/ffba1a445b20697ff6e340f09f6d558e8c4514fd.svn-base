@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>beforeunload</title>
+    <script src="http://www.anydo.wang/resource/js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<script>
+    window.addEventListener('beforeunload',function(e){
+        var confirmtionmessage="您确定要离开吗？";
+        e.returnValue=confirmtionmessage;
+        return confirmtionmessage;
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第三个参数</title>
+</head>
+
+<body>
+    <!-- 第三个参数控制缩进，如果是字符串，则使用该字符串进行缩进，如果是数字，则缩进该数量位数 -->
+    <script type="text/javascript">
+        var json = {
+            "name": "kongzhi",
+            "age": "30",
+            "lists": [{
+                "name": "xxx1",
+                "age": "28"
+            }, {
+                "name": "xxx2",
+                "age": "29"
+            }, {
+                "name": "xxx3",
+                "age": "30"
+            }]
+        };
+        var result = JSON.stringify(json, null, 'xxoo');
+        console.log(result);
+    </script>
+</body>
+
+</html>

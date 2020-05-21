@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</title>
+    <style>
+        body {
+            width: 600px;
+            position: relative;
+            background-color: #0082CB;
+        }
+
+        .aside {
+            width: 200px;
+            height:200px;
+            float: left;
+            background: red;
+        }
+
+        .main {
+            height: 500px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div class="aside"></div>
+<div class="main"></div>
+</body>
+</html>

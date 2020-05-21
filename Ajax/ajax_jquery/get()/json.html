@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强制为json</title>
+    <script src="../../js/jauery-3.2.1.js"></script>
+    <link rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+<button class="button">action</button>
+<script>
+    // 通过在服务端修改Content-Type,将返回数据类型设置为json
+    $(function () {
+        $('.button').click(function () {
+            $.get('php/json.php',function (data) {
+                console.log(data[0].title);
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jauery-3.2.1.js"></script>
+    <title>原生Ajax</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 1200px;
+            margin: 40px auto 0;
+            
+        }
+        .item{
+            margin-bottom: 36px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgb(200,200,200);
+        }
+        .item .content{
+            font-size: 16px;
+            color: cornflowerblue;
+            font-weight: bold;
+            line-height: 26px;
+            list-style: none;
+        }
+         .item .date{
+             font-size: 14px;
+             color: rgb(120,120,120);
+             text-align: right;
+             list-style: none;
+         }
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+    <script>
+        $(function(){
+            var xhr = new XMLHttpRequest;
+            xhr.addEventListener('readystatechange', function () {
+                if (xhr.readyState == 4) {
+                    var v = JSON.parse(xhr.responseText);
+                    v.result.data.find(function (v, index, arr) {
+                        var str = "<ul class='item'><li class='content'>" + v.content + " </li><li class='date'>" + v.updatetime + "</li></ul>";
+                        $(str).appendTo($('.main'));
+                    })
+                }
+            });
+            xhr.open('get', 'http://v.juhe.cn/joke/content/list.php?key=478503db587d59d275971755259b4899&page=1&pagesize=20&sort=asc&time=1418745237');
+            xhr.send(null);
+        })
+    </script>
+</body>
+</html>
