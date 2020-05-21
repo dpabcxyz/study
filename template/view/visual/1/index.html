@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>江西物流大数据</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+    <div class="box box-left">
+        <div class="content">
+            <div class="item item1">
+                <div class="inner" style="padding-top: 40px;">
+                    <li class="symbol">当前在线车辆</li>
+                    <li class="amount">666669</li>
+                    <li class="unit">辆</li>
+                </div>
+            </div>
+            <div class="item item7">
+                <div class="inner">
+                    <li class="title">货车入网数量</li>
+                    <li class="linked">120,456 <span>辆</span></li>
+                </div>
+            </div>
+            <div class="item item2">
+                <div class="inner">
+                    <li class="title">车辆在线率</li>
+                    <li class="echarts" id="echarts_1"></li>
+                </div>
+            </div>
+            <div class="item item3">
+                <div class="inner">
+                    <li class="title">货类结构统计</li>
+                    <li class="echarts" id="echarts_3" style="padding-top: 10px;"></li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box box-right">
+        <div class="content">
+            <div class="item item4">
+                <div class="inner">
+                    <li class="title">流量统计</li>
+                    <div class="flow">
+                        <ul class="today" style="margin-bottom: 10px;">
+                            <li class="name">今日定位</li>
+                            <li class="value">6666666698</li>
+                            <li class="unit">个</li>
+                        </ul>
+                        <ul class="month">
+                            <li class="name">本月定位</li>
+                            <li class="value">87655447888</li>
+                            <li class="unit">个</li>
+                        </ul>
+                    </div>
+                    <!--<div class="flow">-->
+                    <!--<ul class="today">-->
+                    <!--<li class="value">1200</li>-->
+                    <!--<li class="name">今日定位数量(辆)</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="month">-->
+                    <!--<li class="value">120,356,234</li>-->
+                    <!--<li class="name">本月定位数量(辆)</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="item item5">
+                <div class="inner">
+                    <li class="title">在线车辆占比</li>
+                    <li class="echarts" id="echarts_2"></li>
+                </div>
+            </div>
+            <div class="item item6">
+                <div class="inner">
+                    <li class="title">公路运输货运量</li>
+                    <li class="echarts" id="echarts_4"></li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box box-center">
+        <div class="content">
+            <div class="item">
+                <div class="sysName" onclick="parent.location.href='more.html'">物流大数据平台</div>
+                <div class="main">
+                    <li class="block">
+                        <div class="item">
+                            <ul>
+                                <li class="value">13：00：00</li>
+                                <li class="name">2017年1月1日</li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <ul>
+                                <li class="value">65%</li>
+                                <li class="name">全国6月LPI</li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <ul>
+                                <li class="value">76%</li>
+                                <li class="name">全国6月LPI</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="echarts" id="echarts_5"></li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../public/extends/jquery-3.5.0/jquery.min.js"></script>
+    <script src="../../../public/extends/echarts/echarts.js"></script>
+    <script src="../../../public/extends/echarts/china.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(function() {
+            var el = ' <span class="animate">+1</span>';
+            $('.item7 .inner').append(el);
+            setInterval(function() {
+                $(".animate")
+                    .fadeIn(400)
+                    .animate({
+                        fontSize: '22px',
+                        top: '40px',
+                        left: '272px'
+                    }, 400)
+                    .fadeOut(400)
+                    .animate({
+                        fontSize: '12px',
+                        top: '56px',
+                        left: '260px'
+                    }, 0)
+
+            }, 1000);
+
+        });
+    </script>
+</body>
+
+</html>

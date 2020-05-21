@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="public/images/favicon.png" />
+    <title>Bootatrap后台系统</title>
+    <link rel="stylesheet" href="public/extends/bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/layout.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/modules/layer.css">
+    <link rel="stylesheet" href="public/css/reset.css">
+    <link rel="stylesheet" href="public/css/theme/theme_black.css">
+</head>
+
+<body class="layout">
+    <div class="headBar">
+        <!-- 收起与展开 -->
+        <li class="switch" id="switch"><svg class="icon" aria-hidden="true"><use xlink:href="#switch"></use></svg></li>
+        <!-- 常用菜单 -->
+        <div class="navOften">
+            <li>常用菜单</li>
+            <li>常用菜单</li>
+            <li>常用菜单</li>
+        </div>
+        <!-- 用户名 -->
+        <div class="user">
+            <li class="avator"></li>
+            <li class="symbol"><svg class="icon" aria-hidden="true"><use xlink:href="#triangle"></use></svg></li>
+        </div>
+        <!-- 工具 -->
+        <div class="tool">
+            <li><svg class="icon" aria-hidden="true"><use xlink:href="#search"></use></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use xlink:href="#flag"></use></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use xlink:href="#messages"></use></svg></li>
+            <li><svg class="icon" aria-hidden="true"><use xlink:href="#set"></use></svg></li>
+        </div>
+    </div>
+    <div class="slideBar">
+        <!-- <div class="slideBar-background"></div> -->
+        <div class="slideBar-content">
+            <!-- logo/系统名称 -->
+            <div class="sysName">
+                <li class="symbol"><svg class="icon" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg></li>
+                <li class="text">Bootstrap</li>
+            </div>
+            <!-- 菜单 -->
+            <div class="menues">
+                <div class="item">
+                    <div class="item-name">
+                        <li class="menu-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#index"></use></svg></li>
+                        <li class="menu-title">数据表格</li>
+                        <li class="menu-arrow"><svg class="icon" aria-hidden="true"><use xlink:href="#arrow"></use></svg></li>
+                    </div>
+                    <div class="item-content">
+                        <li data-url="view/iframe/table/table1.html">排序</li>
+                        <li data-url="view/iframe/table/table2.html">可编辑</li>
+                        <li data-url="view/iframe/table/table3.html">自动合计</li>
+                        <li data-url="view/iframe/table/table4.html">固定列</li>
+                        <li data-url="view/iframe/table/table5.html">默认全选</li>
+                        <li data-url="view/iframe/table/table6.html">隔行换色</li>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <li class="menu-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#visiual"></use></svg></li>
+                        <li class="menu-title">数据可视化</li>
+                        <li class="menu-arrow"><svg class="icon" aria-hidden="true"><use xlink:href="#arrow"></use></svg></li>
+                    </div>
+                    <div class="item-content">
+                        <li data-url="view/iframe/data/data1.html">可视化1</li>
+                        <li data-url="view/visual/1/index.html" data-type="1">可视化2</li>
+                        <li data-url="view/visual/2/views/1.html" data-type="1">可视化3</li>
+                        <li data-url="view/visual/2/views/2.html" data-type="1">可视化4</li>
+                        <li data-url="view/visual/3/index.html" data-type="1">可视化5</li>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <li class="menu-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#index"></use></svg></li>
+                        <li class="menu-title">弹窗及消息提示</li>
+                        <li class="menu-arrow"><svg class="icon" aria-hidden="true"><use xlink:href="#arrow"></use></svg></li>
+                    </div>
+                    <div class="item-content">
+                        <li data-url="view/iframe/layer/layer1.html">各种弹窗</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="mainContent">
+        <!-- <iframe src="http://www.jd.com" frameborder="0"></iframe> -->
+        <iframe src="view/iframe/data/data1.html" frameborder="0" id="iframe"></iframe>
+    </div>
+    <script src="public/extends/jquery-3.5.0/jquery.min.js"></script>
+    <script src="public/extends/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="public/extends/layui/layui.js"></script>
+    <script src="public/js/modules/layer.js"></script>
+    <script src="public/js/layout.js"></script>
+    <script src="public/js/iconfont.js"></script>
+    <script src="public/js/common.js"></script>
+</body>
+
+</html>
