@@ -1,5 +1,0 @@
-1、第三方模块koa-router
-2、koa框架中使用模板引擎
-    npm install koa-router
-    npm install art-template 
-    npm install koa-art-template  
