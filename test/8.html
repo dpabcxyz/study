@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="10">
+    <title>Document</title>
+   
+</head>
+<body>
+    <button>action</button>
+    <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var obj=[];
+        var originArr=[
+        {id:1,name:'chenxuan1',sex:'男1',age:18},
+        {id:2,name:'chenxuan2',sex:'男2',age:20},
+        {id:3,name:'chenxuan3',sex:'男3',age:23},
+        {id:4,name:'chenxuan4',sex:'男4',age:30},
+        {id:5,name:'chenxuan5',sex:'男5',age:32},
+        {id:6,name:'chenxuan6',sex:'男6',age:50},
+        ]
+        originArr.find((val,index,arr)=>{
+            let cellObj={};
+            cellObj.id=val.id;
+            cellObj.name=val.name;
+            obj.push(cellObj);
+        })
+        console.log(obj);
+    </script>
+</body>
+</html>

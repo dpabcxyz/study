@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环对象</title>
+</head>
+<body>
+    <script>
+        //遍历对象自身的和继承的可枚举属性(循环遍历对象自身的和继承的可枚举属性,不含Symbol属性
+        var obj={a:1,b:2,c:3,d:4};
+        for(var i in obj){
+            console.log(i,":",obj[i]);
+        }
+    </script>
+</body>
+</html>

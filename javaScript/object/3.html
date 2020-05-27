@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环对象</title>
+</head>
+<body>
+    <script>
+        //返回一个数组,包含对象自身的所有属性,不含Symbol属性,但是包括不可枚举属性
+        var obj = {'0':'a','1':'b','2':'c'};
+        Object.getOwnPropertyNames(obj).forEach((key)=>{
+            console.log(key)
+        })
+    </script>
+</body>
+</html>

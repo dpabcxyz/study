@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环对象</title>
+</head>
+<body>
+    <script>
+        var obj = {'0':'a','1':'b','2':'c'};
+        Reflect.ownKeys(obj).forEach((key)=>{
+            // console.log(key);
+            console.log(obj[key])
+        })
+
+    </script>
+</body>
+</html>

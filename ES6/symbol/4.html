@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbol</title>
+</head>
+<body>
+    <script>
+        window.onload = function () {
+            let symbol1 = Symbol();
+            let symbol2 = Symbol();
+
+            
+            let obj = {username: 'kobe', age: 39};
+            obj[symbol1] = 'hello';
+            obj[symbol2] = 'symbol';
+            console.log(obj);
+            for(let i in obj){
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>
