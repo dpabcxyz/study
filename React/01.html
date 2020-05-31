@@ -12,13 +12,21 @@
 <body>
     <div id="app"></div>
     <script type="text/babel">
-        function App(props){
-            return (
-                <li>hello word!{props.name}{props.age}</li>
+        // function App(props){
+        //     return (
+        //         <li>hello word!{props.name}{props.age}</li>
+        //     )
+        // }
+        // ReactDOM.render(
+        //     <App name="陈轩" age="18岁"/>,document.getElementById('app')
+        // )
+        function APP(P){
+            return(
+                <li>hello word {P.name}{P.age}</li>
             )
         }
         ReactDOM.render(
-            <App name="陈轩" age="18岁"/>,document.getElementById('app')
+            <APP name="大侠" age="18"/>, document.getElementById('app')
         )
     </script>
 </body>
