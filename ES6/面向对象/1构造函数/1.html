@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数基本概念</title>
+</head>
+<body>
+    <h2>构造函数首字母大写</h2>
+    <h2>内部使用this对象，来指代将要生成的实例对象</h2>
+    <h2>使用new操作符来调用构造函数，并返回实例对象</h2>
+    <script>
+        function Person(name,height){
+            this.name=name;
+            this.height=height;
+        }
+        var boy=new Person("chenxuan","180cm");
+        console.log(boy.name);
+        console.log(boy.height);
+    </script>
+</body>
+</html>

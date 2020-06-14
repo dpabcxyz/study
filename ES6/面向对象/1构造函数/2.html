@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数的缺点</title>
+</head>
+<body>
+    <script>
+        function Person(name,height){
+            this.name=name;
+            this.height=height;
+            this.hobby=function(){
+                return "看电视"
+            }
+        }
+        var body=new Person("JIM","200cm");
+        var girl=new Person("TOM","150CM");
+        //实例对象boy girl，hobby方法被创建了2次，既没必要又浪费资源
+    </script>
+</body>
+</html>

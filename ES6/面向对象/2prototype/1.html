@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prottype</title>
+</head>
+<body>
+    <h2>1、定义所有对象实例的属性和方法</h2>
+    <h2>2、对于构造函数来说，它是一个属性；对于对象实例来说，它是原型对象</h2>
+    <h2>3、每个函数都有prototype属性，这个属性指向对象的指针</h2>
+    <h2>4、所有一切的对象的原型顶端，都是Object.prototype，即Object构造函数的prototype属性指向的那个对象</h2>
+    <script>
+        function Person(name,height){
+            this.name=name;
+            this.height=height;
+        }
+        Person.prototype.hobby=function(){
+            return "看电视"
+        }
+        var boy=new Person("陈轩","200cm");
+        console.log(boy.hobby());
+        console.log("------over------")
+        console.log("boy的构造函数："+boy.constructor);
+        console.log("Person原型对象的构造函数"+Person.prototype.constructor);
+        console.log("------over------")
+        console.log("构造函数的原型对象的-原型对象："+Person.prototype.__proto__)
+        console.log("对象的原型对象："+Object.prototype);
+        console.log("两者相等："+Person.prototype.__proto__==Object.prototype)
+    </script>
+</body>
+</html>

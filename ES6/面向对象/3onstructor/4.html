@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor作用3</title>
+</head>
+<body>
+    <script>
+        function Person(name,msg){
+            this.name=name;
+            this.msg=msg;
+        }
+        Person.prototype.hello=function(name,msg){
+            return  new this.constructor(name,msg);
+        }
+        var a=new Person("陈轩","北京加油")
+        console.log(a.hello("陈轩","武汉加油！"));
+        console.log(a.msg);   
+        //调用自身的构造函数成为可能
+    </script>
+</body>
+</html>

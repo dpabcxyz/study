@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype不可变性</title>
+</head>
+<body>
+    <script>
+        function Person(){
+
+        }
+        Person.prototype.num=0;
+        var boy=new Person();
+        console.log(boy.num);
+        boy.num=100; //在对象实例boy上修改了num
+        console.log(boy.num);
+        var girl=new Person();
+        console.log(girl.num);  //在其他对象实例上并不会发生变化
+    </script>
+</body>
+</html>
