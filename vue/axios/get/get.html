@@ -49,11 +49,13 @@
 					params:{
 						a:11,
 						b:11
-					}
+					},
+
 				})
 				.then((res) => {
-					this.arr = res.data.result.data;
-					console.log(this.arr[7].content);
+					console.log(res.data)
+					this.arr = res.data.data;
+					// console.log(this.arr[7].content);
                     })
                     .catch((error) => {
                         console.log(error)

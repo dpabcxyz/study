@@ -9,9 +9,10 @@
     <script>
         function Father() {}
         function Son() {
-        Son.height.constructor.call(this);
+          Son.height.constructor.call(this);
         }
         Son.height = new Father();
+        //提供了一种从构造函数继承另外一种构造函数的模式
         </script>
 </body>
 </html>
