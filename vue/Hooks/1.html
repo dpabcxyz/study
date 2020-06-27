@@ -24,12 +24,14 @@
 			/*提供自定义逻辑的机会*/
 			beforeCreate:function(){
 				console.group('beforeCreate---------------------');
+				console.log(this)
 				console.log('el:'+this.$el);
 				console.log('data:'+this.$data);
 				console.log('msg:'+this.msg);
 			},
 			created:function(){
 				console.group('created---------------------');
+				console.log(this);
 				console.log('el:'+this.$el);
 				console.log('data:'+this.$data);
 				console.log('msg:'+this.msg);

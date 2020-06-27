@@ -21,7 +21,7 @@
                 this.msg='hahahahahah!'
             }
         },
-        gbeforeCreate:function(){
+        beforeCreate:function(){
             showData('创建vue实例前：',this);
         },
         created:function(){
@@ -53,10 +53,9 @@
 
     function showData(process,obj){
         console.log(process);
-        console.log('data：' + obj)
+        console.log('this' + obj)
         console.log('挂载的对象：'+obj.$el)
         realDom();
-        console.log('------------------');
         console.log('------------------');
     }
 </script>
