@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承-prototype</title>
+</head>
+<body>
+    <script>
+        function Animal(){
+            this.species = "动物";
+        }
+        function Cat(name,color){
+            this.name=name;
+            this.color=color;
+        }
+        //所有的prototype对象都有一个constructor属性，指向它的构造函数，new Animal()的构造函数是Animal()，无形中将Cat.prototype.constructor指向了 Animai()
+        Cat.prototype=new Animal();
+
+        //纠正Cat.prototype.constructor指向
+        Cat.prototype.constructor=Cat;
+        
+        var cat1=new Cat("大毛","黄色");
+        console.log(cat1.species);
+    </script>
+</body>
+</html>

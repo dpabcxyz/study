@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承-构造函数</title>
+</head>
+<body>
+    <script>
+        //构造函数继承
+        function Eat(name,color){
+            this.name=name;
+            this.color=color;
+            this.type="猫科动物";
+            this.eat=function(){alert("吃老鼠");};
+        }
+        var cat1=new Eat("小花","黄色");
+        console.log(cat1.name);
+        //多占用一些内存,这样既不环保，也缺乏效率。
+    </script>
+</body>
+</html>

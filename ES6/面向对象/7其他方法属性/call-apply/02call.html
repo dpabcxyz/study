@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>call</title>
+  </head>
+  <body>
+    <script>
+      var person = {
+        fullName: function(city, country) {
+          return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+      }
+      var person1 = {
+        firstName:"Bill",
+        lastName: "Gates"
+      }
+      var person2 = {
+        firstName:"Steve",
+        lastName: "Jobs"
+      }
+      console.log(person.fullName.call(person1, "Seatle", "USA"))
+  </script>
+
+  </body>
+</html>

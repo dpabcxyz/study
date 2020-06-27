@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+</head>
+<body>
+    <script>
+        var person={
+          fullName:function(hehe){
+              return this.firstName+" "+this.lastName+" "+hehe;
+            }
+        }
+        var person1={
+          firstName:'bill',
+          lastName:'gates'
+        };
+        var person2={
+          firtName:'steve',
+          lastName:'jobs',
+        }
+        console.log(person.fullName.bind(person1,"chenxuan"));
+        //三者都是用来改变函数的上下文，也就是this指向的。
+        //bind  不会立即执行，返回一个新函数
+        </script>
+</body>
+</html>

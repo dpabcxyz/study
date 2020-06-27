@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>apply</title>
+ </head>
+ <body>
+     <script>
+        var person = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + country;
+            }
+        }
+        var person1 = {
+        firstName:"John",
+        lastName: "Doe"
+        }
+        person.fullName.apply(person1, ["Oslo", "Norway"]);
+        //call() 方法分别接受参数
+        //apply() 方法接受数组形式的参数。
+
+     </script>
+ </body>
+ </html>
