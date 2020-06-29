@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承-prototype</title>
+</head>
+<body>
+    <script>
+        function Animal(){}
+        Animal.prototype.species = "动物";
+
+        function Cat(name,color){
+            this.name=name;
+            this.color=color;
+        }
+
+        //封装一个方法
+        function extend(Child, Parent){
+            var F = function(){};
+            F.prototype = Parent.prototype;
+            Child.prototype = new F();
+            Child.prototype.constructor = Child;
+        }
+        extend(Cat,Animal);
+        var cat1 = new Cat("大毛","黄色");
+        console.log(cat1.species)
+    </script>
+</body>
+</html>
