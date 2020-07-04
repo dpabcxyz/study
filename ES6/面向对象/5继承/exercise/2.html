@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拷贝继承</title>
+</head>
+<body>
+    <script>
+        function Person(){}
+        Person.prototype.amount="1300000000";
+
+        function Coder(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        function extend(parent,child){
+            var p=parent.prototype;
+            var c=child.prototype;
+            for (var i in p) {
+                c[i]=p[i];
+            }
+        }
+        extend(Person,Coder);
+        var weber=new Coder("陈轩",18);
+        console.log(weber.name,weber.amount,weber.age);
+    </script>
+</body>
+</html>
