@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用空对象继承</title>
+</head>
+<body>
+    <script>
+        function Person(){}
+        Person.prototype.amount="1300000000";
+
+        function coder(name,age){
+            this.name=name;
+            this.age=age;
+        }
+
+        var F=function(){}
+        F.prototype=Person.prototype;
+
+        coder.prototype=new F();
+        coder.prototype.constructor=coder;
+
+        var weber=new coder("陈轩",29);
+        console.log(weber.name,weber.age,weber.amount);
+        console.log("---------------------------------");
+
+        //封装一个方法
+        function extend(parent,child){
+            var F=function(){};
+            F.prototype=parent.prototype;
+            child.prototype=new F();
+            child.prototype.constructor=child;
+        }
+        //调用封装的方法
+        extend(Person,coder);
+        var weber=new coder("大神",35);
+        console.log(weber.amount);
+    </script>
+</body>
+</html>

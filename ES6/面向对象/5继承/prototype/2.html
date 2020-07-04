@@ -7,15 +7,14 @@
 </head>
 <body>
     <script>
-        function Animal(){
-            this.species = "动物";
-        }
+        function Animal(){}
+        Animal.prototype.species = "动物";
+
         function Cat(name,color){
             this.name=name;
             this.color=color;
         }
-        Animal.prototype.species = "动物";
-
+        
         Cat.prototype = Animal.prototype;
         Cat.prototype.constructor = Cat;
 
