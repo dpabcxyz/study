@@ -6,10 +6,13 @@
     <title>prototype</title>
 </head>
 <body>
+    <h2>JS所有的数据类型(除了null,undefined)</h2>
     <h2>1、定义所有对象实例的属性和方法</h2>
     <h2>2、对于构造函数来说，它是一个属性；对于对象实例来说，它是原型对象</h2>
-    <h2>3、每个函数都有prototype属性，这个属性指向对象的指针</h2>
-    <h2>4、所有一切的对象的原型顶端，都是Object.prototype，即Object构造函数的prototype属性指向的那个对象</h2>
+    <h2>3、每个构造函数都有prototype属性，这个属性指向对象的指针</h2>
+    <h2>4、所有的对象都有__proto__属性</h2>
+    <h2>5、对象实例的的原型指向构造函数的prototype</h2>
+    <h2>6、所有一切的对象的原型顶端，都是Object.prototype，Object.prototype的原型对象是null</h2>
     <script>
         function Person(name,height){
             this.name=name;
@@ -24,9 +27,11 @@
         console.log("boy的构造函数："+boy.constructor);
         console.log("Person原型对象的构造函数"+Person.prototype.constructor);
         console.log("------over------")
-        console.log("构造函数的原型对象的-原型对象："+Person.prototype.__proto__)
-        console.log("对象的原型对象："+Object.prototype);
-        console.log("两者相等："+Person.prototype.__proto__==Object.prototype)
+        console.log("person是Object的对象实例:"+Object.prototype.isPrototypeOf(Person));
+        console.log("数组是Object的对象实例:"+Object.prototype.isPrototypeOf(Array));
+        console.log("数组是Object的对象实例:"+Object.prototype.isPrototypeOf(String));
+        console.log("------over------");
+        console.log(boy.__proto__==Person.prototype);        
     </script>
 </body>
 </html>

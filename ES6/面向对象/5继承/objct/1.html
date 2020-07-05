@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非构造函数继承</title>
+</head>
+<body>
+    <script>
+        var chinese={
+            nation:'中国'
+        }
+        function object(o){
+            function F(){};
+            F.prototype=o;
+            return new F();
+        }
+        var Doctor=object(chinese);
+        Doctor.career="医生";
+        console.log(Doctor.nation,Doctor.career);
+        //这两个对象都是普通对象，不是构造函数，无法使用构造函数方法实现"继承"
+    </script>
+</body>
+</html>

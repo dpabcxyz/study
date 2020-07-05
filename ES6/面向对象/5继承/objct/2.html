@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浅拷贝继承</title>
+</head>
+<body>
+    <script>
+        var chinese={
+            nation:'中国'
+        }
+        chinese.birthPlaces = ['北京','上海','香港'];
+
+        function Extend(p){
+            var c={};
+            for(var i in p){
+                c[i]=p[i];
+            }
+            return c;
+        }
+        var Doctor=Extend(chinese);
+        Doctor.career="医生";
+        Doctor.birthPlaces.push('厦门');
+        console.log(Doctor.nation,Doctor.career,Doctor.birthPlaces);
+        console.log("----------------------------");
+        console.log(chinese.birthPlaces);  //chinese的birthPlaces也被改掉了！
+        //实际上，子对象获得的只是一个内存地址，而不是真正拷贝，因此存在父对象被篡改的可能。
+
+    </script>
+</body>
+</html>

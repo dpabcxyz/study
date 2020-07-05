@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>s深拷贝继承</title>
+</head>
+<body>
+    <script>
+        var chinese={
+            nation:'中国'
+        }
+        chinese.birthPlaces = ['北京','上海','香港'];
+
+        function extend(p,c){
+            var c=c || {};
+            for(var i in p){
+                　if (typeof p[i] === 'object') {
+                    c[i]=(p[i].constructor===Array) ? []:{};
+                    extend(p[i],c[i]);
+                } else{
+                    c[i]=p[i]
+                }
+            }
+            return c;
+        }
+        var Doctor=extend(chinese);
+        Doctor.birthPlaces.push('厦门');
+        console.log(Doctor.birthPlaces);
+        console.log("----------------------------");
+        console.log(chinese.birthPlaces);  
+    </script>
+</body>
+</html>
