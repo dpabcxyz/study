@@ -12,17 +12,17 @@
         }
         chinese.birthPlaces = ['北京','上海','香港'];
 
-        function extend(p,c){
-            var c=c || {};
+        function extend(p){
+            var F = (p.constructor === Array) ? [] : {};
             for(var i in p){
-                　if (typeof p[i] === 'object') {
-                    c[i]=(p[i].constructor===Array) ? []:{};
-                    extend(p[i],c[i]);
-                } else{
-                    c[i]=p[i]
+                if((typeof p[i]).toString().toLowerCase() == "object"){
+                    F[i] = extend(p[i]);
+                    }
+                else{
+                    F[i] = p[i];
                 }
             }
-            return c;
+            return F;
         }
         var Doctor=extend(chinese);
         Doctor.birthPlaces.push('厦门');
