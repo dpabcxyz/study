@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件传值</title>
+    <script src="../reactjs/bower_components/react/react.js"></script>
+    <script src="../reactjs/bower_components/react/react-dom.js"></script>
+    <script src="../reactjs/bower_components/babel/browser.js"></script>
+</head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      //定义组件
+      var Test=React.createClass({
+        render:function(){
+          return <h2>{this.props.x}</h2>
+        }
+      })
+      //组件调用
+      ReactDOM.render(
+        <Test x="今天天气不错！"/>
+        ,document.getElementById('app')
+      )
+    </script>
+  </body>
+</html>

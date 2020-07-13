@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算表达式</title>
+    <script src="../reactjs/bower_components/react/react.js"></script>
+    <script src="../reactjs/bower_components/react/react-dom.js"></script>
+    <script src="../reactjs/bower_components/babel/browser.js"></script>
+</head>
+  <body>
+    <div id="app">
+      <script type="text/babel">
+        let j=100,k=200;
+        ReactDOM.render(
+          <ul>
+            <li>j：{j}</li>
+            <li>k：{k}</li>
+            <li>j+k：{j+k}</li>
+            <li>j是否大于k：{
+              (j>k) ? "是" :"否"
+            }</li>
+          </ul>
+          ,document.getElementById('app')
+        )
+      </script>
+    </div>
+  </body>
+</html>

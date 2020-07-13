@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>props与state</title>
+    <script src="../reactjs/bower_components/react/react.js"></script>
+    <script src="../reactjs/bower_components/react/react-dom.js"></script>
+    <script src="../reactjs/bower_components/babel/browser.js"></script>
+</head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      var A1=React.createClass({
+        getInitialState:function(){
+          return{
+            a:'a1',
+            b:'b1',
+            c:'c1'
+          }
+        },
+        render:function(){
+          return(
+            <div>
+                <B1 a={this.state.a}/>
+                <B2 b={this.state.b}/>
+                <B3 c={this.state.c}/>
+            </div>
+          )
+        }
+      });
+      var B1=React.createClass({
+        render:function(){
+          return <p>{this.props.a}</p>
+        }
+      });
+      var B2=React.createClass({
+        render:function(){
+          return <p>{this.props.b}</p>
+        }
+      });
+      var B3=React.createClass({
+        render:function(){
+          return <p>{this.props.c}</p>
+        }
+      });
+      ReactDOM.render(
+        <A1/>
+        ,document.getElementById('app')
+      )
+    </script>
+  </body>
+</html>

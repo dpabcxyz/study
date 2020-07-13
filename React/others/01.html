@@ -18,15 +18,16 @@
         //     )
         // }
         // ReactDOM.render(
-        //     <App name="陈轩" age="18岁"/>,document.getElementById('app')
+        //     <App name="陈轩" age="18岁"/>,document.getElementById('app')、
         // )
-        function APP(P){
-            return(
-                <li>hello word {P.name}{P.age}</li>
-            )
+        function App(p){
+          return(
+            <li>hello word{p.name}{p.age}</li>
+          )
         }
         ReactDOM.render(
-            <APP name="大侠" age="18"/>, document.getElementById('app')
+          <App name="陈轩" age="18">
+          ,document.getElementById('app')
         )
     </script>
 </body>

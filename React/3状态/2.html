@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改状态值</title>
+    <script src="../reactjs/bower_components/react/react.js"></script>
+    <script src="../reactjs/bower_components/react/react-dom.js"></script>
+    <script src="../reactjs/bower_components/babel/browser.js"></script>
+</head>
+  <body>
+    <div id="app"></div>
+      <script type="text/babel">
+        var A2=React.createClass({
+          getInitialState:function(){
+            return{
+              data:["张三","李四","王五"]
+            }
+          },
+          handle:function(){
+            let  arr=this.state.data;
+            arr.push("陈轩");
+            this.setState({
+              data:arr
+            })
+          },
+          render:function(){
+            let arr=this.state.data;
+            return <ul>{
+              arr.map(function(item){
+                return <li>{item}</li>
+              })
+            }
+          <li><button type="button" onClick={this.handle}>更新</button></li>
+          </ul>
+          }
+        });
+        //组件渲染
+        ReactDOM.render(
+          <A2/>
+          ,document.getElementById('app')
+        )
+      </script>
+
+  </body>
+</html>
