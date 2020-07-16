@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件1</title>
+    <script src="../reactjs/bower_components/react/react.js"></script>
+    <script src="../reactjs/bower_components/react/react-dom.js"></script>
+    <script src="../reactjs/bower_components/babel/browser.js"></script>
+</head>
+  <body>
+    <div id="app"></div>
+      <script type="text/babel">
+        var A=React.createClass({
+          getInitialState:function(){
+            return {
+              val:'abc'
+            }
+          },
+          changeVal:function(){
+              this.setState({
+                val:'变化后的内容'
+              })
+            },
+          render:function(){
+            var val=this.state.val;
+            return <div>
+                <li><button onClick={this.changeVal}>改变值</button></li>
+                <li>{val}</li>
+            </div>
+          }
+        })
+        ReactDOM.render(
+          <A/>
+          ,document.getElementById('app')
+        )
+      </script>
+    
+  </body>
+</html>
