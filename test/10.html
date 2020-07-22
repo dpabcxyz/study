@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      let resData={
+        '应用管理1':[{functionName:'添加',functionCode:'F001',menuName:'应用管理1',menuCode:'M001',flag:1},{functionName:'添加',functionCode:'F004',menuName:'应用管理4',menuCode:'M004',flag:0}],
+        '应用管理2':[{functionName:'添加',functionCode:'F002',menuName:'应用管理2',menuCode:'M002',flag:1}],
+        '应用管理3':[{functionName:'添加',functionCode:'F003',menuName:'应用管理3',menuCode:'M003',flag:0}]
+      }
+      var cellArr=[];
+      for(var i in resData){
+        let cellObj={};
+        cellObj.children=[];
+        cellObj.selected=[];
+        for(var m=0;m<resData[i].length;m++){
+          let cellChild={};
+          cellChild.functionName=resData[i][m].functionName;
+          cellChild.functionName=resData[i][m].functionName;
+          cellObj.children.push(cellChild);
+
+          if(resData[i][m].flag==1){
+            cellObj.selected.push(resData[i][m].functionCode);
+          }
+
+          cellObj.menuName=resData[i][m].menuName;
+          cellObj.menuCode=resData[i][m].menuCode
+        }
+        cellArr.push(cellObj);
+      };
+      console.log(cellArr);
+    </script>
+  </body>
+</html>

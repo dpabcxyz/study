@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <script type="text/javascript">
-      let devtool=1;
-
-    </script>
-  </body>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		let devtool=1;
+    devtool: isEnvProduction
+       ? shouldUseSourceMap
+         ? 'source-map'
+         : false
+       : isEnvDevelopment && 'cheap-module-source-map',
+		</script>
+	</body>
 </html>
