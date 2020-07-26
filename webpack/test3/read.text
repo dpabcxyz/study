@@ -1,0 +1,8 @@
+1、初始化项目
+npm init
+
+2、安装webpack webpack-cli
+npm i -d webpack webpack-cli
+
+3、webpack-dev-server配置与安装
+npm i -d dev webpack-dev-server

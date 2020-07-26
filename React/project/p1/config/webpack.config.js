@@ -136,10 +136,10 @@ module.exports = function(webpackEnv) {
     devtool: isEnvProduction
       ? shouldUseSourceMap
         ? 'source-map'
-        // ? 'eval-source-map'  生产环境调试
+        // ? 'eval-source-map'  开启生产环境调试 以及34行
         : false
       : isEnvDevelopment && 'cheap-module-source-map',
-      // : isEnvDevelopment && 'eval-source-map', 生产环境调试
+      // : isEnvDevelopment && 'eval-source-map', 开启开发环境调试
       //如果isEnvProduction 为真并且shouldUseSourceMap为真，使用 source-map，否者使用false
       //如果isEnvDevelopment，使用cheap-module-source-map
     // These are the "entry points" to our application.

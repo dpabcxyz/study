@@ -1,0 +1,18 @@
+1、安装脚手架工具
+create-react-app
+
+2、创建项目
+create-react-app myapp
+
+3、暴露webpack配置文件
+npm run eject
+
+4、启动项目
+npm run start
+
+
+5、安装本地服务
+npm i -g serve
+
+6、启动本地服务
+serve -s build
