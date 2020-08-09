@@ -6,3 +6,10 @@ npm i -d webpack webpack-cli
 
 3、webpack-dev-server配置与安装
 npm i -d dev webpack-dev-server
+
+4、html模板插件
+npm i -d  html-webpack-plugin
+
+5、运行打包后的文件
+npm i -g serve
+serve
