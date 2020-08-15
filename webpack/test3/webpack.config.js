@@ -49,6 +49,9 @@ module.exports={
                 collapseWhitespace:true
             },
             hash:true //生产环境下生成hash戳
+        }),
+        new MiniCssExtractPlugin({
+            filename:'static/css/main.css'
         })
     ]
     
