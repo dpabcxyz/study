@@ -10,6 +10,14 @@ npm i -d dev webpack-dev-server
 4、html模板插件
 npm i -d  html-webpack-plugin
 
-5、运行打包后的文件
+5、运行打包后的文件s
 npm i -g serve
 serve
+
+8、多页面配置
+
+7、css loader
+npm i -d  css-loader style-loader mini-css-extract-plugin
+css-loader 解析@import语法
+style=loader 把css插入到head标签中
+mini-css-extract-plugin 抽离css样式 让index.html里面的css样式变成link引入

@@ -1,5 +1,8 @@
 //html模板插件
 let HtmlWebpackPlugin=require('html-webpack-plugin');
+
+// css loader
+let  MiniCssExtractPlugin=require('mini-css-extract-plugin');
 //路径
 let path=require('path');
 module.exports={
