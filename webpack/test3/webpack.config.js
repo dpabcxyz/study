@@ -56,6 +56,17 @@ module.exports={
         new MiniCssExtractPlugin({
             filename:'static/css/main.css'
         })
-    ]
+    ],
+    module:{
+        rule:[{
+            test:/\.css$/,
+            use:[
+                MiniCssExtractPlugin.loader, //都放到main.css里面去
+                {
+                    loader:'css-loader'
+                }
+            ]
+        }]
+    }
     
 }
