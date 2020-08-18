@@ -1,7 +1,7 @@
 //html模板插件
 let HtmlWebpackPlugin=require('html-webpack-plugin');
 
-// css loader
+// 抽离css文件
 let  MiniCssExtractPlugin=require('mini-css-extract-plugin');
 //路径
 let path=require('path');
@@ -58,7 +58,7 @@ module.exports={
         })
     ],
     module:{
-        rule:[{
+        rules:[{
             test:/\.css$/,
             use:[
                 MiniCssExtractPlugin.loader, //都放到main.css里面去
