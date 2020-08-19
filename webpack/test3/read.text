@@ -10,13 +10,23 @@ npm i -d dev webpack-dev-server
 4、html模板插件
 npm i -d  html-webpack-plugin
 
-5、运行打包后的文件s
-npm i -g serve
-serve
+5、运行打包后的文件
+npm i -g serve 安装 
+serve  运行
 
-8、多页面配置
+6、publicPath
+build之后的公共路径
+用于配置打包后的项目放在非根目录
 
-7、css loader
+7、多页面配置
+入口文件：
+ entry:{
+        index:'./src/index.js', 
+        admin:'./src/admin.js',  
+    },
+chunks 解决独立引用问题
+
+8、css loader
 npm i -d  css-loader style-loader mini-css-extract-plugin
 css-loader 解析@import语法
 style=loader 把css插入到head标签中
