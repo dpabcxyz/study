@@ -5,6 +5,16 @@ let HtmlWebpackPlugin=require('html-webpack-plugin');
 let  MiniCssExtractPlugin=require('mini-css-extract-plugin');
 //路径
 let path=require('path');
+
+//css兼容性
+let postCss=require('autoprefixer')({
+    "overrideBrowserslist": [
+        'last 10 Chrome versions',
+        'last 5 Firefox versions',
+        'Safari >= 6',
+        'ie> 8'
+    ]
+});
 module.exports={
     mode:'production',  //development 开发/生产环境
     entry:{
@@ -64,6 +74,13 @@ module.exports={
                 MiniCssExtractPlugin.loader, //都放到main.css里面去
                 {
                     loader:'css-loader'
+                },
+                {
+                    loader:'postCss-loader',
+                    options:{
+                        plugins:[
+                            postCss]
+                    }
                 }
             ]
         }]

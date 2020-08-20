@@ -31,3 +31,7 @@ npm i -d  css-loader style-loader mini-css-extract-plugin
 css-loader 解析@import语法
 style=loader 把css插入到head标签中
 mini-css-extract-plugin 抽离css样式 让index.html里面的css样式变成link引入
+
+9、post-css 处理兼容性
+npm i -s postcss-loader autoprefixer
+

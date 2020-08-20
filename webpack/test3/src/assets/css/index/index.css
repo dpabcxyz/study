@@ -6,4 +6,6 @@
     color: #fff;
     line-height: 300px;
     background-color: red;
+    border-radius: 30px;
+    transform: rotate(60deg);
 }
