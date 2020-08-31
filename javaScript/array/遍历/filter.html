@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+<body>
+    <script>
+        let arr=[{id:1,name:"大侠"},{id:2,name:"陈轩"},{id:3,name:"小白"},{id:4,name:"大白"}];
+        // 1、遍历每一个数组元素,接受三个参数
+        arr.filter((val,index,arr)=>{
+            console.log(index);
+        });
+        // 2、返回复合条件的新数组
+        let a=arr.filter((val,index,arr)=>{
+           return val.id>2
+        });
+        console.log(a);
+    </script>
+</body>
+</html>

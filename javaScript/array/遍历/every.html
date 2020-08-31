@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>every</title>
+</head>
+<body>
+    <script>
+        let arr=[{id:1,name:"大侠"},{id:2,name:"陈轩"},{id:3,name:"小白"},{id:4,name:"大白"}];
+        // 1、只遍历第一个数组元素
+        arr.every((val,index,arr)=>{
+            console.log(val);
+        });
+        // 2、如果有一个元素不满足，则整个表达式返回 false ，且剩余的元素不会再进行检测;
+        //   如果所有条件都满足的话，将返回true
+        let a=arr.every((val,index,arr)=>{
+            return val.id>=1
+        });
+        console.log(a);
+    </script>
+</body>
+</html>
