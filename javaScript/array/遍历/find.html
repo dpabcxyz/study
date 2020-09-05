@@ -6,17 +6,25 @@
     <title>find</title>
 </head>
 <body>
+  <button type="button" name="button"  onclick="myFunction()">click</button>
     <script>
-        let arr=[{id:1,name:"大侠"},{id:2,name:"陈轩"},{id:3,name:"小白"},{id:4,name:"大白"}];
+    
+        // let arr=[{id:1,name:"大侠"},{id:2,name:"陈轩"},{id:3,name:"小白"},{id:4,name:"大白"}];
         // 1、遍历每一个数组元素,接受三个参数
-        arr.find((val,index,arr)=>{
-            console.log(index);
-        });
+        // arr.find((val,index,arr)=>{
+        //     console.log(index);
+        // });
         // 2、遇到符合条件的元素，后面的将不再执行
-        let a=arr.find((val,index,arr)=>{
-            return val.id>2
-        });
-        console.log(a);
+        // let a=arr.find((val,index,arr)=>{
+        //     return val.id>2
+        // });
+        // console.log(a);
+        localStorage.setItem('chenxuan','123456789');
+      
+        function myFunction(){
+          localStorage.clear();
+          alert("111")
+        }
     </script>
 </body>
 </html>

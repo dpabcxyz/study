@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>filter</title>
+    <title>reduce</title>
 </head>
 <body>
     <script>
         let arr=[65, 44, 12, 4];
         // 1、遍历每一个数组元素,接受三个参数
-        arr.reduce((total, currentValue, currentIndex, arr)=>{
-            console.log(currentIndex);
+      let a=arr.reduce((total, currentValue, currentIndex, arr)=>{
+        return total+currentValue;
         });
+        console.log(a);
+        arr.reduce((total, currentValue, currentIndex, arr)=>{
+          console.log(currentValue);
+        })
     </script>
 </body>
 </html>
